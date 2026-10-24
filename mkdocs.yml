@@ -1,0 +1,45 @@
+site_name: DemuestraloPE
+site_description: Enciclopedia abierta de teoremas, demostraciones y notas de clase en Ciencias.
+site_author: Comunidad DemuestraloPE
+
+theme:
+  name: material
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.tabs.link
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+
+nav:
+  - Inicio: index.md
+  - Matemáticas:
+      - Cálculo Diferencial: matematica/calculo-diferencial/limites.md
+  - Física:
+      - Mecánica Clásica: fisica/mecanica/energia.md
