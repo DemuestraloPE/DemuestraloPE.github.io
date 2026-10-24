@@ -5,6 +5,8 @@ site_author: Comunidad DemuestraloPE
 theme:
   name: material
   language: es
+  logo: assets/LOGODEMUESTRALO.PNG
+  favicon: assets/favicon.png
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
