@@ -39,11 +39,11 @@ extra_javascript:
 
 plugins:
   - search
+  - awesome-pages # <--- Genera el menú de carpetas automáticamente
 
+# Simplemente define el orden general de las pestañas principales:
 nav:
   - Inicio: index.md
   - Plantilla Colaborativa: PlantillaPE.md
-  - Matemáticas:
-      - Cálculo Diferencial: matematica/calculo-diferencial/limites.md
-  - Física:
-      - Mecánica Clásica: fisica/mecanica/energia.md
+  - Matemáticas: matematica/
+  - Física: fisica/
