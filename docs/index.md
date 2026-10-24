@@ -5,7 +5,7 @@
 ---
 
 ## 🎯 Visión del Proyecto
-**DemuestraloPE** es una iniciativa académica colaborativa impulsada por estudiantes e investigadores. Nuestro objetivo es recopilar, discutir y formalizar el conocimiento de **Matemáticas, Física, Química y Estadística** combinando la intuición gráfica con el rigor matemático estricto.
+**DemuestraloPE** es una iniciativa académica colaborativa impulsada por estudiantes. Nuestro objetivo es recopilar, discutir y formalizar el conocimiento de **Matemáticas y Física** por el momento, luego se piensa añadir **Química, Estadística, etc**. combinando la intuición e ideas tempranas del conocimiento con el rigor y formalismo matemático estricto. Esto mediante la siguiente estructura.
 
 ---
 
@@ -13,7 +13,7 @@
 Cada tema en esta plataforma está organizado en tres niveles conceptuales:
 
 1. **Nivel 1: Intuición y Visualización**  
-   Representaciones geométricas, diagramas y explicaciones cualitativas.
+   Representaciones geométricas, diagramas simples y explicaciones sin fuerte sustento matemático.
 2. **Nivel 2: Rigor Físico y Matemático**  
    Desarrollo formal estándar al nivel de asignaturas universitarias.
 3. **Nivel 3: Fundamentación Axiomática**  
