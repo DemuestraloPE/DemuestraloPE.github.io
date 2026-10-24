@@ -1,4 +1,5 @@
 # 🇵🇪 DemuestraloPE
+![Banner DemuestraloPE](assets/Gemini_Generated_LOGO.jpg)
 *Enciclopedia abierta de demostraciones, teoremas y notas de clase en tres niveles de rigor.*
 
 ---
