@@ -21,11 +21,12 @@ theme:
         icon: material/brightness-7
         name: Cambiar a modo oscuro
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - search.suggest
-    - content.tabs.link
+    - navigation.tabs           # Pestañas superiores (Inicio, Matemáticas, Física)
+    - navigation.sections       # Agrupa secciones en el menú lateral
+    - navigation.expand         # Mantiene las subcarpetas abiertas automáticamente
+    - navigation.top            # Botón para volver arriba
+    - search.suggest            # Buscador con sugerencias inteligentes
+    - content.tabs.link         # Pestañas en las demostraciones
 
 markdown_extensions:
   - pymdownx.superfences
