@@ -41,6 +41,7 @@ extra_javascript:
 
 nav:
   - Inicio: index.md
+  - Plantilla Colaborativa: PlantillaPE.md
   - Matemáticas:
       - Cálculo Diferencial: matematica/calculo-diferencial/limites.md
   - Física:
