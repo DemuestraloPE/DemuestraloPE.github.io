@@ -1,5 +1,5 @@
 site_name: DemuestraloPE
-site_description: Enciclopedia abierta de teoremas, demostraciones y notas de clase en Ciencias.
+site_description: Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.
 site_author: Comunidad DemuestraloPE
 
 theme:
@@ -8,15 +8,13 @@ theme:
   logo: assets/LOGODEMUESTRALO.PNG
   favicon: assets/LOGODEMUESTRALO.PNG
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: deep purple
       accent: blue
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: deep purple
       accent: blue
       toggle:
@@ -38,6 +36,9 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+
+plugins:
+  - search
 
 nav:
   - Inicio: index.md
