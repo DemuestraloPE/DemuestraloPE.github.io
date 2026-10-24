@@ -6,7 +6,7 @@ theme:
   name: material
   language: es
   logo: assets/LOGODEMUESTRALO.PNG
-  favicon: assets/favicon.png
+  favicon: assets/LOGODEMUESTRALO.PNG
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
