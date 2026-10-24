@@ -1,11 +1,11 @@
 # [Nombre del Teorema o Tema de Ciencias]
 
-!!! info "Información del Documento"
-    * **Autor principal:** [Nombre del Colaborador / Estudiante]
-    * **Contacto / Perfil:** [jscampanav@unitru.edu.pe](mailto:jscampanav@unitru.edu.pe) | [LinkedIn / GitHub](https://github.com/tu_usuario)
-    * **Asignatura / Área:** [Ej. Electromagnetismo II / Cálculo Multivariable]
-    * **Última actualización:** 24 de Octubre, 2026
-    * **Estado:** 🟡 En Revisión por Pares / 🟢 Completo
+!!! info "Información del Documento".<br>
+    * **Autor principal:** [Nombre del Colaborador / Estudiante].<br>
+    * **Contacto / Perfil:** [jscampanav@unitru.edu.pe](mailto:jscampanav@unitru.edu.pe) | [LinkedIn / GitHub](https://github.com/tu_usuario).<br>
+    * **Asignatura / Área:** [Ej. Electromagnetismo II / Cálculo Multivariable].<br>
+    * **Última actualización:** 24 de Octubre, 2026.<br>
+    * **Estado:** 🟡 En Revisión por Pares / 🟢 Completo.
 
 ---
 
