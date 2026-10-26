@@ -28,5 +28,5 @@ Por obvias razones no siempre encontraremos la misma estructura en la rigurosida
 1. Navega a la asignatura correspondiente en el menú superior.
 2. Haz clic en el ícono del lápiz (**Editar en GitHub**) en cualquier página.
 3. Agrega tus notas en Markdown y LaTeX.
-4. Contacto: Mandar un correo a la siguiente direccion: jscampana@unitru.edu.pe
+4. Contacto: Mandar un correo a la siguiente direccion: jscampanav@unitru.edu.pe
 5. Envía tu contribución mediante un **Pull Request**.
