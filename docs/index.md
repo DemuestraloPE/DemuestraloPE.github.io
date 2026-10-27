@@ -1,5 +1,5 @@
 # DemuestraloPE: Presentación
-![Banner DemuestraloPE](assets/Gemini_Generated_LOGO.jpg)
+![Banner DemuestraloPE](assets/images/Gemini_Generated_LOGO.jpg)
 *Enciclopedia abierta de demostraciones, teoremas y notas de clase.*
 
 ---
