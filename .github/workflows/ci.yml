@@ -28,13 +28,39 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # Instalar todas las dependencias necesarias de una sola vez
+      # 1. Crear directorios necesarios para evitar errores de carpeta inexistente
+      - run: |
+          mkdir -p docs/clases_zip
+          mkdir -p docs/assets/pdf
+
+      # 2. Descomprimir todos los archivos .zip guardados en docs/clases_zip/
+      - name: Descomprimir proyectos LaTeX (.zip)
+        run: |
+          mkdir -p docs/tex_extracted
+          for zip in docs/clases_zip/*.zip; do
+            if [ -f "$zip" ]; then
+              folder_name=$(basename "$zip" .zip)
+              unzip -o "$zip" -d "docs/tex_extracted/$folder_name"
+            fi
+          done
+
+      # 3. Compilar proyectos LaTeX descomprimidos a PDF
+      - name: Compilar LaTeX a PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            docs/tex_extracted/**/main.tex
+            docs/tex_extracted/**/*.tex
+          args: "-pdf -interaction=nonstopmode -output-directory=docs/assets/pdf"
+          continue_on_error: true
+
+      # 4. Instalar dependencias de Python para MkDocs
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
 
-      # Configurar identidad de Git para que gh-deploy tenga permiso de publicar
+      # 5. Configurar identidad de Git para el bot de despliegue
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Desplegar el sitio web
+      # 6. Desplegar sitio web en GitHub Pages
       - run: mkdocs gh-deploy --force
