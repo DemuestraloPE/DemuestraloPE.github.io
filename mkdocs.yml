@@ -5,8 +5,8 @@ site_author: Comunidad DemuestraloPE
 theme:
   name: material
   language: es
-  logo: assets/LOGODEMUESTRALO.PNG
-  favicon: assets/LOGODEMUESTRALO.PNG
+  logo: assets/images/LOGODEMUESTRALO.PNG
+  favicon: assets/images/LOGODEMUESTRALO.PNG
   palette:
     - scheme: slate
       primary: deep purple
