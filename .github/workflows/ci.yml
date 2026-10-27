@@ -28,15 +28,15 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear directorios necesarios
+      # 1. Crear estructuras de carpetas requeridas
       - run: |
           mkdir -p docs/clases_zip
           mkdir -p docs/assets/pdf
+          mkdir -p docs/tex_extracted
 
-      # 2. Descomprimir todos los archivos .zip dentro de docs/clases_zip/
+      # 2. Descomprimir los archivos .zip
       - name: Descomprimir proyectos LaTeX (.zip)
         run: |
-          mkdir -p docs/tex_extracted
           for zip in docs/clases_zip/*.zip; do
             if [ -f "$zip" ]; then
               folder_name=$(basename "$zip" .zip)
@@ -44,22 +44,23 @@ jobs:
             fi
           done
 
-      # 3. Compilar LaTeX a PDF (con búsqueda recursiva correcta)
-      - name: Compilar LaTeX a PDF
+      # 3. Compilación robusta a PDF (Busca el .tex principal de cada ZIP)
+      - name: Compilar LaTeX a PDF de forma dinámica
         uses: xu-cheng/latex-action@v2
         with:
+          root_file: |
+            docs/tex_extracted/**/*.tex
           glob_root_file: true
-          root_file: "docs/tex_extracted/**/*.tex"
-          args: "-pdf -interaction=nonstopmode -output-directory=docs/assets/pdf"
+          args: "-pdf -interaction=nonstopmode -output-directory=../../assets/pdf"
           continue_on_error: true
 
-      # 4. Instalar dependencias de Python para MkDocs
+      # 4. Instalar dependencias para la web
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
 
-      # 5. Configurar identidad de Git para el bot de despliegue
+      # 5. Configurar Git Bot
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 6. Desplegar sitio web en GitHub Pages
+      # 6. Desplegar sitio en GitHub Pages
       - run: mkdocs gh-deploy --force
