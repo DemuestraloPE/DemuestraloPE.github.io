@@ -28,12 +28,12 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear directorios necesarios para evitar errores de carpeta inexistente
+      # 1. Crear directorios necesarios
       - run: |
           mkdir -p docs/clases_zip
           mkdir -p docs/assets/pdf
 
-      # 2. Descomprimir todos los archivos .zip guardados en docs/clases_zip/
+      # 2. Descomprimir todos los archivos .zip dentro de docs/clases_zip/
       - name: Descomprimir proyectos LaTeX (.zip)
         run: |
           mkdir -p docs/tex_extracted
@@ -44,13 +44,12 @@ jobs:
             fi
           done
 
-      # 3. Compilar proyectos LaTeX descomprimidos a PDF
+      # 3. Compilar LaTeX a PDF (con búsqueda recursiva correcta)
       - name: Compilar LaTeX a PDF
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: |
-            docs/tex_extracted/**/main.tex
-            docs/tex_extracted/**/*.tex
+          glob_root_file: true
+          root_file: "docs/tex_extracted/**/*.tex"
           args: "-pdf -interaction=nonstopmode -output-directory=docs/assets/pdf"
           continue_on_error: true
 
