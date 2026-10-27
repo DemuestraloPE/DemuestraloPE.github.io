@@ -1,0 +1,53 @@
+site_name: DemuestraloPE
+site_description: Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.
+site_author: Comunidad DemuestraloPE
+
+theme:
+  name: material
+  language: es
+  logo: assets/LOGODEMUESTRALO.PNG
+  favicon: assets/LOGODEMUESTRALO.PNG
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+    - scheme: default
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+  features:
+    - navigation.tabs           # Pestañas superiores (Inicio, Matemáticas, Física)
+    - navigation.sections       # Agrupa secciones en el menú lateral
+    - navigation.expand         # Mantiene las subcarpetas abiertas automáticamente
+    - navigation.top            # Botón para volver arriba
+    - search.suggest            # Buscador con sugerencias inteligentes
+    - content.tabs.link         # Pestañas en las demostraciones
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - awesome-pages
+  - gen-files:
+      scripts:
+        - scripts/generate_indexes.py
+
+# Menú principal simplificado:
+nav:
+  - Inicio: index.md
+  - Plantilla Colaborativa: PlantillaPE.md
+  - Matemáticas: matematica/
+  - Física: fisica/
