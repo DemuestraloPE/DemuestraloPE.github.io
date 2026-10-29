@@ -48,11 +48,15 @@ jobs:
       - name: Compilar LaTeX a PDF de forma dinámica
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: |
-            docs/tex_extracted/**/*.tex
           glob_root_file: true
-          args: "-pdf -interaction=nonstopmode -output-directory=../../assets/pdf"
+          root_file: "docs/tex_extracted/**/*.tex"
+          args: "-pdf -interaction=nonstopmode -output-directory=docs/assets/pdf"
           continue_on_error: true
+
+      # Mover los PDFs generados en subcarpetas a la raíz de assets/pdf
+      - name: Normalizar ubicación de PDFs
+        run: |
+          find docs/assets/pdf/ -name "*.pdf" -exec mv {} docs/assets/pdf/ \;
 
       # 4. Instalar dependencias para la web
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
