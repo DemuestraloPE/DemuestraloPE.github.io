@@ -1,17 +1,30 @@
 <footer class="md-footer" style="
   background-color: var(--md-sidebar-bg-color, #1a1a2e); 
   border-top: 1px solid var(--md-default-fg-color--lightest); 
-  padding: 2.5rem 1rem; 
+  padding: 0 0 2rem 0; 
   margin-top: 4rem;
+  width: 100%;
+  clear: both;
 ">
-  <div class="md-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+  <!-- Línea decorativa superior -->
+  <div style="height: 3px; width: 100%; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite; margin-bottom: 2rem;"></div>
+
+  <div class="md-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
     <div>
-      <p style="margin: 0; font-weight: bold; font-size: 1rem;">DemuestraloPE</p>
-      <p style="margin: 0; font-size: 0.8rem; opacity: 0.7;">Repositorio académico abierto para la ciencia y tecnología.</p>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-weight: 800; font-size: 1.1rem; color: var(--md-default-fg-color);">DemuestraloPE</span>
+        <span style="background: rgba(0, 230, 118, 0.1); border: 1px solid rgba(0, 230, 118, 0.3); padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; color: #00e676;">
+          ● Build Active
+        </span>
+      </div>
+      <p style="margin: 0; font-size: 0.8rem; opacity: 0.7; color: var(--md-default-fg-color);">
+        Repositorio académico abierto para la ciencia y tecnología.
+      </p>
     </div>
-    <div style="font-size: 0.85rem; display: flex; gap: 15px;">
-      <a href="https://github.com" target="_blank" style="color: var(--md-accent-fg-color); text-decoration: none;">GitHub</a>
-      <a href="PlantillaPE.html" style="color: var(--md-accent-fg-color); text-decoration: none;">Contribuir</a>
+
+    <div style="font-size: 0.85rem; display: flex; align-items: center; gap: 15px;">
+      <a href="PlantillaPE.html" style="color: var(--md-default-fg-color); text-decoration: none; opacity: 0.8;">📄 Plantilla</a>
+      <a href="https://github.com/DemuestraloPE" target="_blank" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: bold;">GitHub Repositorio</a>
     </div>
   </div>
 </footer>
