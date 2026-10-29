@@ -23,8 +23,10 @@ theme:
         name: Cambiar a modo oscuro
   features:
     - navigation.tabs           # Pestañas superiores (Inicio, Matemáticas, Física)
+    - navigation.tabs.sticky    # Mantiene las pestañas visibles al hacer scroll
     - navigation.sections       # Agrupa secciones en el menú lateral
     - navigation.expand         # Mantiene las subcarpetas abiertas automáticamente
+    - navigation.path           # Muestra ruta de migas de pan (breadcrumbs)
     - navigation.top            # Botón para volver arriba
     - search.suggest            # Buscador con sugerencias inteligentes
     - content.tabs.link         # Pestañas en las demostraciones
@@ -69,7 +71,7 @@ validation:
     absolute_links: ignore
     unrecognized_links: ignore
 
-# Menú principal oñeorganiza porãva
+# Mapeo explicito para asegurar que la navegacion dibuje todos los arboles
 nav:
   - Inicio: index.md
   - Plantilla Colaborativa: PlantillaPE.md
