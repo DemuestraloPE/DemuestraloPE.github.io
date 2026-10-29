@@ -19,27 +19,26 @@
   border-radius: 10px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
-/* Forzar imagen de la cita a ser grande y centrada */
+/* Ampliar y centrar foto en el bloque de citas lateral */
 #sidebar-random-fact {
   text-align: center !important;
-  padding: 10px 5px !important;
+  padding: 12px 5px !important;
 }
 
 #sidebar-random-fact img {
-  width: 90px !important;
-  height: 90px !important;
-  max-width: 90px !important;
-  max-height: 90px !important;
+  width: 95px !important;
+  height: 95px !important;
+  max-width: 95px !important;
+  max-height: 95px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
   display: block !important;
-  margin: 0 auto 12px auto !important;
+  margin: 0 auto 10px auto !important;
   border: 3px solid #00e676 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
 }
 
 #sidebar-random-fact p {
   font-size: 0.85rem !important;
   line-height: 1.4 !important;
-  margin-top: 8px !important;
 }
