@@ -25,15 +25,21 @@
         </div>
       </div>
     </div>
-    {% if config.theme.palette %}
-      {% if config.theme.palette is mapping %}
-        {% include "partials/palette.html" %}
-      {% else %}
-        {% for palette in config.theme.palette %}
-          {% include "partials/palette.html" %}
-        {% endfor %}
-      {% endif %}
+
+    <!-- Buscador -->
+    {% if "material/search" in config.plugins %}
+      <label class="md-header__button md-icon" for="__search">
+        {% set icon = config.theme.icon.search or "material/magnify" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </label>
+      {% include "partials/search.html" %}
     {% endif %}
+
+    <!-- Selector de Paleta / Tema (Solo se llama UNA vez) -->
+    {% if config.theme.palette %}
+      {% include "partials/palette.html" %}
+    {% endif %}
+
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}
@@ -41,6 +47,6 @@
     {% endif %}
   </nav>
 
-  <!-- Borde animado inferior -->
+  <!-- Borde superior animado -->
   <div style="height: 3px; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite;"></div>
 </header>
