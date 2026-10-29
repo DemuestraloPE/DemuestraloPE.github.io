@@ -28,64 +28,45 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear directorios base
-      - run: |
-          mkdir -p docs/clases_zip
-          mkdir -p docs/assets/pdf
-          mkdir -p docs/tex_extracted
+      # 1. Crear la carpeta contenedora para PDFs
+      - run: mkdir -p docs/assets/pdf
 
-      # 2. Descomprimir archivos .zip
-      - name: Descomprimir proyectos LaTeX (.zip)
+      # 2. Compilar todos los archivos .tex del repositorio directamente con TeX Live Full
+      - name: Compilar todos los .tex a PDF
         run: |
-          for zip in docs/clases_zip/*.zip; do
-            if [ -f "$zip" ]; then
-              folder_name=$(basename "$zip" .zip)
-              unzip -o "$zip" -d "docs/tex_extracted/$folder_name"
-            fi
+          # Buscar archivos .tex dentro de docs/ (excluyendo plantillas auxiliares si es necesario)
+          find docs -type f -name "*.tex" | while read -r tex_file; do
+            dir_path=$(dirname "$tex_file")
+            file_name=$(basename "$tex_file" .tex)
+            
+            echo "Compilando $tex_file en la carpeta $dir_path..."
+            
+            # Ejecutar latexmk desde la carpeta donde reside el .tex para que encuentre sus imágenes locales
+            docker run --rm -v "$(pwd):/github/workspace" -w "/github/workspace/$dir_path" ghcr.io/xu-cheng/texlive-full:latest \
+              latexmk -pdf -interaction=nonstopmode -output-directory=../../assets/pdf "$file_name.tex" || true
           done
 
-      # 3. Detectar el archivo .tex principal de cada carpeta y compilarlo a PDF
-      - name: Compilar todos los proyectos TeX
+      # 3. Verificar qué PDFs se generaron
+      - name: Verificar PDFs en assets/pdf/
         run: |
-          for folder in docs/tex_extracted/*/; do
-            if [ -d "$folder" ]; then
-              folder_name=$(basename "$folder")
-              echo "Procesando carpeta: $folder_name"
-              
-              # Buscar main.tex o el primer .tex dentro del proyecto
-              tex_file=$(find "$folder" -maxdepth 2 -type f -name "main.tex" | head -n 1)
-              if [ -z "$tex_file" ]; then
-                tex_file=$(find "$folder" -maxdepth 2 -type f -name "*.tex" | head -n 1)
-              fi
-              
-              if [ -n "$tex_file" ]; then
-                echo "Compilando $tex_file..."
-                # Usar contenedor de latexmk directamente sobre la ruta exacta hallada
-                docker run --rm -v "$(pwd):/github/workspace" -w /github/workspace ghcr.io/xu-cheng/texlive-full:latest \
-                  latexmk -pdf -interaction=nonstopmode -output-directory=docs/assets/pdf "$tex_file" || true
-                
-                # Asegurar que el PDF resultante tome el nombre de la carpeta/ZIP
-                compiled_pdf=$(find docs/assets/pdf -type f -name "*.pdf" | head -n 1)
-                if [ -f "$compiled_pdf" ]; then
-                  mv "$compiled_pdf" "docs/assets/pdf/${folder_name}.pdf"
-                fi
-              fi
-            fi
-          done
-
-      # 4. Verificar qué PDFs se crearon en la ruta final
-      - name: Verificar PDFs generados
-        run: |
-          echo "=== PDFs en docs/assets/pdf/ ==="
+          echo "=== PDFs generados ==="
           ls -la docs/assets/pdf/
 
-      # 5. Instalar dependencias para MkDocs
+      # 4. Instalar dependencias para MkDocs
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
 
-      # 6. Configurar Git Bot
+      # 5. Configurar Git Bot
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 7. Desplegar sitio web
+      # 6. Desplegar sitio web
       - run: mkdocs gh-deploy --force
+      
+      # 7. Guardar copia de respaldo de la web compilada y los PDFs como Artefacto
+      - name: Crear Respaldo de Artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: respaldo-sitio-y-pdfs
+          path: site/
+          retention-days: 30
