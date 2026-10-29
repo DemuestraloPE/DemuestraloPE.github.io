@@ -4,6 +4,7 @@ site_author: Comunidad DemuestraloPE
 
 theme:
   name: material
+  custom_dir: overrides  # <-- Habilita las plantillas personalizadas
   language: es
   logo: assets/images/LOGODEMUESTRALO.PNG
   favicon: assets/images/LOGODEMUESTRALO.PNG
