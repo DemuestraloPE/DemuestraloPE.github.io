@@ -44,6 +44,9 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
   - javascripts/random_quotes.js
 
+extra_css:
+  - stylesheets/extra.css
+
 plugins:
   - search
   - awesome-pages
