@@ -1,6 +1,6 @@
 {% import "partials/language.html" as lang with context %}
 
-<!-- Tabla de contenidos nativa de MkDocs -->
+<!-- Tabla de contenidos nativa -->
 <nav class="md-nav md-nav--secondary" aria-label="{{ lang.t('toc') }}">
   {% set toc = page.toc %}
   {% if toc | first is defined %}
@@ -9,14 +9,14 @@
       {{ lang.t('toc') }}
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      {% for item in toc %}
-        {% include "partials/toc-item.html" with context %}
+      {% for toc_item in toc %}
+        {% include "partials/toc-item.html" %}
       {% endfor %}
     </ul>
   {% endif %}
 </nav>
 
-<!-- Bloque de Citas/Datos Aleatorios: Colocado afuera para que siempre cargue -->
+<!-- Bloque de Citas/Datos Aleatorios (Debajo de la Tabla de Contenidos) -->
 <div style="margin-top: 1.5rem; padding: 0.5rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
   <div id="sidebar-random-fact"></div>
 </div>
