@@ -1,73 +1,37 @@
-site_name: DemuestraloPE
-site_description: Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.
-site_author: Comunidad DemuestraloPE
+<!-- Carga el componente nativo de Tabla de Contenidos -->
+{% set toc = page.toc %}
+{% if toc | first is defined %}
+  <nav class="md-nav md-nav--secondary" aria-label="{{ lang.t('toc') }}">
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      {{ lang.t('toc') }}
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      {% for toc_item in toc %}
+        <li class="md-nav__item">
+          <a href="{{ toc_item.url }}" class="md-nav__link">
+            <span class="md-ellipsis">{{ toc_item.title }}</span>
+          </a>
+          {% if toc_item.children %}
+            <nav class="md-nav" aria-label="{{ toc_item.title }}">
+              <ul class="md-nav__list">
+                {% for child in toc_item.children %}
+                  <li class="md-nav__item">
+                    <a href="{{ child.url }}" class="md-nav__link">
+                      <span class="md-ellipsis">{{ child.title }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
 
-theme:
-  name: material
-  custom_dir: overrides  # <-- Habilita las plantillas personalizadas
-  language: es
-  logo: assets/images/LOGODEMUESTRALO.PNG
-  favicon: assets/images/LOGODEMUESTRALO.PNG
-  palette:
-    - scheme: slate
-      primary: deep purple
-      accent: blue
-      toggle:
-        icon: material/brightness-4
-        name: Cambiar a modo claro
-    - scheme: default
-      primary: deep purple
-      accent: blue
-      toggle:
-        icon: material/brightness-7
-        name: Cambiar a modo oscuro
-  features:
-    - navigation.tabs           # Pestañas superiores (Inicio, Matemáticas, Física)
-    - navigation.sections       # Agrupa secciones en el menú lateral
-    - navigation.expand         # Mantiene las subcarpetas abiertas automáticamente
-    - navigation.top            # Botón para volver arriba
-    - search.suggest            # Buscador con sugerencias inteligentes
-    - content.tabs.link         # Pestañas en las demostraciones
-
-markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.arithmatex:
-      generic: true
-  - attr_list
-  - admonition
-  - pymdownx.details            # Cajas desplegables (collapsible/acordeón)
-  - pymdownx.emoji:             # Soporte completo de emoticonos y GitHub Badges
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tasklist:          # Listas de tareas interactiva [-] o [x]
-      custom_checkbox: true
-  - pymdownx.highlight:         # Resaltado sintáctico avanzado de código TeX, Python, C++
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys               # Formato para teclas de teclado: ++ctrl+alt+del++
-
-# 📌 AQUÍ SE AGREGÓ EL SCRIPT DE CITAS/DATOS ALEATORIOS:
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
-  - javascripts/random_quotes.js
-
-extra_css:
-  - stylesheets/extra.css
-
-plugins:
-  - search
-  - awesome-pages
-  - gen-files:
-      scripts:
-        - scripts/generate_indexes.py
-
-# Menú principal simplificado:
-nav:
-  - Inicio: index.md
-  - Plantilla Colaborativa: PlantillaPE.md
-  - Matemáticas: matematica/index.md
-  - Física: fisica/index.md
+<!-- Bloque de Citas/Datos Aleatorios (SIEMPRE VISIBLE) -->
+<div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
+  <div id="sidebar-random-fact"></div>
+</div>
