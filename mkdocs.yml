@@ -37,7 +37,18 @@ markdown_extensions:
       generic: true
   - attr_list
   - admonition
-  - pymdownx.details
+  - pymdownx.details            # Cajas desplegables (collapsible/acordeón)
+  - pymdownx.emoji:             # Soporte completo de emoticonos y GitHub Badges
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:          # Listas de tareas interactiva [-] o [x]
+      custom_checkbox: true
+  - pymdownx.highlight:         # Resaltado sintáctico avanzado de código TeX, Python, C++
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys               # Formato para teclas de teclado: ++ctrl+alt+del++
 
 # 📌 AQUÍ SE AGREGÓ EL SCRIPT DE CITAS/DATOS ALEATORIOS:
 extra_javascript:
