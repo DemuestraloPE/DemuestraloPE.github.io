@@ -1,0 +1,7 @@
+title: ⚛️ Física
+nav:
+  - index.md
+  - mecanica
+  - Mecánica Cuántica
+  - Ondas
+  - ... # El comodín "..." incluye cualquier tema nuevo automáticamente abajo
