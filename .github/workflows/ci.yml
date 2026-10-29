@@ -28,57 +28,52 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear la carpeta contenedora para PDFs
-      - run: mkdir -p docs/assets/pdf
+      # 1. Crear directorios base necesarios
+      - run: |
+          mkdir -p docs/clases_tex
+          mkdir -p docs/assets/pdf
 
-      # 2. Compilar todos los archivos .tex del repositorio directamente con TeX Live Full
-      - name: Compilar todos los .tex a PDF
+      # 2. Compilar carpetas de LaTeX a PDF respetando imágenes y assets locales
+      - name: Compilar carpetas de LaTeX a PDF
         run: |
-          # Buscar archivos .tex dentro de docs/ (excluyendo plantillas auxiliares si es necesario)
-          find docs -type f -name "*.tex" | while read -r tex_file; do
-            dir_path=$(dirname "$tex_file")
-            file_name=$(basename "$tex_file" .tex)
-            
-            echo "Compilando $tex_file en la carpeta $dir_path..."
-            
-            # Ejecutar latexmk desde la carpeta donde reside el .tex para que encuentre sus imágenes locales
-            docker run --rm -v "$(pwd):/github/workspace" -w "/github/workspace/$dir_path" ghcr.io/xu-cheng/texlive-full:latest \
-              latexmk -pdf -interaction=nonstopmode -output-directory=../../assets/pdf "$file_name.tex" || true
-          done
-
-      # 3. Detectar el archivo .tex y compilarlo mostrando errores reales
-      - name: Compilar todos los proyectos TeX
-        run: |
-          for folder in docs/tex_extracted/*/; do
+          for folder in docs/clases_tex/*/; do
             if [ -d "$folder" ]; then
               folder_name=$(basename "$folder")
-              echo "=== Procesando carpeta: $folder_name ==="
+              echo "=== Procesando clase: $folder_name ==="
               
-              # Buscar main.tex o el primer .tex dentro del proyecto
+              # Buscar main.tex o el primer .tex dentro de la carpeta
               tex_file=$(find "$folder" -maxdepth 2 -type f -name "main.tex" | head -n 1)
               if [ -z "$tex_file" ]; then
                 tex_file=$(find "$folder" -maxdepth 2 -type f -name "*.tex" | head -n 1)
               fi
               
               if [ -n "$tex_file" ]; then
-                echo "Compilando archivo: $tex_file..."
+                tex_filename=$(basename "$tex_file")
+                echo "Compilando $tex_filename dentro de $folder..."
                 
-                # Ejecutamos la compilación SIN '|| true' para ver el error real si falla
-                docker run --rm -v "$(pwd):/github/workspace" -w /github/workspace ghcr.io/xu-cheng/texlive-full:latest \
-                  latexmk -pdf -interaction=nonstopmode -output-directory=docs/assets/pdf "$tex_file"
+                # Ejecutar latexmk desde dentro de la carpeta del tema para que detecte imágenes locales
+                docker run --rm -v "$(pwd):/github/workspace" -w "/github/workspace/$folder" ghcr.io/xu-cheng/texlive-full:latest \
+                  latexmk -pdf -interaction=nonstopmode -output-directory=../../assets/pdf "$tex_filename"
                 
-                # Mover y renombrar el PDF al nombre exacto de la carpeta (.zip)
-                compiled_pdf=$(find docs/assets/pdf -type f -name "*.pdf" | head -n 1)
-                if [ -f "$compiled_pdf" ]; then
-                  mv "$compiled_pdf" "docs/assets/pdf/${folder_name}.pdf"
-                  echo "PDF creado exitosamente: docs/assets/pdf/${folder_name}.pdf"
+                # Renombrar el PDF resultante para que coincida con el nombre de la carpeta
+                raw_pdf="docs/assets/pdf/${tex_filename%.tex}.pdf"
+                target_pdf="docs/assets/pdf/${folder_name}.pdf"
+                
+                if [ -f "$raw_pdf" ] && [ "$raw_pdf" != "$target_pdf" ]; then
+                  mv "$raw_pdf" "$target_pdf"
                 fi
-              else
-                echo "ERROR: No se encontro ningun archivo .tex en $folder"
-                exit 1
+                
+                echo "PDF listo: docs/assets/pdf/${folder_name}.pdf"
               fi
             fi
           done
+
+      # 3. Lista de verificación de PDFs generados
+      - name: Verificar PDFs generados
+        run: |
+          echo "=== PDFs disponibles en assets/pdf/ ==="
+          ls -la docs/assets/pdf/
+
       # 4. Instalar dependencias para MkDocs
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
 
@@ -87,10 +82,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 6. Desplegar sitio web
+      # 6. Desplegar sitio en GitHub Pages
       - run: mkdocs gh-deploy --force
-      
-      # 7. Guardar copia de respaldo de la web compilada y los PDFs como Artefacto
+
+      # 7. Crear copia de respaldo descargable (Artefacto)
       - name: Crear Respaldo de Artefacto
         uses: actions/upload-artifact@v4
         with:
