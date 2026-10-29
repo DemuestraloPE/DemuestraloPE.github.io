@@ -61,9 +61,6 @@ extra_javascript:
 plugins:
   - search
   - awesome-pages
-  - gen-files:
-      scripts:
-        - scripts/generate_indexes.py
 
 # Evita que la falta de un PDF detenga el despliegue
 validation:
