@@ -21,24 +21,41 @@
 }
 /* Ampliar y centrar foto en el bloque de citas lateral */
 #sidebar-random-fact {
-  text-align: center !important;
   padding: 12px 5px !important;
 }
 
-#sidebar-random-fact img {
-  width: 95px !important;
-  height: 95px !important;
-  max-width: 95px !important;
-  max-height: 95px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  display: block !important;
-  margin: 0 auto 10px auto !important;
-  border: 3px solid #00e676 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+#sidebar-random-fact .random-quote-image {
+  width: 104px;
+  height: 104px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 8px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-#sidebar-random-fact p {
-  font-size: 0.85rem !important;
-  line-height: 1.4 !important;
+#random-fact-box .random-quote-image {
+  width: 132px;
+  height: 132px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+#sidebar-random-fact .admonition,
+#random-fact-box .admonition {
+  overflow: hidden;
+}
+
+#sidebar-random-fact p,
+#random-fact-box p {
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
