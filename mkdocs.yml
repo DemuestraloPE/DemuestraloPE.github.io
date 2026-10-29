@@ -55,5 +55,5 @@ plugins:
 nav:
   - Inicio: index.md
   - Plantilla Colaborativa: PlantillaPE.md
-  - Matemáticas: matematica/
-  - Física: fisica/
+  - Matemáticas: matematica/index.md
+  - Física: fisica/index.md
