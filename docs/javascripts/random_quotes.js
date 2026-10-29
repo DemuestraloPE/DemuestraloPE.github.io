@@ -5,37 +5,37 @@ function renderRandomQuote() {
     {
       titulo: "Isaac Newton",
       texto: "Si he logrado ver más lejos, ha sido porque me he subido a hombros de gigantes.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/220px-GodfreyKneller-IsaacNewton-1689.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg",
       tipo: "quote"
     },
     {
       titulo: "Galileo Galilei",
       texto: "Las matemáticas son el alfabeto con el cual Dios ha escrito el universo.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Justus_Sustermans_-_Portrait_of_Galileo_Galilei%2C_1636.jpg/220px-Justus_Sustermans_-_Portrait_of_Galileo_Galilei%2C_1636.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Justus_Sustermans_-_Portrait_of_Galileo_Galilei%2C_1636.jpg",
       tipo: "quote"
     },
     {
       titulo: "James Clerk Maxwell",
       texto: "El verdadero trabajo de la ciencia no es reducir las cosas a leyes mecánicas, sino descubrir la armonía de la naturaleza.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/James_Clerk_Maxwell.png/220px-James_Clerk_Maxwell.png",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/1/1e/James_Clerk_Maxwell_big.jpg",
       tipo: "quote"
     },
     {
       titulo: "Johannes Kepler",
       texto: "Medí los cielos, ahora mido las sombras. La mente estaba en el cielo, el cuerpo descansa en la tierra.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Johannes_Kepler_1610.jpg/220px-Johannes_Kepler_1610.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Portrait_Confused_With_Johannes_Kepler_1610.jpg",
       tipo: "quote"
     },
     {
       titulo: "Niels Bohr",
       texto: "Todo lo que llamamos real está hecho de cosas que no pueden considerarse reales.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Niels_Bohr.jpg/220px-Niels_Bohr.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Niels_Bohr.jpg",
       tipo: "quote"
     },
     {
       titulo: "Carl Sagan",
       texto: "En algún lugar, algo increíble está esperando ser descubierto.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Carl_Sagan_Planetary_Society.JPG/220px-Carl_Sagan_Planetary_Society.JPG",
+      imagen: "https://www.imdb.com/es-es/name/nm0755981/mediaviewer/rm606210048/",
       tipo: "quote"
     },
     {
