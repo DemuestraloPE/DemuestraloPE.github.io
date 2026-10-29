@@ -1,7 +1,16 @@
-{% extends "partials/tabs.html" %}
-
-{% block tabs %}
-  <div style="box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    {{ super() }}
-  </div>
-{% endblock %}
+<!-- Navegación de pestañas horizontales nativa de MkDocs Material -->
+{% if "navigation.tabs" in config.theme.features %}
+  {% set class = "md-tabs" %}
+  {% if "navigation.tabs.sticky" in config.theme.features %}
+    {% set class = class ~ " md-tabs--sticky" %}
+  {% endif %}
+  <nav class="{{ class }}" data-md-component="tabs" aria-label="{{ lang.t('tabs') }}">
+    <div class="md-grid" style="box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <ul class="md-tabs__list">
+        {% for nav_item in nav %}
+          {% include "partials/tabs-item.html" %}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+{% endif %}
