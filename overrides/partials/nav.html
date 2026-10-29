@@ -5,11 +5,11 @@
     </a>
     {{ config.site_name }}
   </label>
-
-  <div style="padding: 0.8rem 1rem 0.2rem 1rem; font-size: 0.72rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; color: var(--md-default-fg-color);">
-    📚 Módulos Académicos
-  </div>
-
+  {% if config.repo_url %}
+    <div class="md-nav__source">
+      {% include "partials/source.html" %}
+    </div>
+  {% endif %}
   <ul class="md-nav__list" data-md-scrollfix>
     {% for nav_item in nav %}
       {% set path = "nav-" ~ loop.index %}
