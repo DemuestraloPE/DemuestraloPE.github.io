@@ -9,18 +9,49 @@
       100% { background-position: 0% 50%; }
     }
 
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 15px rgba(0, 230, 118, 0.2); }
-      50% { box-shadow: 0 0 30px rgba(0, 230, 118, 0.6); }
-    }
-
+    /* Transición suave y entrada de página */
     .md-content {
-      animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: fadeIn 0.4s ease-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
+{% endblock %}
+
+{% block footer %}
+  <footer class="md-footer" style="
+    background-color: var(--md-default-bg-color--light, var(--md-code-bg-color)); 
+    border-top: 1px solid var(--md-default-fg-color--lightest); 
+    padding: 0 0 2rem 0; 
+    margin-top: 4rem;
+    width: 100%;
+  ">
+    <!-- Borde animado superior -->
+    <div style="height: 3px; width: 100%; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite; margin-bottom: 2rem;"></div>
+
+    <div class="md-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: var(--md-default-fg-color);">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-weight: 800; font-size: 1.1rem;">DemuestraloPE</span>
+          <span style="background: rgba(0, 230, 118, 0.15); border: 1px solid rgba(0, 230, 118, 0.4); padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; color: #00e676;">
+            ● Build Active
+          </span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 0.8rem; opacity: 0.8;">
+          Repositorio académico abierto para la ciencia y tecnología.
+        </p>
+        <p style="margin: 2px 0 0 0; font-size: 0.75rem; opacity: 0.6;">
+          © <span id="footer-year">2026</span> DemuestraloPE • Desarrollado con MkDocs & LaTeX
+        </p>
+      </div>
+
+      <div style="font-size: 0.85rem; display: flex; align-items: center; gap: 15px;">
+        <a href="{{ 'PlantillaPE.html' | url }}" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: 500;">📄 Plantilla</a>
+        <a href="https://github.com/DemuestraloPE" target="_blank" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: bold;">GitHub Repositorio</a>
+      </div>
+    </div>
+  </footer>
 {% endblock %}
