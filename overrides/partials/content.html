@@ -1,0 +1,22 @@
+{% extends "partials/content.html" %}
+
+{% block content %}
+  <!-- Etiqueta superior opcional para indicar versión o estado -->
+  <div style="
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px; 
+    background: var(--md-code-bg-color); 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    margin-bottom: 1rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+  ">
+    <span style="height: 8px; width: 8px; background-color: #00e676; border-radius: 50%; display: inline-block;"></span>
+    Documento verificado en LaTeX
+  </div>
+
+  {{ super() }}
+{% endblock %}
