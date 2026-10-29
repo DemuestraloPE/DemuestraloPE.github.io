@@ -38,8 +38,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 
+# 📌 AQUÍ SE AGREGÓ EL SCRIPT DE CITAS/DATOS ALEATORIOS:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+  - javascripts/random_quotes.js
 
 plugins:
   - search
