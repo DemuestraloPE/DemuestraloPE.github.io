@@ -52,6 +52,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js  # 👈 OBLIGATORIO PARA ARRASTRAR
   - javascripts/random_quotes.js
   - javascripts/draggable_panels.js
 
@@ -72,5 +73,5 @@ validation:
 nav:
   - Inicio: index.md
   - Plantilla Colaborativa: PlantillaPE.md
-  - Matemáticas: matematica/index.md
-  - Física: fisica/index.md
+  - Matemáticas: matematica/
+  - Física: fisica/
