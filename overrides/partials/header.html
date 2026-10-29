@@ -35,13 +35,10 @@
       {% include "partials/search.html" %}
     {% endif %}
 
-    <!-- Selector de Paleta / Tema (Solo se llama UNA vez) -->
+    <!-- Selector de Paleta / Tema -->
     {% if config.theme.palette %}
       {% include "partials/palette.html" %}
     {% endif %}
-
-    <!-- PESTAÑAS HORIZONTALES SUPERIORES (Obligatorio para que se muestren las pestañas) -->
-    {% include "partials/tabs.html" %}
 
     {% if config.repo_url %}
       <div class="md-header__source">
@@ -49,6 +46,9 @@
       </div>
     {% endif %}
   </nav>
+
+  <!-- PESTAÑAS VANS FUERA DEL NAV DEL HEADER -->
+  {% include "partials/tabs.html" %}
 
   <!-- Borde superior animado -->
   <div style="height: 3px; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite;"></div>
