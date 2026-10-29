@@ -58,6 +58,9 @@ extra_javascript:
   - javascripts/random_quotes.js
   - javascripts/draggable_panels.js
 
+extra_css:
+  - stylesheets/extra.css
+
 plugins:
   - search
   - awesome-pages
