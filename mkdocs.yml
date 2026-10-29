@@ -1,37 +1,76 @@
-<!-- Carga el componente nativo de Tabla de Contenidos -->
-{% set toc = page.toc %}
-{% if toc | first is defined %}
-  <nav class="md-nav md-nav--secondary" aria-label="{{ lang.t('toc') }}">
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      {{ lang.t('toc') }}
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      {% for toc_item in toc %}
-        <li class="md-nav__item">
-          <a href="{{ toc_item.url }}" class="md-nav__link">
-            <span class="md-ellipsis">{{ toc_item.title }}</span>
-          </a>
-          {% if toc_item.children %}
-            <nav class="md-nav" aria-label="{{ toc_item.title }}">
-              <ul class="md-nav__list">
-                {% for child in toc_item.children %}
-                  <li class="md-nav__item">
-                    <a href="{{ child.url }}" class="md-nav__link">
-                      <span class="md-ellipsis">{{ child.title }}</span>
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </nav>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
-{% endif %}
+site_name: DemuestraloPE
+site_description: Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.
+site_author: Comunidad DemuestraloPE
 
-<!-- Bloque de Citas/Datos Aleatorios (SIEMPRE VISIBLE) -->
-<div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
-  <div id="sidebar-random-fact"></div>
-</div>
+theme:
+  name: material
+  custom_dir: overrides
+  language: es
+  logo: assets/images/LOGODEMUESTRALO.PNG
+  favicon: assets/images/LOGODEMUESTRALO.PNG
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+    - scheme: default
+      primary: deep purple
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+  features:
+    - navigation.tabs           # Pestañas superiores (Inicio, Matemáticas, Física)
+    - navigation.sections       # Agrupa secciones en el menú lateral
+    - navigation.expand         # Mantiene las subcarpetas abiertas automáticamente
+    - navigation.top            # Botón para volver arriba
+    - search.suggest            # Buscador con sugerencias inteligentes
+    - content.tabs.link         # Pestañas en las demostraciones
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - admonition
+  - pymdownx.details            # Cajas desplegables
+  - pymdownx.emoji:             # Emoticonos y badges
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:          # Listas de tareas
+      custom_checkbox: true
+  - pymdownx.highlight:         # Resaltado de código
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys               # Teclas (++ctrl+alt+del++)
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+  - javascripts/random_quotes.js
+  - javascripts/draggable_panels.js
+
+plugins:
+  - search
+  - awesome-pages
+  - gen-files:
+      scripts:
+        - scripts/generate_indexes.py
+
+# Evita que la falta de un PDF detenga el despliegue
+validation:
+  links:
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+# Menú principal simplificado
+nav:
+  - Inicio: index.md
+  - Plantilla Colaborativa: PlantillaPE.md
+  - Matemáticas: matematica/index.md
+  - Física: fisica/index.md
