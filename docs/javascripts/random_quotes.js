@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function renderRandomQuote() {
   // Lista de datos, citas y curiosidades de física
   const contenidoAleatorio = [
     {
@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  // 1. Inyectar en la Barra Lateral Derecha (Sidebar)
+  // 📌 1. SELECCIÓN ALEATORIA DE UN ELEMENTO (AQUÍ ESTABA EL ERROR PRINCIPAL):
+  const item = contenidoAleatorio[Math.floor(Math.random() * contenidoAleatorio.length)];
+
+  // 2. Inyectar en la Barra Lateral Derecha (Sidebar)
   const contenedorSidebar = document.getElementById("sidebar-random-fact");
   if (contenedorSidebar) {
     contenedorSidebar.innerHTML = `
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
-  // 2. Inyectar en el cuerpo del Markdown (si existe <div id="random-fact-box"></div>)
+  // 3. Inyectar en el cuerpo del Markdown (si existe <div id="random-fact-box"></div>)
   const contenedorCuerpo = document.getElementById("random-fact-box");
   if (contenedorCuerpo) {
     contenedorCuerpo.innerHTML = `
@@ -60,4 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
   }
-});
+}
+
+// 📌 4. SUSCRIPCIÓN COMPATIBLE CON NAVEGACIÓN INSTANTÁNEA DE MKDOCS MATERIAL:
+if (typeof document$ !== "undefined") {
+  document$.subscribe(function () {
+    renderRandomQuote();
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", renderRandomQuote);
+}
