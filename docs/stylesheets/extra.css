@@ -23,7 +23,7 @@
 #sidebar-random-fact img {
   width: 90px !important;       /* Ajusta el ancho deseado (por defecto suele ser ~40px) */
   height: 90px !important;      /* Mantiene la proporción cuadrada */
-  border-radius: 50%;          /* Mantiene la forma circular */
+  border-radius: 10%;          /* Mantiene la forma circular */
   object-fit: cover;           /* Evita que la imagen se distorsione */
   display: block;
   margin: 0 auto 10px auto;    /* La centra horizontalmente con margen inferior */
