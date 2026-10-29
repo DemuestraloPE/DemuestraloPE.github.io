@@ -1,13 +1,12 @@
 <!-- Tabla de contenidos nativa -->
-{% set toc = page.toc %}
-{% if toc | first is defined %}
+{% if page and page.toc %}
   <nav class="md-nav md-nav--secondary" aria-label="{{ lang.t('toc') }}">
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       {{ lang.t('toc') }}
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      {% for toc_item in toc %}
+      {% for toc_item in page.toc %}
         <li class="md-nav__item">
           <a href="{{ toc_item.url }}" class="md-nav__link">
             <span class="md-ellipsis">{{ toc_item.title }}</span>
