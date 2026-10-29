@@ -35,19 +35,19 @@ function renderRandomQuote() {
     {
       titulo: "Carl Sagan",
       texto: "En algún lugar, algo increíble está esperando ser descubierto.",
-      imagen: "https://www.imdb.com/es-es/name/nm0755981/mediaviewer/rm606210048/",
+      imagen: "https://commons.wikimedia.org/wiki/Special:FilePath/Astronomer_Carl_Sagan_in_1987%2C_crop.jpg",
       tipo: "quote"
     },
     {
       titulo: "Richard Feynman",
       texto: "Si crees que entiendes la mecánica cuántica, es que no entiendes la mecánica cuántica.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Richard_Feynman_1959.jpg/220px-Richard_Feynman_1959.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Feynman_1959.jpg",
       tipo: "quote"
     },
     {
       titulo: "Albert Einstein",
       texto: "La imaginación es más importante que el conocimiento. El conocimiento es limitado, mientras que la imaginación abarca todo el mundo.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/220px-Albert_Einstein_Head.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg",
       tipo: "quote"
     },
     {
@@ -117,8 +117,8 @@ function renderRandomQuote() {
       <div class="admonition ${item.tipo}" style="margin: 0; font-size: 0.78rem;">
         <p class="admonition-title" style="font-size: 0.82rem;">💡 ${item.titulo}</p>
         <div style="padding: 2px 0;">
-          ${item.imagen ? `<img src="${item.imagen}" alt="${item.titulo}" style="width: 45px; height: 45px; object-fit: cover; border-radius: 50%; float: right; margin-left: 8px;">` : ''}
-          <p style="margin: 0; font-style: italic;">"${item.texto}"</p>
+          ${item.imagen ? `<img class="random-quote-image" src="${item.imagen}" alt="Retrato de ${item.titulo}" loading="lazy" onerror="this.remove()">` : ''}
+          <p class="random-quote-text" style="margin: 0; font-style: italic;">"${item.texto}"</p>
         </div>
       </div>
     `;
@@ -131,8 +131,8 @@ function renderRandomQuote() {
       <div class="admonition ${item.tipo}">
         <p class="admonition-title">💡 ${item.titulo}</p>
         <div style="overflow: hidden; padding: 4px 0;">
-          ${item.imagen ? `<img src="${item.imagen}" alt="${item.titulo}" style="width: 65px; height: 65px; object-fit: cover; border-radius: 50%; float: right; margin-left: 12px; border: 2px solid var(--md-accent-fg-color);">` : ''}
-          <p style="margin: 0; font-style: italic;">"${item.texto}"</p>
+          ${item.imagen ? `<img class="random-quote-image" src="${item.imagen}" alt="Retrato de ${item.titulo}" loading="lazy" onerror="this.remove()">` : ''}
+          <p class="random-quote-text" style="margin: 0; font-style: italic;">"${item.texto}"</p>
         </div>
       </div>
     `;
