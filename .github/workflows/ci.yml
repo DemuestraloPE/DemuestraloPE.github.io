@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   deploy:
@@ -30,13 +28,13 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear directorios necesarios
+      # 1. Crear directorios base
       - run: |
           mkdir -p docs/clases_zip
           mkdir -p docs/assets/pdf
           mkdir -p docs/tex_extracted
 
-      # 2. Descomprimir todos los .zip en carpetas individuales
+      # 2. Descomprimir archivos .zip
       - name: Descomprimir proyectos LaTeX (.zip)
         run: |
           for zip in docs/clases_zip/*.zip; do
@@ -46,32 +44,39 @@ jobs:
             fi
           done
 
-      # 3. Localizar el archivo TeX principal y compilarlo
-      - name: Buscar y compilar archivos LaTeX a PDF
+      # 3. Detectar el archivo .tex principal de cada carpeta y compilarlo a PDF
+      - name: Compilar todos los proyectos TeX
         run: |
-          find docs/tex_extracted -type f -name "*.tex" | while read -r tex_file; do
-            # Priorizar main.tex o compilar el primer .tex que encuentre
-            echo "Encontrado archivo TeX: $tex_file"
+          for folder in docs/tex_extracted/*/; do
+            if [ -d "$folder" ]; then
+              folder_name=$(basename "$folder")
+              echo "Procesando carpeta: $folder_name"
+              
+              # Buscar main.tex o el primer .tex dentro del proyecto
+              tex_file=$(find "$folder" -maxdepth 2 -type f -name "main.tex" | head -n 1)
+              if [ -z "$tex_file" ]; then
+                tex_file=$(find "$folder" -maxdepth 2 -type f -name "*.tex" | head -n 1)
+              fi
+              
+              if [ -n "$tex_file" ]; then
+                echo "Compilando $tex_file..."
+                # Usar contenedor de latexmk directamente sobre la ruta exacta hallada
+                docker run --rm -v "$(pwd):/github/workspace" -w /github/workspace ghcr.io/xu-cheng/texlive-full:latest \
+                  latexmk -pdf -interaction=nonstopmode -output-directory=docs/assets/pdf "$tex_file" || true
+                
+                # Asegurar que el PDF resultante tome el nombre de la carpeta/ZIP
+                compiled_pdf=$(find docs/assets/pdf -type f -name "*.pdf" | head -n 1)
+                if [ -f "$compiled_pdf" ]; then
+                  mv "$compiled_pdf" "docs/assets/pdf/${folder_name}.pdf"
+                fi
+              fi
+            fi
           done
 
-      - name: Compilar LaTeX a PDF
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: |
-            docs/tex_extracted/*/main.tex
-            docs/tex_extracted/*/*.tex
-          args: "-pdf -interaction=nonstopmode -output-directory=docs/assets/pdf"
-          continue_on_error: true
-
-      # 4. Aplanar la estructura de PDFs y renombrar al nombre del ZIP
-      - name: Normalizar ubicación de PDFs
+      # 4. Verificar qué PDFs se crearon en la ruta final
+      - name: Verificar PDFs generados
         run: |
-          echo "=== Organizando archivos PDF generados ==="
-          find docs/assets/pdf -type f -name "*.pdf" | while read -r pdf_file; do
-            filename=$(basename "$pdf_file")
-            mv "$pdf_file" "docs/assets/pdf/$filename"
-          done
-          echo "=== Contenido final de docs/assets/pdf/ ==="
+          echo "=== PDFs en docs/assets/pdf/ ==="
           ls -la docs/assets/pdf/
 
       # 5. Instalar dependencias para MkDocs
