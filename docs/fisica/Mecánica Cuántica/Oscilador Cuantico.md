@@ -24,4 +24,5 @@ Este modelo surge de preguntarse que pasa si la energía potencial es parabólic
 ## 📥 Recursos de la Clase
 
 [📥 Descargar PDF de la Clase](../../../assets/pdf/Osc_Cuantico_1D.pdf){ .md-button .md-button--primary }
+
 [📦 Descargar Código Fuente TeX (.zip)](../../../clases_zip/Osc_Cuantico_1D.zip){ .md-button }
