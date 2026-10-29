@@ -10,23 +10,14 @@
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
-          <span class="md-ellipsis">
-            {{ config.site_name }}
-          </span>
+          <span class="md-ellipsis">{{ config.site_name }}</span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            {% if page.meta and page.meta.title %}
-              {{ page.meta.title }}
-            {% else %}
-              {{ page.title }}
-            {% endif %}
-          </span>
+          <span class="md-ellipsis">{{ page.title }}</span>
         </div>
       </div>
     </div>
 
-    <!-- Buscador -->
     {% if "material/search" in config.plugins %}
       <label class="md-header__button md-icon" for="__search">
         {% set icon = config.theme.icon.search or "material/magnify" %}
@@ -35,21 +26,13 @@
       {% include "partials/search.html" %}
     {% endif %}
 
-    <!-- Selector de Paleta / Tema -->
     {% if config.theme.palette %}
       {% include "partials/palette.html" %}
     {% endif %}
-
-    {% if config.repo_url %}
-      <div class="md-header__source">
-        {% include "partials/source.html" %}
-      </div>
-    {% endif %}
   </nav>
 
-  <!-- PESTAÑAS VANS FUERA DEL NAV DEL HEADER -->
+  <!-- PESTAÑAS UBICADAS FUERA DEL NAV DEL HEADER -->
   {% include "partials/tabs.html" %}
 
-  <!-- Borde superior animado -->
   <div style="height: 3px; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite;"></div>
 </header>
