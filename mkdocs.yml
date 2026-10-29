@@ -72,14 +72,9 @@ validation:
     unrecognized_links: ignore
 
 # Mapeo explicito para asegurar que la navegacion dibuje todos los arboles
+# Al usar awesome-pages, solo apuntamos a las carpetas raíz finalizadas en "/"
 nav:
   - Inicio: index.md
-  - Plantilla Colaborativa: PlantillaPE.md
-  - Matemáticas:
-      - Introducción: matematica/index.md
-      - Cálculo de Variable Real: matematica/Calculo de Variable Real/Limites.md
-  - Física:
-      - Introducción: fisica/index.md
-      - Mecánica: fisica/mecanica/energia.md
-      - Mecánica Cuántica: fisica/Mecánica Cuántica/Oscilador Cuantico.md
-      - Ondas: fisica/Ondas/Ondas Mecánicas.md
+  - Plantilla: PlantillaPE.md
+  - Matemáticas: matematica/
+  - Física: fisica/
