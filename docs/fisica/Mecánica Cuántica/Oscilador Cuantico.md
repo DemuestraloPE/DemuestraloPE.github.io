@@ -9,16 +9,21 @@ Este modelo surge de preguntarse que pasa si la energía potencial es parabólic
 
 ## 📄 Visor de las Notas de Clase y Demostraciones
 
-<iframe 
-    src="../../../assets/pdf/Osc_Cuantico_1D.pdf" 
-    width="100%" 
-    height="750px" 
-    style="border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-</iframe>
+<div style="width: 100%; height: 800px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  <object
+    data="../../../assets/pdf/Osc_Cuantico_1D.pdf#toolbar=1&navpanes=0&scrollbar=1"
+    type="application/pdf"
+    width="100%"
+    height="100%">
+    <p>Tu navegador no soporta la vista previa de PDF. Puedes 
+       <a href="../../../assets/pdf/Osc_Cuantico_1D.pdf">descargarlo aquí</a>.
+    </p>
+  </object>
+</div>
 
 ---
 
-## 📥 Recursos Descargables para Estudiantes
+## 📥 Recursos de la Clase
 
-[📥 Descargar Clase en PDF](../../../assets/pdf/Osc_Cuantico_1D.pdf){ .md-button .md-button--primary }
+[📥 Descargar PDF de la Clase](../../../assets/pdf/Osc_Cuantico_1D.pdf){ .md-button .md-button--primary }
 [📦 Descargar Código Fuente TeX (.zip)](../../../clases_zip/Osc_Cuantico_1D.zip){ .md-button }
