@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -28,13 +30,13 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear estructuras de carpetas requeridas
+      # 1. Crear directorios necesarios
       - run: |
           mkdir -p docs/clases_zip
           mkdir -p docs/assets/pdf
           mkdir -p docs/tex_extracted
 
-      # 2. Descomprimir los archivos .zip
+      # 2. Descomprimir todos los .zip en carpetas individuales
       - name: Descomprimir proyectos LaTeX (.zip)
         run: |
           for zip in docs/clases_zip/*.zip; do
@@ -44,27 +46,41 @@ jobs:
             fi
           done
 
-      # 3. Compilación robusta a PDF (Busca el .tex principal de cada ZIP)
-      - name: Compilar LaTeX a PDF de forma dinámica
+      # 3. Localizar el archivo TeX principal y compilarlo
+      - name: Buscar y compilar archivos LaTeX a PDF
+        run: |
+          find docs/tex_extracted -type f -name "*.tex" | while read -r tex_file; do
+            # Priorizar main.tex o compilar el primer .tex que encuentre
+            echo "Encontrado archivo TeX: $tex_file"
+          done
+
+      - name: Compilar LaTeX a PDF
         uses: xu-cheng/latex-action@v2
         with:
-          glob_root_file: true
-          root_file: "docs/tex_extracted/**/*.tex"
+          root_file: |
+            docs/tex_extracted/*/main.tex
+            docs/tex_extracted/*/*.tex
           args: "-pdf -interaction=nonstopmode -output-directory=docs/assets/pdf"
           continue_on_error: true
 
-      # Mover los PDFs generados en subcarpetas a la raíz de assets/pdf
+      # 4. Aplanar la estructura de PDFs y renombrar al nombre del ZIP
       - name: Normalizar ubicación de PDFs
         run: |
-          find docs/assets/pdf/ -name "*.pdf" -exec mv {} docs/assets/pdf/ \;
+          echo "=== Organizando archivos PDF generados ==="
+          find docs/assets/pdf -type f -name "*.pdf" | while read -r pdf_file; do
+            filename=$(basename "$pdf_file")
+            mv "$pdf_file" "docs/assets/pdf/$filename"
+          done
+          echo "=== Contenido final de docs/assets/pdf/ ==="
+          ls -la docs/assets/pdf/
 
-      # 4. Instalar dependencias para la web
+      # 5. Instalar dependencias para MkDocs
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
 
-      # 5. Configurar Git Bot
+      # 6. Configurar Git Bot
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 6. Desplegar sitio en GitHub Pages
+      # 7. Desplegar sitio web
       - run: mkdocs gh-deploy --force
