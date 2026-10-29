@@ -46,12 +46,39 @@ jobs:
               latexmk -pdf -interaction=nonstopmode -output-directory=../../assets/pdf "$file_name.tex" || true
           done
 
-      # 3. Verificar qué PDFs se generaron
-      - name: Verificar PDFs en assets/pdf/
+      # 3. Detectar el archivo .tex y compilarlo mostrando errores reales
+      - name: Compilar todos los proyectos TeX
         run: |
-          echo "=== PDFs generados ==="
-          ls -la docs/assets/pdf/
-
+          for folder in docs/tex_extracted/*/; do
+            if [ -d "$folder" ]; then
+              folder_name=$(basename "$folder")
+              echo "=== Procesando carpeta: $folder_name ==="
+              
+              # Buscar main.tex o el primer .tex dentro del proyecto
+              tex_file=$(find "$folder" -maxdepth 2 -type f -name "main.tex" | head -n 1)
+              if [ -z "$tex_file" ]; then
+                tex_file=$(find "$folder" -maxdepth 2 -type f -name "*.tex" | head -n 1)
+              fi
+              
+              if [ -n "$tex_file" ]; then
+                echo "Compilando archivo: $tex_file..."
+                
+                # Ejecutamos la compilación SIN '|| true' para ver el error real si falla
+                docker run --rm -v "$(pwd):/github/workspace" -w /github/workspace ghcr.io/xu-cheng/texlive-full:latest \
+                  latexmk -pdf -interaction=nonstopmode -output-directory=docs/assets/pdf "$tex_file"
+                
+                # Mover y renombrar el PDF al nombre exacto de la carpeta (.zip)
+                compiled_pdf=$(find docs/assets/pdf -type f -name "*.pdf" | head -n 1)
+                if [ -f "$compiled_pdf" ]; then
+                  mv "$compiled_pdf" "docs/assets/pdf/${folder_name}.pdf"
+                  echo "PDF creado exitosamente: docs/assets/pdf/${folder_name}.pdf"
+                fi
+              else
+                echo "ERROR: No se encontro ningun archivo .tex en $folder"
+                exit 1
+              fi
+            fi
+          done
       # 4. Instalar dependencias para MkDocs
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
 
