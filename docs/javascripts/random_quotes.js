@@ -4,31 +4,31 @@ function renderRandomQuote() {
     {
       titulo: "Richard Feynman",
       texto: "Si crees que entiendes la mecánica cuántica, es que no entiendes la mecánica cuántica.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Richard_Feynman_1959.jpg/220px-Richard_Feynman_1959.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/en/4/42/Richard_Feynman_Nobel.jpg",
       tipo: "quote"
     },
     {
       titulo: "Albert Einstein",
       texto: "La imaginación es más importante que el conocimiento. El conocimiento es limitado, mientras que la imaginación abarca todo el mundo.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/220px-Albert_Einstein_Head.jpg",
+      imagen: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Albert_Einstein_%28Nobel%29.png/250px-Albert_Einstein_%28Nobel%29.png",
       tipo: "quote"
     },
     {
       titulo: "Marie Curie",
       texto: "Nada en la vida debe ser temido, solo debe ser comprendido. Ahora es el momento de comprender más, para que podamos temer menos.",
-      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/220px-Marie_Curie_c._1920s.jpg",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/5/51/Marie_Curie_%281900%29.jpg",
       tipo: "tip"
     },
     {
       titulo: "Transiciones Cuánticas",
-      texto: "Un electrón en un átomo no 'viaja' de un orbital a otro; salta instantáneamente entre niveles de energía sin pasar por el espacio intermedio.",
+      texto: "Un electrón en un átomo no 'viaja' de un orbital a otro; salta instantáneamente entre niveles de energía dado que su trayectoria no esta definida, si lo pueden la posición o el momento lineal, pero nunca los dos a la vez.",
       imagen: "",
       tipo: "info"
     },
     {
       titulo: "Paul Dirac",
       texto: "En la ciencia uno intenta decir a la gente, de una forma que todos puedan entender, algo que nadie sabía antes. En la poesía, es exactamente lo contrario.",
-      imagen: "",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/5/50/Paul_Dirac%2C_1933.jpg",
       tipo: "quote"
     }
   ];
