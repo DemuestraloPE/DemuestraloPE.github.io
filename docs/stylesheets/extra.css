@@ -19,3 +19,20 @@
   border-radius: 10px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
+/* Aumentar el tamaño del avatar / foto en el bloque de citas del sidebar */
+#sidebar-random-fact img {
+  width: 90px !important;       /* Ajusta el ancho deseado (por defecto suele ser ~40px) */
+  height: 90px !important;      /* Mantiene la proporción cuadrada */
+  border-radius: 50%;          /* Mantiene la forma circular */
+  object-fit: cover;           /* Evita que la imagen se distorsione */
+  display: block;
+  margin: 0 auto 10px auto;    /* La centra horizontalmente con margen inferior */
+  border: 2px solid var(--md-accent-fg-color, #00e676); /* Borde decorativo acorde al tema */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra para dar relieve */
+}
+
+/* Ajustes adicionales al texto de la cita para balancear el nuevo tamaño */
+#sidebar-random-fact {
+  text-align: center;          /* Centra la foto y el texto de la cita */
+  padding: 10px 5px;
+}
