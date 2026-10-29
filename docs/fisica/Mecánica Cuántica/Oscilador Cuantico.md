@@ -9,15 +9,13 @@ Este modelo surge de preguntarse que pasa si la energía potencial es parabólic
 
 ## 📄 Visor de las Notas de Clase y Demostraciones
 
-<div style="width: 100%; height: 800px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<div style="width: 100%; height: 800px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
   <object
-    data="../../../assets/pdf/Osc_Cuantico_1D.pdf#toolbar=1&navpanes=0&scrollbar=1"
+    data="../../../assets/pdf/Clase_OsciladorArmonico1D.pdf#toolbar=1&navpanes=0&scrollbar=1"
     type="application/pdf"
     width="100%"
     height="100%">
-    <p>Tu navegador no soporta la vista previa de PDF. Puedes 
-       <a href="../../../assets/pdf/Osc_Cuantico_1D.pdf">descargarlo aquí</a>.
-    </p>
+    <p>Tu navegador no soporta la vista previa. <a href="../../../assets/pdf/Clase_OsciladorArmonico1D.pdf">Descargar PDF</a></p>
   </object>
 </div>
 
