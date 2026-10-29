@@ -40,6 +40,9 @@
       {% include "partials/palette.html" %}
     {% endif %}
 
+    <!-- PESTAÑAS HORIZONTALES SUPERIORES (Obligatorio para que se muestren las pestañas) -->
+    {% include "partials/tabs.html" %}
+
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}
