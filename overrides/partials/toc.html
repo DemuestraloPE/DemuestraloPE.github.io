@@ -1,22 +1,99 @@
-{% import "partials/language.html" as lang with context %}
+<footer class="md-footer" style="
+  background-color: var(--md-sidebar-bg-color, #1a1a2e); 
+  border-top: 1px solid var(--md-default-fg-color--lightest); 
+  padding: 0 0 2.5rem 0; 
+  margin-top: 4rem;
+  position: relative;
+">
+  <!-- Línea decorativa animada idéntica a la del Header -->
+  <div style="
+    height: 3px; 
+    width: 100%;
+    background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); 
+    background-size: 200% 200%; 
+    animation: gradientShift 4s ease infinite;
+    margin-bottom: 2rem;
+  "></div>
 
-<!-- Tabla de contenidos nativa -->
-<nav class="md-nav md-nav--secondary" aria-label="{{ lang.t('toc') }}">
-  {% set toc = page.toc %}
-  {% if toc | first is defined %}
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      {{ lang.t('toc') }}
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      {% for toc_item in toc %}
-        {% include "partials/toc-item.html" %}
-      {% endfor %}
-    </ul>
-  {% endif %}
-</nav>
+  <div class="md-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    
+    <!-- Columna Izquierda: Marca y descripción con Píldora de Estado -->
+    <div style="display: flex; flexDirection: column; gap: 0.3rem;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-weight: 800; font-size: 1.1rem; letter-spacing: 0.5px; color: var(--md-default-fg-color);">
+          DemuestraloPE
+        </span>
+        
+        <!-- Píldora con luz pulsante verde -->
+        <span style="
+          display: inline-flex; 
+          align-items: center; 
+          gap: 6px; 
+          background: rgba(0, 230, 118, 0.1); 
+          border: 1px solid rgba(0, 230, 118, 0.3);
+          padding: 2px 8px; 
+          border-radius: 12px; 
+          font-size: 0.7rem; 
+          font-weight: 600; 
+          color: #00e676;
+        ">
+          <span style="
+            height: 6px; 
+            width: 6px; 
+            background-color: #00e676; 
+            border-radius: 50%; 
+            display: inline-block;
+            box-shadow: 0 0 8px #00e676;
+          "></span>
+          Build Active
+        </span>
+      </div>
 
-<!-- Bloque de Citas/Datos Aleatorios (Debajo de la Tabla de Contenidos) -->
-<div style="margin-top: 1.5rem; padding: 0.5rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
-  <div id="sidebar-random-fact"></div>
-</div>
+      <p style="margin: 0; font-size: 0.8rem; opacity: 0.7; color: var(--md-default-fg-color);">
+        Repositorio académico abierto para la ciencia y tecnología.
+      </p>
+      
+      <p style="margin: 0; font-size: 0.75rem; opacity: 0.5; color: var(--md-default-fg-color);">
+        © <span id="footer-year"></span> DemuestraloPE • Desarrollado con MkDocs & LaTeX
+      </p>
+    </div>
+
+    <!-- Columna Derecha: Enlaces rápidos e Iconos con animaciones Hover -->
+    <div style="font-size: 0.85rem; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <a href="PlantillaPE.html" style="
+        color: var(--md-default-fg-color); 
+        text-decoration: none; 
+        opacity: 0.8;
+        transition: all 0.2s ease;
+      " onmouseover="this.style.color='var(--md-accent-fg-color)'; this.style.opacity='1'" onmouseout="this.style.color='var(--md-default-fg-color)'; this.style.opacity='0.8'">
+        📄 Plantilla
+      </a>
+
+      <a href="https://github.com/DemuestraloPE" target="_blank" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--md-accent-fg-color); 
+        text-decoration: none;
+        font-weight: bold;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: rgba(124, 77, 255, 0.1);
+        border: 1px solid rgba(124, 77, 255, 0.3);
+        transition: all 0.2s ease;
+      " onmouseover="this.style.transform='translateY(-2px)'; this.style.background='rgba(124, 77, 255, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(124, 77, 255, 0.1)'">
+        <!-- SVG Icono GitHub -->
+        <svg style="width:16px; height:16px; fill:currentColor;" viewBox="0 0 24 24">
+          <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+        </svg>
+        GitHub Repositorio
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Script para actualizar dinámicamente el año de copyright -->
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
