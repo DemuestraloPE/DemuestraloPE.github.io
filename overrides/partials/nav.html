@@ -1,8 +1,27 @@
-{% extends "partials/nav.html" %}
+<!-- Menú lateral izquierdo nativo con encabezado personalizado -->
+<nav class="md-nav md-nav--primary" aria-label="{{ lang.t('nav') }}" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="{{ config.extra.homepage | default(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-nav__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    {{ config.site_name }}
+  </label>
+  {% if config.repo_url %}
+    <div class="md-nav__source">
+      {% include "partials/source.html" %}
+    </div>
+  {% endif %}
 
-{% block site_nav %}
-  <div style="padding: 0.5rem 1rem 0 1rem; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6;">
-    📚 Módulos
+  <!-- Título personalizado de sección -->
+  <div style="padding: 0.8rem 1rem 0.2rem 1rem; font-size: 0.72rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; color: var(--md-default-fg-color);">
+    📚 Módulos Académicos
   </div>
-  {{ super() }}
-{% endblock %}
+
+  <ul class="md-nav__list" data-md-scrollfix>
+    {% for nav_item in nav %}
+      {% set path = "nav-" ~ loop.index %}
+      {% set level = 1 %}
+      {% include "partials/nav-item.html" %}
+    {% endfor %}
+  </ul>
+</nav>
