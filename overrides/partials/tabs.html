@@ -4,7 +4,7 @@
     {% set class = class ~ " md-tabs--sticky" %}
   {% endif %}
   <nav class="{{ class }}" data-md-component="tabs" aria-label="{{ lang.t('tabs') }}">
-    <div class="md-grid" style="box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <div class="md-grid">
       <ul class="md-tabs__list">
         {% for nav_item in nav %}
           {% include "partials/tabs-item.html" %}
