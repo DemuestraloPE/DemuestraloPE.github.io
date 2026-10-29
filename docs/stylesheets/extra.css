@@ -1,0 +1,21 @@
+/* Cambiar colores principales del tema */
+:root {
+  --md-primary-fg-color:        #4A148C; /* Púrpura profundo para la barra superior */
+  --md-primary-fg-color--dark:  #311B92;
+  --md-accent-fg-color:         #00E676; /* Verde neón para acentos y botones */
+}
+
+/* Fondo de pantalla y fuentes en modo oscuro */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:             #121212;
+  --md-default-fg-color:             #E0E0E0;
+  --md-sidebar-bg-color:             #1E1E1E;
+}
+
+/* Redondear bordes de cajas y visores */
+.md-typeset .admonition, 
+.md-typeset iframe,
+.md-typeset object {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
