@@ -75,6 +75,16 @@ validation:
 # Al usar awesome-pages, solo apuntamos a las carpetas raíz finalizadas en "/"
 nav:
   - Inicio: index.md
-  - Plantilla: PlantillaPE.md
-  - Matemáticas: matematica/
-  - Física: fisica/
+  - Plantilla Colaborativa: PlantillaPE.md
+  - Matemáticas:
+      - Introducción: matematica/index.md
+      - Cálculo de Variable Real:
+          - matematica/Calculo de Variable Real/
+  - Física:
+      - Introducción: fisica/index.md
+      - Mecánica Cuántica:
+          - fisica/Mecánica Cuántica/
+      - Ondas:
+          - fisica/Ondas/
+      - Mecánica:
+          - fisica/mecanica/
