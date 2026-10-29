@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Lista de datos, citas y curiosidades de física
-  const contenidoAleatorio = [
+  const citas = [
     {
       titulo: "💡 Cita del día — Richard Feynman",
       texto: '"Si crees que entiendes la mecánica cuántica, es que no entiendes la mecánica cuántica."',
@@ -33,26 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  // Buscar el contenedor en la página
-  const contenedor = document.getElementById("random-fact-box");
+  const contenedor = document.getElementById("sidebar-random-fact");
 
   if (contenedor) {
-    // Seleccionar un elemento al azar
-    const item = contenidoAleatorio[Math.floor(Math.random() * contenidoAleatorio.length)];
-
-    // Construir la imagen si existe
-    const htmlImagen = item.imagen 
-      ? `<img src="${item.imagen}" alt="Imagen" style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%; float: right; margin-left: 12px; border: 2px solid #e0e0e0;">`
-      : "";
-
-    // Insertar el bloque estilizado
+    const item = citas[Math.floor(Math.random() * citas.length)];
     contenedor.innerHTML = `
-      <div class="admonition ${item.tipo}">
-        <p class="admonition-title">${item.titulo}</p>
-        <div style="overflow: hidden; padding: 4px 0;">
-          ${htmlImagen}
-          <p style="margin: 0; font-style: italic;">${item.texto}</p>
-        </div>
+      <div class="admonition ${item.tipo}" style="margin: 0; font-size: 0.75rem;">
+        <p class="admonition-title" style="font-size: 0.8rem;">💡 ${item.autor}</p>
+        <p style="margin: 0; font-style: italic;">"${item.texto}"</p>
       </div>
     `;
   }
