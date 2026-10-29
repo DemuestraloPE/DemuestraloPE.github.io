@@ -52,7 +52,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
-  - https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js  # 👈 OBLIGATORIO PARA ARRASTRAR
+  - https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js
   - javascripts/random_quotes.js
   - javascripts/draggable_panels.js
 
@@ -69,9 +69,15 @@ validation:
     absolute_links: ignore
     unrecognized_links: ignore
 
-# Menú principal simplificado
+# Menú principal oñeorganiza porãva
 nav:
   - Inicio: index.md
   - Plantilla Colaborativa: PlantillaPE.md
-  - Matemáticas: matematica/
-  - Física: fisica/
+  - Matemáticas:
+      - Introducción: matematica/index.md
+      - Cálculo de Variable Real: matematica/Calculo de Variable Real/Limites.md
+  - Física:
+      - Introducción: fisica/index.md
+      - Mecánica: fisica/mecanica/energia.md
+      - Mecánica Cuántica: fisica/Mecánica Cuántica/Oscilador Cuantico.md
+      - Ondas: fisica/Ondas/Ondas Mecánicas.md
