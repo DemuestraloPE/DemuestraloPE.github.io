@@ -5,6 +5,19 @@
   --md-accent-fg-color:         #00E676; /* Verde neón para acentos y botones */
 }
 
+/* Mostrar los índices principales en pantallas medianas, no solo en monitores grandes. */
+@media screen and (min-width: 48em) {
+  .md-tabs {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 47.99em) {
+  .md-tabs {
+    display: none !important;
+  }
+}
+
 /* Fondo de pantalla y fuentes en modo oscuro */
 [data-md-color-scheme="slate"] {
   --md-default-bg-color:             #121212;
