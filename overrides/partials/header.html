@@ -1,5 +1,0 @@
-{% include "partials/logo.html" %} {% set icon = config.theme.icon.menu or "material/menu" %} {% include ".icons/" ~ icon ~ ".svg" %}
-{{ config.site_name }}
-{{ page.title }}
-{% if "material/search" in config.plugins %} {% set icon = config.theme.icon.search or "material/magnify" %} {% include ".icons/" ~ icon ~ ".svg" %} {% include "partials/search.html" %} {% endif %} {% if config.theme.palette %} {% include "partials/palette.html" %} {% endif %}
-{% if "navigation.tabs" in config.theme.features %} {% include "partials/tabs.html" %} {% endif %}
