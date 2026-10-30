@@ -25,6 +25,7 @@ theme:
     - navigation.tabs           # Pestañas superiores (Inicio, Matemáticas, Física)
     - navigation.tabs.sticky    # Mantiene las pestañas visibles al hacer scroll
     - navigation.sections       # Agrupa secciones en el menú lateral
+    - navigation.indexes        # Permite abrir el índice de cada sección desde su título
     - navigation.path           # Muestra ruta de migas de pan (breadcrumbs)
     - navigation.top            # Botón para volver arriba
     - search.suggest            # Buscador con sugerencias inteligentes
@@ -72,4 +73,3 @@ validation:
   links:
     absolute_links: ignore
     unrecognized_links: ignore
-
