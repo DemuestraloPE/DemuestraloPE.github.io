@@ -1,15 +1,3 @@
-{% if "navigation.tabs" in config.theme.features %}
-  {% set class = "md-tabs" %}
-  {% if "navigation.tabs.sticky" in config.theme.features %}
-    {% set class = class ~ " md-tabs--sticky" %}
-  {% endif %}
-  <nav class="{{ class }}" data-md-component="tabs" aria-label="{{ lang.t('tabs') }}">
-    <div class="md-grid">
-      <ul class="md-tabs__list">
-        {% for nav_item in nav %}
-          {% include "partials/tabs-item.html" %}
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
+{% import "partials/tabs-item.html" as item with context %} {% if "navigation.tabs" in config.theme.features %}
+{% for nav_item in nav.items %} {{ item.render(nav_item) }} {% endfor %}
 {% endif %}
