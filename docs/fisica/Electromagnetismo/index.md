@@ -7,4 +7,4 @@ con la materia y su relación con las ondas electromagnéticas.
 
 - [Ecuaciones de Maxwell](Ecuaciones de Maxwell.md)
 
-Para añadir un nuevo tema, copia la [plantilla general](../../Plantillas/PlantillaTema.md).
+Para añadir un nuevo tema, copia la [plantilla general](../../matematica/Plantillas/PlantillaTema.md).

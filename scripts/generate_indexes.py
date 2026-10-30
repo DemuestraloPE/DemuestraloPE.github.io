@@ -3,8 +3,8 @@ from urllib.parse import quote
 import mkdocs_gen_files
 
 sections = {
-    "matematica": ("📐 Sección de Matemáticas", "Catálogo automático de temas y teoremas en Matemáticas:"),
-    "fisica": ("⚛️ Sección de Física", "Catálogo automático de temas y teoremas en Física:")
+    "matematica": ("📐 Matemáticas", "Catálogo automático de temas y teoremas en Matemáticas:"),
+    "fisica": ("⚛️ Física", "Catálogo automático de temas y teoremas en Física:")
 }
 
 for folder, (title, description) in sections.items():

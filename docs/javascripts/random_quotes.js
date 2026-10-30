@@ -1,5 +1,5 @@
 function renderRandomQuote() {
-  // Lista de datos, citas y curiosidades de física
+  // Citas y curiosidades de matemáticas, física y astronomía
   const contenidoAleatorio = [
     // --- CITAS REALES VERIFICADAS ---
     {
@@ -101,7 +101,67 @@ function renderRandomQuote() {
     },
     {
       titulo: "Transiciones Cuánticas",
-      texto: "Un electrón en un átomo no 'viaja' de un orbital a otro; salta instantáneamente entre niveles de energía dado que su trayectoria no está definida. Se puede determinar su posición o su momento lineal, pero nunca ambos a la vez.",
+      texto: "Los orbitales atómicos describen distribuciones de probabilidad para encontrar un electrón; no son trayectorias planetarias alrededor del núcleo.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "Números primos",
+      texto: "Hay infinitos números primos. La demostración clásica de Euclides muestra que cualquier lista finita de primos puede ampliarse con un argumento de contradicción.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "El número π",
+      texto: "π es irracional: su desarrollo decimal no termina ni se repite periódicamente. Además, es trascendental, por lo que no es raíz de ningún polinomio no nulo con coeficientes enteros.",
+      imagen: "",
+      tipo: "tip"
+    },
+    {
+      titulo: "Los puentes de Königsberg",
+      texto: "El problema de cruzar una vez cada uno de siete puentes inspiró a Euler a estudiar recorridos en grafos, una de las ideas fundacionales de la teoría de grafos.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "Identidad de Euler",
+      texto: "La igualdad e^(iπ) + 1 = 0 conecta cinco constantes fundamentales: e, i, π, 1 y 0.",
+      imagen: "",
+      tipo: "tip"
+    },
+    {
+      titulo: "La luz del Sol",
+      texto: "La luz solar tarda alrededor de 8 minutos y 20 segundos en llegar a la Tierra; por eso vemos el Sol como era unos minutos antes.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "GPS y relatividad",
+      texto: "Los relojes de los satélites GPS requieren correcciones relativistas: la velocidad orbital y la gravedad distinta hacen que no transcurran al mismo ritmo que los relojes en la superficie.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "El fondo cósmico de microondas",
+      texto: "El universo está lleno de una radiación fósil liberada cuando tenía unos 380 000 años; hoy se observa enfriada hasta cerca de 2,7 kelvin.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "La Luna se aleja",
+      texto: "Mediciones con reflectores láser dejados en la Luna muestran que su distancia media a la Tierra aumenta unos 3,8 centímetros por año.",
+      imagen: "",
+      tipo: "tip"
+    },
+    {
+      titulo: "El sonido necesita un medio",
+      texto: "El sonido es una onda mecánica: se propaga mediante vibraciones de un medio material, así que no puede viajar por el vacío del espacio.",
+      imagen: "",
+      tipo: "info"
+    },
+    {
+      titulo: "Espectro electromagnético",
+      texto: "La luz visible es solo una pequeña franja del espectro electromagnético, que también incluye ondas de radio, microondas, infrarrojo, ultravioleta, rayos X y rayos gamma.",
       imagen: "",
       tipo: "info"
     }
