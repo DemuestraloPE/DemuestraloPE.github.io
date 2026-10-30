@@ -1,4 +1,5 @@
 import os
+from urllib.parse import quote
 import mkdocs_gen_files
 
 sections = {
@@ -11,7 +12,7 @@ for folder, (title, description) in sections.items():
     if not os.path.exists(docs_folder):
         continue
 
-    index_path = f"{folder}/index.md"
+    index_path = f"{folder}/temas.md"
     
     with mkdocs_gen_files.open(index_path, "w") as f:
         print(f"# {title}\n", file=f)
@@ -33,4 +34,5 @@ for folder, (title, description) in sections.items():
                     # Construir la ruta relativa
                     rel_path = os.path.relpath(os.path.join(root, file), docs_folder)
                     
-                    print(f"| **{subarea}** | {topic_name} | [{topic_name} :octicons-arrow-right-24:]({rel_path}) |", file=f)
+                    encoded_path = quote(rel_path.replace(os.sep, "/"), safe="/()")
+                    print(f"| **{subarea}** | {topic_name} | [{topic_name} :octicons-arrow-right-24:]({encoded_path}) |", file=f)
