@@ -111,7 +111,9 @@ function renderRandomQuote() {
   const item = contenidoAleatorio[Math.floor(Math.random() * contenidoAleatorio.length)];
 
   // 2. Inyectar en la Barra Lateral Derecha (Sidebar)
-  const contenedorSidebar = document.getElementById("sidebar-random-fact");
+  const contenedorSidebar = document.querySelector(
+    ".md-sidebar--secondary .sidebar-random-fact"
+  );
   if (contenedorSidebar) {
     contenedorSidebar.innerHTML = `
       <div class="admonition ${item.tipo}" style="margin: 0; font-size: 0.78rem;">
