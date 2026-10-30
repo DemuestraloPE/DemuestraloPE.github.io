@@ -1,2 +1,3 @@
 # Sección de Física
-Selecciona un tema en el menú lateral.
+
+Explora los temas disponibles desde el [índice de temas](temas.md) o selecciónalos en el menú lateral.
