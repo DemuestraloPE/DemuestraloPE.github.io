@@ -1,39 +1,5 @@
-<header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-    <a href="{{ config.extra.homepage | default(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
-      {% include "partials/logo.html" %}
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      {% set icon = config.theme.icon.menu or "material/menu" %}
-      {% include ".icons/" ~ icon ~ ".svg" %}
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">{{ config.site_name }}</span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">{{ page.title }}</span>
-        </div>
-      </div>
-    </div>
-
-    {% if "material/search" in config.plugins %}
-      <label class="md-header__button md-icon" for="__search">
-        {% set icon = config.theme.icon.search or "material/magnify" %}
-        {% include ".icons/" ~ icon ~ ".svg" %}
-      </label>
-      {% include "partials/search.html" %}
-    {% endif %}
-
-    {% if config.theme.palette %}
-      {% include "partials/palette.html" %}
-    {% endif %}
-  </nav>
-
-  {% if "navigation.tabs" in config.theme.features %}
-    {% include "partials/tabs.html" %}
-  {% endif %}
-
-  <div style="height: 3px; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite;"></div>
-</header>
+{% include "partials/logo.html" %} {% set icon = config.theme.icon.menu or "material/menu" %} {% include ".icons/" ~ icon ~ ".svg" %}
+{{ config.site_name }}
+{{ page.title }}
+{% if "material/search" in config.plugins %} {% set icon = config.theme.icon.search or "material/magnify" %} {% include ".icons/" ~ icon ~ ".svg" %} {% include "partials/search.html" %} {% endif %} {% if config.theme.palette %} {% include "partials/palette.html" %} {% endif %}
+{% if "navigation.tabs" in config.theme.features %} {% include "partials/tabs.html" %} {% endif %}
