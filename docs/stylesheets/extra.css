@@ -9,6 +9,30 @@
 @media screen and (min-width: 48em) {
   .md-tabs {
     display: block !important;
+    height: 2.4rem;
+    overflow: hidden;
+  }
+
+  .md-tabs__list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    height: 2.4rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .md-tabs__item {
+    display: flex !important;
+    flex: 0 0 auto;
+  }
+
+  .md-tabs__link {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -32,6 +56,24 @@
   border-radius: 10px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Mantener el logo del menú lateral al tamaño de un icono. */
+.md-nav--primary .md-nav__title .md-logo {
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  margin-right: 0.6rem;
+}
+
+.md-nav--primary .md-nav__title .md-logo img,
+.md-nav--primary .md-nav__title .md-logo svg {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+  max-width: 1.6rem !important;
+  max-height: 1.6rem !important;
+  object-fit: contain;
+}
+
 /* Ampliar y centrar foto en el bloque de citas lateral */
 #sidebar-random-fact {
   padding: 12px 5px !important;
