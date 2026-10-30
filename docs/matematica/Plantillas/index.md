@@ -8,12 +8,25 @@ Adapta o elimina las secciones que no necesite cada contenido.
 
 ## Publicar una clase en LaTeX
 
-1. Crea una carpeta en `docs/clases_tex/` y coloca allí el archivo `.tex` y sus
-   imágenes o recursos locales.
-2. Sube los cambios a `main`. El workflow compila un PDF en `docs/assets/pdf/`
-   usando el nombre de la carpeta.
-3. Para que la clase también aparezca como tema navegable, crea o edita una página
-   Markdown en la subárea correspondiente y enlaza allí el PDF.
+Desde la raíz del repositorio, ejecuta:
 
-La compilación del PDF ya está automatizada; por ahora, crear la página del tema y
-enlazar el PDF sigue siendo un paso manual.
+```bash
+python scripts/new_topic.py matematica "Calculo de Variable Real" "Regla de la cadena"
+```
+
+Usa `fisica` para Física y el nombre exacto de una subárea que ya exista. El comando
+crea la página Markdown a partir de esta plantilla, prepara `docs/clases_tex/<slug>/main.tex`,
+agrega el tema a la navegación de la subárea y deja enlazado el PDF que producirá
+el workflow. Puedes cambiar el nombre de `main.tex` o añadir imágenes y otros
+recursos dentro de esa carpeta.
+
+Después, revisa y completa la página y el archivo LaTeX, y sube los cambios a
+GitHub. Al combinar los cambios en `main`, el workflow compila los PDF y publica
+el sitio. No hace falta editar a mano el índice `.pages` ni escribir el enlace
+del PDF.
+
+Para consultar los argumentos disponibles:
+
+```bash
+python scripts/new_topic.py --help
+```
