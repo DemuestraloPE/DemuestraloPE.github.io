@@ -1,7 +1,8 @@
 title: 📐 Matemáticas
 nav:
   - index.md
-  - temas.md
   - Calculo de Variable Real
   - Polinomios Especiales
-  - ...
+  - Álgebra Lineal
+  - Ecuaciones Diferenciales
+  - Plantillas

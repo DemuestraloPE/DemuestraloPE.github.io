@@ -6,5 +6,7 @@ de funciones reales.
 ## Contenidos
 
 - [Límites y continuidad](Limites.md)
+- [Derivadas](Derivadas.md)
+- [Integrales](Integrales.md)
 
-Para crear un nuevo tema, copia la [plantilla general](../../Plantillas/PlantillaTema.md).
+Para crear un nuevo tema, copia la [plantilla general](../Plantillas/PlantillaTema.md).
