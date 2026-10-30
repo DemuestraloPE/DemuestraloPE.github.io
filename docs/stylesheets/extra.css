@@ -74,12 +74,17 @@
   object-fit: contain;
 }
 
+/* La plantilla de contenidos también se incluye en el menú lateral izquierdo. */
+.md-sidebar--primary .sidebar-random-fact-section {
+  display: none;
+}
+
 /* Ampliar y centrar foto en el bloque de citas lateral */
-#sidebar-random-fact {
+.sidebar-random-fact {
   padding: 12px 5px !important;
 }
 
-#sidebar-random-fact .random-quote-image {
+.sidebar-random-fact .random-quote-image {
   width: 104px;
   height: 104px;
   max-width: 100%;
@@ -104,12 +109,12 @@
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 
-#sidebar-random-fact .admonition,
+.sidebar-random-fact .admonition,
 #random-fact-box .admonition {
   overflow: hidden;
 }
 
-#sidebar-random-fact p,
+.sidebar-random-fact p,
 #random-fact-box p {
   font-size: 0.88rem;
   line-height: 1.5;
