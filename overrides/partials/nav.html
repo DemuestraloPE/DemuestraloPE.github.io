@@ -1,5 +1,0 @@
-{% import "partials/nav-item.html" as item with context %} {% set class = "md-nav md-nav--primary" %} {% if "navigation.tabs" in config.theme.features %} {% set class = class ~ " md-nav--lifted" %} {% endif %}
-{% include "partials/logo.html" %} {{ config.site_name }} {% if config.repo_url %}
-{% include "partials/source.html" %}
-{% endif %}
-{% for nav_item in nav.items %} {% set path = "__nav_" ~ loop.index %} {{ item.render(nav_item, path, 1) }} {% endfor %}
