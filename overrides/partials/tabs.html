@@ -1,3 +1,0 @@
-{% import "partials/tabs-item.html" as item with context %} {% if "navigation.tabs" in config.theme.features %}
-{% for nav_item in nav.items %} {{ item.render(nav_item) }} {% endfor %}
-{% endif %}
