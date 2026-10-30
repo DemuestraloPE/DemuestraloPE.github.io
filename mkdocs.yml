@@ -54,12 +54,12 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
-  - https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js
   - javascripts/random_quotes.js
-  - javascripts/draggable_panels.js
+  - javascripts/study_desk.js
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/study_desk.css
 
 plugins:
   - search
