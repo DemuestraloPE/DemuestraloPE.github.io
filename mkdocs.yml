@@ -63,6 +63,9 @@ extra_css:
 
 plugins:
   - search
+  - gen-files:
+      scripts:
+        - scripts/generate_indexes.py
   - awesome-pages
 
 # Evita que la falta de un PDF detenga el despliegue
@@ -78,10 +81,12 @@ nav:
   - Plantilla Colaborativa: PlantillaPE.md
   - Matemáticas:
       - Introducción: matematica/index.md
+      - Índice de temas: matematica/temas.md
       - Cálculo de Variable Real:
           - matematica/Calculo de Variable Real/
   - Física:
       - Introducción: fisica/index.md
+      - Índice de temas: fisica/temas.md
       - Mecánica Cuántica:
           - fisica/Mecánica Cuántica/
       - Ondas:
