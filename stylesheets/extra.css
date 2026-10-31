@@ -1,0 +1,121 @@
+/* Cambiar colores principales del tema */
+:root {
+  --md-primary-fg-color:        #4A148C; /* Púrpura profundo para la barra superior */
+  --md-primary-fg-color--dark:  #311B92;
+  --md-accent-fg-color:         #00E676; /* Verde neón para acentos y botones */
+}
+
+/* Mostrar los índices principales en pantallas medianas, no solo en monitores grandes. */
+@media screen and (min-width: 48em) {
+  .md-tabs {
+    display: block !important;
+    height: 2.4rem;
+    overflow: hidden;
+  }
+
+  .md-tabs__list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    height: 2.4rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .md-tabs__item {
+    display: flex !important;
+    flex: 0 0 auto;
+  }
+
+  .md-tabs__link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 47.99em) {
+  .md-tabs {
+    display: none !important;
+  }
+}
+
+/* Fondo de pantalla y fuentes en modo oscuro */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:             #121212;
+  --md-default-fg-color:             #E0E0E0;
+  --md-sidebar-bg-color:             #1E1E1E;
+}
+
+/* Redondear bordes de cajas y visores */
+.md-typeset .admonition, 
+.md-typeset iframe,
+.md-typeset object {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Mantener el logo del menú lateral al tamaño de un icono. */
+.md-nav--primary .md-nav__title .md-logo {
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  margin-right: 0.6rem;
+}
+
+.md-nav--primary .md-nav__title .md-logo img,
+.md-nav--primary .md-nav__title .md-logo svg {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+  max-width: 1.6rem !important;
+  max-height: 1.6rem !important;
+  object-fit: contain;
+}
+
+/* La plantilla de contenidos también se incluye en el menú lateral izquierdo. */
+.md-sidebar--primary .sidebar-random-fact-section {
+  display: none;
+}
+
+/* Ampliar y centrar foto en el bloque de citas lateral */
+.sidebar-random-fact {
+  padding: 12px 5px !important;
+}
+
+.sidebar-random-fact .random-quote-image {
+  width: 104px;
+  height: 104px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 8px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#random-fact-box .random-quote-image {
+  width: 132px;
+  height: 132px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.sidebar-random-fact .admonition,
+#random-fact-box .admonition {
+  overflow: hidden;
+}
+
+.sidebar-random-fact p,
+#random-fact-box p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
