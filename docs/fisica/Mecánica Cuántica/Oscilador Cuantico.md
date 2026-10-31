@@ -1,14 +1,34 @@
 # Oscilador Armónico Cuántico
 
-!!! note "Material de Clase Completo"
-    Esta lección fue redactada en LaTeX e incluye la deducción mediante operadores de creación y aniquilación, así como la solución por polinomios de Hermite.
+!!! info "Información del documento"
+    - **Área:** Física, Mecánica Cuantica
+    - **Autoría:** Campaña Vergara Jackson
+    - **Última actualización:** 31/10/26
+    - **Estado:** [✏ Borrador]
 
-## Concepto Previo
+## Resumen
+
+[Describe en pocas líneas qué estudia este tema y por qué es importante.]
+
+## Objetivos de aprendizaje
+
+- [Objetivo 1]
+- [Objetivo 2]
+
+## Prerrequisitos
+
+- [Añade aquí los conceptos previos y enlaza las páginas existentes.]
+
+??? Conceptos fundamentales
 A primera vista, la elección de un potencial proporcional a la posición al cuadrado, $V(x) = \ frac{1}{2}m\omega^2 x^2$, evoca directamente al resorte clásico de la ley de Hooke. Sin embargo, su relevancia en física cuántica vamucho más allá de un simple resorte. En la naturaleza, cualquier sistema cuántico cerca de un punto de equilibrio estable (como los átomos vibrando dentro de una molécula o en una red cristalina) puede aproximarse mediante un potencial parabólico al truncar su expansión en serie de Taylor a segundo orden.
 
 Este modelo surge de preguntarse que pasa si la energía potencial es parabólica, y dense cuenta de lo interesante del asunto, dado que el operador energía cinética $\hat{T}=-(\hbar/2m)\napla^2$ en mecánica clásica es estrictamente positivo 
 
 ---
+
+### Definiciones
+
+Ecuación de Schrodinger: $\frac{-\hbar^2}{2m}$
 
 ## 📄 Visor de las Notas de Clase y Demostraciones
 
@@ -23,6 +43,33 @@ Este modelo surge de preguntarse que pasa si la energía potencial es parabólic
 </div>
 
 ---
+
+## Desarrollo en tres niveles de rigor
+
+=== "1. Intuición"
+    [Explica la idea con palabras, ejemplos o diagramas.]
+
+=== "2. Desarrollo estándar"
+    [Presenta el desarrollo habitual para un curso universitario.]
+
+=== "3. Fundamentación rigurosa"
+    [Expón las hipótesis, definiciones formales y demostraciones completas.]
+
+### Resultados principales
+
+[Enuncia los teoremas, leyes o relaciones importantes.]
+
+## Ejemplos y aplicaciones
+
+[Añade ejemplos resueltos y aplicaciones.]
+
+## Ejercicios
+
+1. [Enunciado del ejercicio]
+
+## Referencias
+
+- [Añade aquí libros, artículos o recursos consultados.]
 
 ## 📥 Recursos de la Clase
 
