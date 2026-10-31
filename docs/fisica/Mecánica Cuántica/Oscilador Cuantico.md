@@ -6,13 +6,14 @@
     - **Última actualización:** 31/10/26
     - **Estado:** [✏ Borrador]
 
-## Resumen
-
-[Describe en pocas líneas qué estudia este tema y por qué es importante.]
-
 ## Prerrequisitos
 
 - [Añade aquí los conceptos previos y enlaza las páginas existentes.]
+
+## Resumen
+
+Un problema físico importante es el del oscilador armonico  para el cual la energia potencial es $V=\frac{1}{2}k x^2$. Este problema suministra importante información acerca de las vibraciones atomicas en las moleculas y los sólidos, ya que en primera aproximación, debemos suponer que el movimiento relativo de los atomos en las moleculas y en los solidos es oscilatorio armonico, con ello la ecuación de schrodinger es:
+$$\frac{-\hbar^2}{2m} \frac{d^2}{dx^2} \Psi + \frac{1}{2} \Psi = E \Psi$$
 
 ??? Conceptos fundamentales
     A primera vista, la elección de un potencial proporcional a la posición al cuadrado, $V(x) = \frac{1}{2}m\omega^2 x^2$, evoca directamente al resorte clásico de la ley de Hooke. Sin embargo, su relevancia en física cuántica vamucho más allá de un simple resorte. En la naturaleza, cualquier sistema cuántico cerca de un punto de equilibrio estable (como los átomos vibrando dentro de una molécula o en una red cristalina) puede aproximarse mediante un potencial parabólico al truncar su expansión en serie de Taylor a segundo orden.
@@ -23,7 +24,7 @@ Este modelo surge de preguntarse que pasa si la energía potencial es parabólic
 
 ### Definiciones
 
-Ecuación de Schrodinger: $\frac{-\hbar^2}{2m}$
+Ecuación de Schrodinger: $\frac{-\hbar^2}{2m} \nabla^2 \Psi + V(\vec{r}) \Psi = E \Psi$
 
 ## 📄 Visor de las Notas de Clase y Demostraciones
 
