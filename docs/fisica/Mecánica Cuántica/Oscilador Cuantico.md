@@ -199,25 +199,17 @@ Para eliminar los términos sobrantes tomamos $s=0$, con ello la serie queda lim
 
 $$(k+2)(k+1)c_{k+2} -2(k)c_k + (2\mathcal{E} - 1) c_k =0$$
 
-$$c_{k+2} = \frac{2(k)- (2\mathcal{E} - 1)}{(k+2)(k+1)} c_k$$
-Homogeneizando las potencias para $k \ge 0$ (cambiando $k \to k+2$ en la suma del término de segunda derivada):
-
-$$(k+s+2)(k+s+1) c_{k+2} - \left[ 2(k+s) - (2\mathcal{E} - 1) \right] c_k = 0$$
-
-$$\mathbf{c_{k+2} = \frac{2(k+s) - (2\mathcal{E} - 1)}{(k+s+1)(k+s+2)} c_k}$$
-
-### Análisis Directo desde la Raíz Fundamental $s = 0$
-Sustituyendo $s = 0$ directamente en la relación de recurrencia:
-
 $$c_{k+2} = \frac{2k - (2\mathcal{E} - 1)}{(k+1)(k+2)} c_k$$
 
 Como el salto en los subíndices es de $k \to k+2$, la paridad queda **completamente desacoplada**:
+
 * Los coeficientes pares ($c_0, c_2, c_4, \dots$) dependen **únicamente de $c_0$**.
+
 * Los coeficientes impares ($c_1, c_3, c_5, \dots$) dependen **únicamente de $c_1$**.
 
 ---
 
-## 5. Cuantización Inevitable de $(2\mathcal{E} - 1)$
+## Cuantización Inevitable de $(2\mathcal{E} - 1)$
 
 Para evitar que la serie $w(\xi)$ sea infinita y diverja asintóticamente como $e^{\xi^2}$ (lo que destruiría la normalizabilidad de la función de onda total $\psi(\xi) = w(\xi)e^{-\xi^2/2}$), la serie debe **truncarse** en un polinomio de grado finito $N$.
 
