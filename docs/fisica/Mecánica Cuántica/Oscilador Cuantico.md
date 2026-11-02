@@ -68,7 +68,7 @@ $$\mathbf{y \frac{d^2\psi(y)}{dy^2} + \frac{1}{2} \frac{d\psi(y)}{dy} + \left( \
 
 ### Comportamiento Asintótico $e^{-y/2}$ (Ecuación de Kummer)
 Para grandes valores de $y$, la ecuación dominante es 
-$$\lim_{y \to \infty} \left{ \frac{d^2\psi(y)}{dy^2} + \frac{1}{2y} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2y} - \frac{1}{4} \right) \psi(y) \right} = 0 = \frac{d^2\psi(y)}{dy^2} - \frac{1}{4} \psi(y)$$
+$$\lim_{y \to \infty} \left[ \frac{d^2\psi(y)}{dy^2} + \frac{1}{2y} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2y} - \frac{1}{4} \right) \psi(y) \right] = 0 = \frac{d^2\psi(y)}{dy^2} - \frac{1}{4} \psi(y)$$
 
 Sugiriendo una solución de la forma $\psi(y) = e^{-y/2} w(y)$ para valores grandes de $y$, recordando que $y=x^2 \geq 0$. Con ello como propuesta a la solucion acoplamos dicho comportameinto asintotico a una funcion cualquiera $w(y)$ la cual dictara su solución a valores cercanso al origen. Asi se sustituye por $\psi(y) = e^{-y/2} w(y)$ y sus derivadas:
 $$\psi' = e^{-y/2} \left( w' - \frac{1}{2}w \right) \qquad \psi'' = e^{-y/2} \left( w'' - w' + \frac{1}{4}w \right)$$
