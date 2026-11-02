@@ -168,12 +168,12 @@ $$
 Simplificando los términos, obtenemos la **Ecuación Diferencial de Hermite**:
 
 $$
-\mathbf{\frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + (2\mathcal{E} - 1) w(\xi) = 0}
+\mathbf{\frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + \subbrave{(2\mathcal{E} - 1)}_{-2a} w(\xi) = 0}
 $$
 
 **NOTA:** Claramente se pudo obtener directamente este resultado pero es interesante observar como surgen los polinomios de hermite de la ecuación hipergeométrica confluente (Ec. de Kummer).
 
-Con esto concluimos que la solución general del oscilador armónico cuántico es muy parecida a la ecuación de los **Polinomios de Hermite** $H_n(\xi)$. Solo si $2\mathcal{E} - 1=2n$ con $n$ un numero entero positivo, a rigor falta demostrar la discretización de este termino para que la solución de la función de valores cercanos al origen $w(xi)$ es efectivamente dada por dichos polinomios.
+Con esto concluimos que la solución general del oscilador armónico cuántico es muy parecida a la ecuación de los **Polinomios de Hermite** $H_n(\xi)$. Solo si $2\mathcal{E} - 1=-2 a=2n$ con $n$ un numero entero positivo, a rigor falta demostrar la discretización de este termino para que la solución de la función de valores cercanos al origen $w(xi)$ es efectivamente dada por dichos polinomios.
 
 Para demostrarlo supondremos la solución de $w(\xi)$ en forma de una serie de potencias en forma del metodo de Frobenious.
 
@@ -185,19 +185,21 @@ $$w(\xi) = \sum_{k=0}^{\infty} c_k \xi^{k+s} \quad (c_0 \neq 0)$$
 
 Sustituyendo $w(\xi)$, $w'(\xi)$ y $w''(\xi)$ en la ecuación diferencial:
 
-$$\frac{d^2 w}{d\xi^2} - 2\xi \frac{dw}{d\xi} + (2\mathcal{E} - 1)w = 0$$
+$$\frac{d^2 w}{d\xi^2} - 2\xi \frac{dw}{d\xi} -4aw = 0$$
 
-$$\sum_{k=0}^{\infty} (k+s)(k+s-1)c_k \xi^{k+s-2} - 2\sum_{k=0}^{\infty} (k+s)c_k \xi^{k+s} + (2\mathcal{E} - 1)\sum_{k=0}^{\infty} c_k \xi^{k+s} = 0$$
+$$\sum_{k=0}^{\infty} (k+s)(k+s-1)c_k \xi^{k+s-2} - 2\sum_{k=0}^{\infty} (k+s)c_k \xi^{k+s} -4a \sum_{k=0}^{\infty} c_k \xi^{k+s} = 0$$
 
+$$\sum_{k=-2}^{\infty} (k+s+2)(k+s+1)c_{k+2} \xi^{k+s} + \sum_{k=0}^{\infty} [-2(k+s)c_k \xi^{k+s} -4a c_k \xi^{k+s}] = 0$$
 
+$$ (s)(s-1)c_{0} \xi^{s-2} + (s+1)(s)c_{1} \xi^{s-1} + \sum_{k=0}^{\infty} [(k+s+2)(k+s+1)c_{k+2} \xi^{k+s}-2(k+s)c_k \xi^{k+s} -4a c_k \xi^{k+s}] = 0$$
+
+Para obtener la serie necesitamos eliminar los términos sobrantes
+$$\Rightarrow (s)(s-1)c_{0} \xi^{s-2} + (s+1)(s)c_{1} \xi^{s-1}=0 \rightarrow s=0$$
+
+$$ \forall k \leq 0 (k+2)(k+1)c_{k+2} \xi^{k}-2k c_k \xi^{k} -4a c_k \xi^{k} = 0$$
 
 ---
 
-### **2. La Ecuación Indicial y las Raíces $s$**
-
-Para encontrar $s$, agrupamos la potencia más baja de $\xi$, que corresponde a **$k = 0$** ($\xi^{s-2}$):
-
-$$s(s - 1) c_0 \xi^{s-2} = 0$$
 
 Como se exige que $c_0 \neq 0$ para definir el inicio de la serie, obtenemos la **ecuación indicial**:
 
