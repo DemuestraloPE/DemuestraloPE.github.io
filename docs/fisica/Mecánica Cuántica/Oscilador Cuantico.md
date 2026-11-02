@@ -30,72 +30,148 @@ Este modelo surge de preguntarse que pasa si la energía potencial es parabólic
 
 Ecuación de Schrodinger: $\frac{-\hbar^2}{2m} \nabla^2 \Psi + V(\vec{r}) \Psi = E \Psi$
 
-## Oscilador armonico cuántico
-El Hamiltoniano del oscilador armónico en 1D es:
+---
 
-\[\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2}m\omega^2 x^2 \right) \psi(x) = E \psi(x)\]
+# Solución del Oscilador Armónico Cuántico
 
-Reordenando para dejar la derivada de mayor orden limpia:
+El Hamiltoniano del oscilador armónico en una dimensión (1D) está dado por:
 
-\[\frac{d^2\psi(x)}{dx^2} - \frac{m^2\omega^2}{\hbar^2} x^2 \psi(x) + \frac{2mE}{\hbar^2} \psi(x) = 0\]
+$$
+\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2}m\omega^2 x^2 \right) \psi(x) = E \psi(x)
+$$
 
-Constantes físicas estándar con dimensiones apropiadas:
-$a^2 = \frac{m\omega}{\hbar} \implies a^4 = \frac{m^2\omega^2}{\hbar^2}$
-$k^2 = \frac{2mE}{\hbar^2}$
+Reordenando para aislar la derivada de mayor orden:
 
-\[\text{Ahora se tiene: } \mathbf{\frac{d^2\psi(x)}{dx^2} - a^4 x^2 \psi(x) + k^2 \psi(x) = 0}\]
+$$
+\frac{d^2\psi(x)}{dx^2} - \frac{m^2\omega^2}{\hbar^2} x^2 \psi(x) + \frac{2mE}{\hbar^2} \psi(x) = 0
+$$
 
-### Cambio de Variable Hacia la Ecuación Confluente:
+Definimos las constantes físicas estándar con dimensiones apropiadas:
 
-\[\text{Aplicando } y = a^2 x^2 \Rightarrow \frac{dy}{dx}=2a^2x=2ay^{1/2} \Rightarrow \frac{df}{dx}=\frac{dy}{dx}\frac{df}{dy}=2ay^{1/2}\frac{df}{dy}\]
+* $a^2 = \frac{m\omega}{\hbar} \implies a^4 = \frac{m^2\omega^2}{\hbar^2}$
+* $k^2 = \frac{2mE}{\hbar^2}$
 
-\[\text{Ahora }\frac{d^2f}{dx^2} = 2ay^{1/2}\frac{d}{dy}(2ay^{1/2}\frac{df}{dy}) = 4a^2 y \frac{d^2f}{dy^2} + 2a^2 \frac{df}{dy}\]
-Sustituyendo en la ecuación diferencial
+Obtenemos la ecuación diferencial reestructurada:
 
-\[\left( 4a^2 y \frac{d^2\psi}{dy^2} + 2a^2 \frac{d\psi}{dy} \right) - a^4 \left(\frac{y}{a^2}\right)\psi + k^2 \psi = 0\]
+$$
+\mathbf{\frac{d^2\psi(x)}{dx^2} - a^4 x^2 \psi(x) + k^2 \psi(x) = 0}
+$$
 
-Dividiendo toda la ecuación entre $4a^2$
+---
 
-\[y \frac{d^2\psi}{dy^2} + \frac{1}{2} \frac{d\psi}{dy} + \left( \frac{k^2}{4a^2} - \frac{y}{4} \right) \psi(y) = 0\]
+### Cambio de Variable Hacia la Ecuación Confluente
 
-Definimos el parámetro adimensional de energía
+Aplicando la transformación $y = a^2 x^2$:
 
-\[\mathcal{E} \equiv \frac{k^2}{2a^2} = \frac{\frac{2mE}{\hbar^2}}{2\frac{m\omega}{\hbar}} = \mathbf{\frac{E}{\hbar\omega}}\]
+$$
+\frac{dy}{dx} = 2a^2 x = 2a y^{1/2} \implies \frac{df}{dx} = \frac{dy}{dx}\frac{df}{dy} = 2a y^{1/2} \frac{df}{dy}
+$$
 
-Sustituyendo $\frac{k^2}{4a^2} = \frac{\mathcal{E}}{2}$, obtenemos la ecuación intermedia
+Calculando la segunda derivada:
 
-\[\mathbf{y \frac{d^2\psi(y)}{dy^2} + \frac{1}{2} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) \psi(y) = 0} (*)\]
+$$
+\frac{d^2 f}{dx^2} = 2a y^{1/2} \frac{d}{dy}\left(2a y^{1/2} \frac{df}{dy}\right) = 4a^2 y \frac{d^2 f}{dy^2} + 2a^2 \frac{df}{dy}
+$$
+
+Sustituyendo en la ecuación diferencial principal:
+
+$$
+\left( 4a^2 y \frac{d^2\psi}{dy^2} + 2a^2 \frac{d\psi}{dy} \right) - a^4 \left(\frac{y}{a^2}\right)\psi + k^2 \psi = 0
+$$
+
+Dividiendo toda la ecuación entre $4a^2$:
+
+$$
+y \frac{d^2\psi}{dy^2} + \frac{1}{2} \frac{d\psi}{dy} + \left( \frac{k^2}{4a^2} - \frac{y}{4} \right) \psi(y) = 0
+$$
+
+Definimos el parámetro adimensional de energía $\mathcal{E}$:
+
+$$
+\mathcal{E} \equiv \frac{k^2}{2a^2} = \frac{\frac{2mE}{\hbar^2}}{2\frac{m\omega}{\hbar}} = \mathbf{\frac{E}{\hbar\omega}}
+$$
+
+Sustituyendo $\frac{k^2}{4a^2} = \frac{\mathcal{E}}{2}$, obtenemos la ecuación intermedia:
+
+$$
+\mathbf{y \frac{d^2\psi(y)}{dy^2} + \frac{1}{2} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) \psi(y) = 0} \quad (*)
+$$
+
+---
 
 ### Comportamiento Asintótico $e^{-y/2}$ (Ecuación de Kummer)
-Para grandes valores de $y$, la ecuación dominante es 
-\[\lim_{y \to \infty} \left[ \frac{d^2\psi(y)}{dy^2} + \frac{1}{2y} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2y} - \frac{1}{4} \right) \psi(y) \right] = 0 = \frac{d^2\psi(y)}{dy^2} - \frac{1}{4} \psi(y)\]
 
-Sugiriendo una solución de la forma $\psi(y) = e^{-y/2} w(y)$ para valores grandes de $y$, recordando que $y=x^2 \geq 0$. Con ello como propuesta a la solucion acoplamos dicho comportameinto asintotico a una funcion cualquiera $w(y)$ la cual dictara su solución a valores cercanso al origen. Asi se sustituye por $\psi(y) = e^{-y/2} w(y)$ y sus derivadas:
-\[\psi' = e^{-y/2} \left( w' - \frac{1}{2}w \right) \qquad \psi'' = e^{-y/2} \left( w'' - w' + \frac{1}{4}w \right)\]
-Sustituyendo en la ecuación anterior $(*)$ y cancelando el factor común
-\[y \left( w'' - w' + \frac{1}{4}w \right) + \frac{1}{2} \left( w' - \frac{1}{2}w \right) + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) w = 0\]
+Para grandes valores de $y$, la ecuación dominante toma la forma:
 
-Desarrollando los términos
+$$
+\lim_{y \to \infty} \left\{ \frac{d^2\psi(y)}{dy^2} + \frac{1}{2y} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2y} - \frac{1}{4} \right) \psi(y) \right\} = 0 \implies \frac{d^2\psi(y)}{dy^2} - \frac{1}{4} \psi(y) = 0
+$$
 
-\[y w'' - y w' + \frac{y}{4}w + \frac{1}{2} w' - \frac{1}{4}w + \frac{\mathcal{E}}{2}w - \frac{y}{4}w = 0\]
-\[y w'' + \left(\frac{1}{2} - y\right) w' - \left( \frac{1}{4} - \frac{\mathcal{E}}{2} \right) w = 0****
-Llegamos exactamente a la Ecuación Hipergeométrica Confluente (de Kummer)
-\[\mathbf{y \frac{d^2 w(y)}{dy^2} + (b - y) \frac{dw(y)}{dy} - a \, w(y) = 0}\]
-La cual es conocida por ser capaz de devolver una solucion en base a polinomios especiales segun los parametros $a$ y $b$ que se tengan en el problema, es una forma de ecuacion mas general desde la cual se puede obtener una solución en base a los polinomios de hermite.\\
-Donde $b = \frac{1}{2}$ $\quad a = \frac{1}{4} - \frac{\mathcal{E}}{2} = \mathbf{\frac{1}{4} - \frac{E}{2\hbar\omega}}$
+Esto sugiere una solución asintótica de la forma $\psi(y) = e^{-y/2} w(y)$ para valores grandes de $y$, recordando que $y = x^2 \geq 0$. Con esta propuesta, acoplamos dicho comportamiento asintótico a una función propuesta $w(y)$ que dictará el comportamiento de la solución en regiones cercanas al origen. 
+
+Calculamos las derivadas de $\psi(y) = e^{-y/2} w(y)$:
+
+$$
+\psi' = e^{-y/2} \left( w' - \frac{1}{2}w \right) \qquad \psi'' = e^{-y/2} \left( w'' - w' + \frac{1}{4}w \right)
+$$
+
+Sustituyendo en la ecuación intermedia $(*)$ y simplificando el factor común $e^{-y/2}$:
+
+$$
+y \left( w'' - w' + \frac{1}{4}w \right) + \frac{1}{2} \left( w' - \frac{1}{2}w \right) + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) w = 0
+$$
+
+Desarrollando los términos:
+
+$$
+y w'' - y w' + \frac{y}{4}w + \frac{1}{2} w' - \frac{1}{4}w + \frac{\mathcal{E}}{2}w - \frac{y}{4}w = 0
+$$
+
+$$
+y w'' + \left(\frac{1}{2} - y\right) w' - \left( \frac{1}{4} - \frac{\mathcal{E}}{2} \right) w = 0
+$$
+
+Llegamos exactamente a la **Ecuación Hipergeométrica Confluente (de Kummer)**:
+
+$$
+\mathbf{y \frac{d^2 w(y)}{dy^2} + (b - y) \frac{dw(y)}{dy} - a \, w(y) = 0}
+$$
+
+La cual es capaz de entregar una solución basada en polinomios especiales según los parámetros $a$ y $b$ involucrados en el problema. Es una forma generalizada desde la cual se obtiene la solución mediante los Polinomios de Hermite, donde:
+
+$$
+b = \frac{1}{2}, \qquad a = \frac{1}{4} - \frac{\mathcal{E}}{2} = \mathbf{\frac{1}{4} - \frac{E}{2\hbar\omega}}
+$$
+
+---
 
 ### Transformación a la Variable Espacial $\xi = \sqrt{y}$ (Ecuación de Hermite)
-Si en lugar de $y$ usamos la coordenada espacial adimensional $\xi = ax = \sqrt{\frac{m\omega}{\hbar}} x$,\\
-\[\rightarrow \frac{d\xi}{dy}=\frac{1}{2}y^{-1/2}\rightarrow \frac{df}{dy}=\frac{1}{2\xi}\frac{df}{d\xi}\]
-Calculando las derivadas
-\[\frac{d\w}{dy} = \frac{1}{2\xi}\frac{dw}{d\xi} \qquad \frac{d^2w}{dy^2} = \frac{1}{2\xi}\frac{1}{d\xi}\left(\frac{1}{2\xi}\frac{dw}{d\xi}\right)= \frac{1}{2\xi}\left(-\frac{1}{2\xi^2}\frac{dw}{d\xi}+\frac{1}{2\xi}\frac{d^2w}{d\xi^2}\right)\]
 
-Expresando la ecuación de Kummer en la variable $\xi$ 
+Si en lugar de $y$ empleamos la coordenada espacial adimensional $\xi = ax = \sqrt{\frac{m\omega}{\hbar}} x$:
 
-\[-\frac{1}{4\xi}\frac{dw}{d\xi}+\frac{1}{4}\frac{d^2w}{d\xi^2} + \frac{1}{4\xi}\frac{dw}{d\xi} -\frac{\xi}{2}\frac{dw}{d\xi} - (\frac{1}{4}-\frac{\mathcal{E}}{2}) \, w(\xi) = 0\]
+$$
+\frac{d\xi}{dy} = \frac{1}{2}y^{-1/2} \implies \frac{df}{dy} = \frac{1}{2\xi} \frac{df}{d\xi}
+$$
 
-\[\text{La ecuación de Hermite }\mathbf{\Rightarrow \frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + (2\mathcal{E} - 1) w(\xi) = 0}\]
-Con ello conluimos que la solucion se trata de los polinomios de hermite teniendo asi
+Calculando las derivadas correspondientes:
+
+$$
+\frac{dw}{dy} = \frac{1}{2\xi}\frac{dw}{d\xi} \qquad \frac{d^2w}{dy^2} = \frac{1}{2\xi}\frac{d}{d\xi}\left(\frac{1}{2\xi}\frac{dw}{d\xi}\right) = \frac{1}{2\xi}\left(-\frac{1}{2\xi^2}\frac{dw}{d\xi} + \frac{1}{2\xi}\frac{d^2w}{d\xi^2}\right)
+$$
+
+Expresando la ecuación de Kummer en términos de la variable espacial $\xi$:
+
+$$
+-\frac{1}{4\xi}\frac{dw}{d\xi} + \frac{1}{4}\frac{d^2w}{d\xi^2} + \frac{1}{4\xi}\frac{dw}{d\xi} - \frac{\xi}{2}\frac{dw}{d\xi} - \left(\frac{1}{4} - \frac{\mathcal{E}}{2}\right) w(\xi) = 0
+$$
+
+Simplificando los términos, obtenemos la **Ecuación Diferencial de Hermite**:
+
+$$
+\mathbf{\frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + (2\mathcal{E} - 1) w(\xi) = 0}
+$$
+
+Con esto concluimos que la solución general del oscilador armónico cuántico está dada en términos de los **Polinomios de Hermite** $H_n(\xi)$.
 
 ## 📄 Visor de las Notas de Clase y Demostraciones
 
