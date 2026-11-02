@@ -168,12 +168,12 @@ $$
 Simplificando los términos, obtenemos la **Ecuación Diferencial de Hermite**:
 
 $$
-\mathbf{\frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + \subbrave{(2\mathcal{E} - 1)}_{-2a} w(\xi) = 0}
+\mathbf{\frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + \underbrace{(2\mathcal{E} - 1)}_{-2a} w(\xi) = 0}
 $$
 
 **NOTA:** Claramente se pudo obtener directamente este resultado pero es interesante observar como surgen los polinomios de hermite de la ecuación hipergeométrica confluente (Ec. de Kummer).
 
-Con esto concluimos que la solución general del oscilador armónico cuántico es muy parecida a la ecuación de los **Polinomios de Hermite** $H_n(\xi)$. Solo si $2\mathcal{E} - 1=-2 a=2n$ con $n$ un numero entero positivo, a rigor falta demostrar la discretización de este termino para que la solución de la función de valores cercanos al origen $w(xi)$ es efectivamente dada por dichos polinomios.
+Con esto concluimos que la solución general del oscilador armónico cuántico es muy parecida a la ecuación de los **Polinomios de Hermite** $H_n(\xi)$. Solo si $2\mathcal{E} - 1=-2 a=2n$ con $n$ un numero entero positivo, a rigor falta demostrar la discretización de este termino para que la solución de la función de valores cercanos al origen $w(\xi)$ es efectivamente dada por dichos polinomios.
 
 Para demostrarlo supondremos la solución de $w(\xi)$ en forma de una serie de potencias en forma del metodo de Frobenious.
 
@@ -196,7 +196,7 @@ $$ (s)(s-1)c_{0} \xi^{s-2} + (s+1)(s)c_{1} \xi^{s-1} + \sum_{k=0}^{\infty} [(k+s
 Para obtener la serie necesitamos eliminar los términos sobrantes
 $$\Rightarrow (s)(s-1)c_{0} \xi^{s-2} + (s+1)(s)c_{1} \xi^{s-1}=0 \rightarrow s=0$$
 
-$$ \forall k \leq 0 (k+2)(k+1)c_{k+2} \xi^{k}-2k c_k \xi^{k} -4a c_k \xi^{k} = 0$$
+$$ \forall k \geq 0, \qquad (k+2)(k+1)c_{k+2} \xi^{k}-2k c_k \xi^{k} -4a c_k \xi^{k} = 0$$
 
 ---
 
