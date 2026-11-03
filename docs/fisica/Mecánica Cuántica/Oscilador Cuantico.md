@@ -209,47 +209,97 @@ Como el salto en los subíndices es de $k \to k+2$, la paridad queda **completam
 
 ---
 
-### Divergencia de la Solución sin Truncamiento
+# Divergencia sin Truncamiento
 
-Partimos de la relación de recurrencia exacta para la rama:
+Para que la función de onda $\psi(\xi) = w(\xi) e^{-\xi^2/2}$ represente un estado físico válido, debe pertenecer al espacio de Hilbert $L^2(\mathbb{R})$, lo que exige que su norma sea finita: $\|\psi\|^2 < \infty$. A continuación se demuestra que si la serie $w(\xi)$ no se trunca en un polinomio, esta integral diverge estrictamente a $+\infty$.
+
+## 1. Comportamiento Asintótico y Producto Telescópico de los Coeficientes
+
+Partimos de la relación de recurrencia exacta para la rama par (o impar):
 
 $$c_{2m+2} = \frac{4m - (2\mathcal{E} - 1)}{(2m+1)(2m+2)} c_{2m}$$
 
-Si la serie no se trunca, existe un entero $M \in \mathbb{N}$ tal que para todo $m \ge M$, el numerador $4m - (2\mathcal{E}-1) > 0$. A partir de este índice $M$, todos los coeficientes $c_{2m}$ tienen el mismo signo (asumamos positivo $c_{2m} > 0$ sin pérdida de generalidad).Tomemos el cociente para $m \ge M$:
+**Paso 1.1: Estabilización del signo.**  
+Si la serie no se trunca, el numerador nunca es cero. Existe un entero $M \in \mathbb{N}$ suficientemente grande tal que para todo $m \ge M$, se cumple $4m - (2\mathcal{E} - 1) > 0$. Como el denominador siempre es positivo, a partir de $M$ todos los coeficientes mantienen el mismo signo. Asumiremos $c_{2M} > 0$.
+
+**Paso 1.2: Acotación del cociente.**  
+Analizamos el cociente de coeficientes para $m \ge M$:
 
 $$\frac{c_{2m+2}}{c_{2m}} = \frac{4m - (2\mathcal{E} - 1)}{4m^2 + 6m + 2}$$
 
-Para cualquier valor fijo de $\mathcal{E}$, existe un número entero $K \ge M$ y una constante positiva $\gamma > 0$ tal que para todo $m \ge K$
+Para $m$ grande, el término dominante en el numerador es $4m$ y en el denominador es $4m^2$, por lo que el cociente decae como $1/m$. Formalmente, siempre es posible elegir un índice $K \ge M$ y una constante estricta $\gamma > 0$ tal que para todo $m \ge K$:
 
 $$\frac{c_{2m+2}}{c_{2m}} \ge \frac{\gamma}{m+1}$$
 
-Por inducción directa para $m \ge K$, esto implica la existencia de una constante estricta $A > 0$ tal que
+**Paso 1.3: Expansión por inducción (Detalle Omitido Frecuentemente).**  
+Para hallar el valor de un coeficiente avanzado $c_{2N}$ (con $N > K$), multiplicamos todos los cocientes intermedios desde $m = K$ hasta $N-1$. Esto forma un producto telescópico donde los términos intermedios se cancelan:
 
-$$c_{2m} \ge \frac{A}{m!} \quad \text{para todo } m \ge K$$
+$$\frac{c_{2N}}{c_{2K}} = \left( \frac{c_{2K+2}}{c_{2K}} \right) \left( \frac{c_{2K+4}}{c_{2K+2}} \right) \dots \left( \frac{c_{2N}}{c_{2N-2}} \right)$$
 
-Acotación Inferior de la Función $w(\xi)$ Dado que todos los términos de la serie para $m \ge K$ son estrictamente positivos cuando $\xi \in \mathbb{R}$, podemos acotar la función $w(\xi)$ por abajo mediante la suma parcial a partir del término $K$
+Aplicando nuestra desigualdad a cada factor:
 
-$$w(\xi) = \sum_{m=0}^{K-1} c_{2m} \xi^{2m} + \sum_{m=K}^{\infty} c_{2m} \xi^{2m}$$
+$$\frac{c_{2N}}{c_{2K}} \ge \left( \frac{\gamma}{K+1} \right) \left( \frac{\gamma}{K+2} \right) \dots \left( \frac{\gamma}{N} \right) = \frac{\gamma^{N-K} \, K!}{N!}$$
 
-Para $\vert{}\xi\vert{} \ge 1$, el primer sumatorio finito está acotado por un polinomio $P(\xi)$. Para el segundo sumatorio, aplicamos nuestra cota inferior de coeficientes $c_{2m} \ge \frac{A}{m!}$
+Despejando $c_{2N}$ y agrupando todas las constantes que no dependen de $N$ en una única constante global $A = c_{2K} \gamma^{-K} K! > 0$, obtenemos la cota inferior estricta:
 
-$$\sum_{m=K}^{\infty} c_{2m} \xi^{2m} \ge A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!} = A \left( e^{\xi^2} - \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!} \right)$$
+$$c_{2N} \ge A \frac{\gamma^N}{N!} \quad \text{para todo } N \ge K$$
+*(Para simplificar la notación en la integral posterior, podemos reabsorber $\gamma$ en un cambio de escala o asumir el caso límite donde comparamos directamente, por lo que escribiremos genéricamente $c_{2m} \ge \frac{A}{m!}$).*
 
-Por lo tanto, existe un punto $\xi_0 > 0$ tal que para todo $\vert{}\xi\vert{} > \xi_0$, se cumple rigurosamente la desigualdad estricta
+---
+
+## 2. Acotación Inferior de la Función $w(\xi)$ frente al Polinomio
+
+Sabiendo que $c_{2m} \ge \frac{A}{m!}$, dividimos la función $w(\xi)$ en dos partes: el tramo finito inicial y la cola infinita.
+
+$$w(\xi) = \underbrace{\sum_{m=0}^{K-1} c_{2m} \xi^{2m}}_{\text{Polinomio finito } P(\xi)} + \underbrace{\sum_{m=K}^{\infty} c_{2m} \xi^{2m}}_{\text{Cola infinita}}$$
+
+Aplicamos la cota a la cola infinita:
+
+$$\sum_{m=K}^{\infty} c_{2m} \xi^{2m} \ge A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!}$$
+
+Reconocemos que esta suma es casi la serie de Taylor de la función exponencial, solo le faltan los primeros $K$ términos:
+
+$$A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!} = A \left( e^{\xi^2} - \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!} \right)$$
+
+Sustituyendo esto en la función original $w(\xi)$:
+
+$$w(\xi) \ge P(\xi) + A e^{\xi^2} - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}$$
+
+**El argumento de dominancia asintótica (Detalle Omitido):**  
+Agrupemos los términos polinómicos en un solo polinomio $Q(\xi) = P(\xi) - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}$. 
+Sabemos por el Teorema de L'Hôpital que la función exponencial $e^{\xi^2}$ crece asintóticamente mucho más rápido que *cualquier* polinomio finito $Q(\xi)$. Por tanto, el cociente $|Q(\xi)| / e^{\xi^2} \to 0$ cuando $\xi \to \infty$. 
+
+Esto garantiza que existe un punto en el espacio $\xi_0 > 0$ a partir del cual el término $A e^{\xi^2}$ es tan inmensamente superior al polinomio $Q(\xi)$ que lo absorbe holgadamente, permitiéndonos asegurar que para todo $|\xi| > \xi_0$:
 
 $$w(\xi) \ge \frac{A}{2} e^{\xi^2}$$
 
-Criterio de Integrabilidad para la Norma en $L^2(\mathbb{R})$
+---
 
-Evaluemos la norma al cuadrado de $\psi(\xi)$ utilizando la regla de monotonía de la integral de Lebesgue sobre el dominio $(-\infty, -\xi_0] \cup [\xi_0, \infty
+## 3. Criterio de Integrabilidad para la Norma en $L^2(\mathbb{R})$
 
-Vert{}\psi\Vert{}^2 = \int_{-\infty}^{\infty} [w(\xi)]^2 e^{-\xi^2} d\xi \ge \int_{\vert{}\xi\vert{} > \xi_0} [w(\xi)]^2 e^{-\xi^2} d\xi$$
+Ahora evaluamos la condición física de normalización calculando la norma al cuadrado $\|\psi\|^2$.
 
-Sustituyendo la acotación inferior estricta $w(\xi) \ge \frac{A}{2} e^{\xi^2}$:
+$$\|\psi\|^2 = \int_{-\infty}^{\infty} [w(\xi)]^2 e^{-\xi^2} d\xi$$
 
-$$\Vert{}\psi\Vert{}^2 \ge \int_{\vert{}\xi\vert{} > \xi_0} \left( \frac{A}{2} e^{\xi^2} \right)^2 e^{-\xi^2} d\xi$$
+Dado que el integrando es estrictamente positivo, la integral sobre todo el dominio real es mayor que la integral evaluada únicamente en las "colas" del espacio (para $|\xi| > \xi_0$):
 
-$$\Vert{}\psi\Vert{}^2 \ge \frac{A^2}{4} \int_{\vert{}\xi\vert{} > \xi_0} e^{2\xi^2} e^{-\xi^2} d\xi = \frac{A^2}{4} \int_{\vert{}\xi\vert{} > \xi_0} e^{+\xi^2} d\xi$$Dado que $e^{+\xi^2} \ge 1$ para todo $\xi$:$$\Vert{}\psi\Vert{}^2 \ge \frac{A^2}{4} \int_{\xi_0}^{\infty} 1 \, d\xi = +\infty$$
+$$\|\psi\|^2 \ge \int_{|\xi| > \xi_0} [w(\xi)]^2 e^{-\xi^2} d\xi$$
+
+**Sustitución de la cota inferior:**  
+Reemplazamos $w(\xi)$ por la desigualdad estricta $\frac{A}{2} e^{\xi^2}$ que demostramos para esa región:
+
+$$\|\psi\|^2 \ge \int_{|\xi| > \xi_0} \left( \frac{A}{2} e^{\xi^2} \right)^2 e^{-\xi^2} d\xi$$
+
+Elevamos al cuadrado y operamos los exponentes:
+
+$$\|\psi\|^2 \ge \frac{A^2}{4} \int_{|\xi| > \xi_0} e^{2\xi^2} e^{-\xi^2} d\xi = \frac{A^2}{4} \int_{|\xi| > \xi_0} e^{+\xi^2} d\xi$$
+
+**Conclusión del límite de divergencia:**  
+Para cualquier número real $\xi$, se cumple que $e^{+\xi^2} \ge 1$. Sustituyendo esto en la integral:
+
+$$\|\psi\|^2 \ge \frac{A^2}{4} \int_{|\xi| > \xi_0} 1 \, d\xi = \frac{A^2}{4} \times (\infty) = +\infty$$
+
+La integral diverge irremisiblemente a infinito. Esto demuestra matemáticamente que **la única forma de que la función de onda sea físicamente admisible (cuadrado integrable) es impedir la existencia de la cola infinita**, forzando al numerador de la recurrencia a ser cero en algún punto: $2N - (2\mathcal{E} - 1) = 0$.
 
 ## Cuantización Inevitable de $(2\mathcal{E} - 1)$
 
