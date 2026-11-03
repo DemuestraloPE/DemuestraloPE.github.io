@@ -209,41 +209,47 @@ Como el salto en los subíndices es de $k \to k+2$, la paridad queda **completam
 
 ---
 
-??? "Divergencia de la Solución sin Truncamiento"
+### Divergencia de la Solución sin Truncamiento
 
-    Partimos de la relación de recurrencia exacta para la rama:
+Partimos de la relación de recurrencia exacta para la rama:
 
-    $$c_{2m+2} = \frac{4m - (2\mathcal{E} - 1)}{(2m+1)(2m+2)} c_{2m}$$
+$$c_{2m+2} = \frac{4m - (2\mathcal{E} - 1)}{(2m+1)(2m+2)} c_{2m}$$
 
-    Si la serie no se trunca, existe un entero $M \in \mathbb{N}$ tal que para todo $m \ge M$, el numerador $4m - (2\mathcal{E}-1) > 0$. A partir de este índice $M$, todos los coeficientes $c_{2m}$ tienen el mismo signo (asumamos positivo $c_{2m} > 0$ sin pérdida de generalidad).Tomemos el cociente para $m \ge M$:
+Si la serie no se trunca, existe un entero $M \in \mathbb{N}$ tal que para todo $m \ge M$, el numerador $4m - (2\mathcal{E}-1) > 0$. A partir de este índice $M$, todos los coeficientes $c_{2m}$ tienen el mismo signo (asumamos positivo $c_{2m} > 0$ sin pérdida de generalidad).Tomemos el cociente para $m \ge M$:
 
-    $$\frac{c_{2m+2}}{c_{2m}} = \frac{4m - (2\mathcal{E} - 1)}{4m^2 + 6m + 2}$$
+$$\frac{c_{2m+2}}{c_{2m}} = \frac{4m - (2\mathcal{E} - 1)}{4m^2 + 6m + 2}$$
 
-    Para cualquier valor fijo de $\mathcal{E}$, existe un número entero $K \ge M$ y una constante positiva $\gamma > 0$ tal que para todo $m \ge K$:$$\frac{c_{2m+2}}{c_{2m}} \ge \frac{\gamma}{m+1}$$
+Para cualquier valor fijo de $\mathcal{E}$, existe un número entero $K \ge M$ y una constante positiva $\gamma > 0$ tal que para todo $m \ge K$
 
-    Por inducción directa para $m \ge K$, esto implica la existencia de una constante estricta $A > 0$ tal que:$$c_{2m} \ge \frac{A}{m!} \quad \text{para todo } m \ge K$$
+$$\frac{c_{2m+2}}{c_{2m}} \ge \frac{\gamma}{m+1}$$
 
-    Acotación Inferior de la Función $w(\xi)$ Dado que todos los términos de la serie para $m \ge K$ son estrictamente positivos cuando $\xi \in \mathbb{R}$, podemos acotar la función $w(\xi)$ por abajo mediante la suma parcial a partir del término $K$:
+Por inducción directa para $m \ge K$, esto implica la existencia de una constante estricta $A > 0$ tal que
 
-    $$w(\xi) = \sum_{m=0}^{K-1} c_{2m} \xi^{2m} + \sum_{m=K}^{\infty} c_{2m} \xi^{2m}$$
+$$c_{2m} \ge \frac{A}{m!} \quad \text{para todo } m \ge K$$
 
-    Para $\vert{}\xi\vert{} \ge 1$, el primer sumatorio finito está acotado por un polinomio $P(\xi)$. Para el segundo sumatorio, aplicamos nuestra cota inferior de coeficientes $c_{2m} \ge \frac{A}{m!}$:
+Acotación Inferior de la Función $w(\xi)$ Dado que todos los términos de la serie para $m \ge K$ son estrictamente positivos cuando $\xi \in \mathbb{R}$, podemos acotar la función $w(\xi)$ por abajo mediante la suma parcial a partir del término $K$
 
-    $$\sum_{m=K}^{\infty} c_{2m} \xi^{2m} \ge A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!} = A \left( e^{\xi^2} - \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!} \right)$$
+$$w(\xi) = \sum_{m=0}^{K-1} c_{2m} \xi^{2m} + \sum_{m=K}^{\infty} c_{2m} \xi^{2m}$$
 
-    Por lo tanto, existe un punto $\xi_0 > 0$ tal que para todo $\vert{}\xi\vert{} > \xi_0$, se cumple rigurosamente la desigualdad estricta:
+Para $\vert{}\xi\vert{} \ge 1$, el primer sumatorio finito está acotado por un polinomio $P(\xi)$. Para el segundo sumatorio, aplicamos nuestra cota inferior de coeficientes $c_{2m} \ge \frac{A}{m!}$
 
-    $$w(\xi) \ge \frac{A}{2} e^{\xi^2}$$
+$$\sum_{m=K}^{\infty} c_{2m} \xi^{2m} \ge A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!} = A \left( e^{\xi^2} - \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!} \right)$$
 
-    Criterio de Integrabilidad para la Norma en $L^2(\mathbb{R})$
+Por lo tanto, existe un punto $\xi_0 > 0$ tal que para todo $\vert{}\xi\vert{} > \xi_0$, se cumple rigurosamente la desigualdad estricta
 
-    Evaluemos la norma al cuadrado de $\psi(\xi)$ utilizando la regla de monotonía de la integral de Lebesgue sobre el dominio $(-\infty, -\xi_0] \cup [\xi_0, \infty
+$$w(\xi) \ge \frac{A}{2} e^{\xi^2}$$
 
-    Vert{}\psi\Vert{}^2 = \int_{-\infty}^{\infty} [w(\xi)]^2 e^{-\xi^2} d\xi \ge \int_{\vert{}\xi\vert{} > \xi_0} [w(\xi)]^2 e^{-\xi^2} d\xi$$Sustituyendo la acotación inferior estricta $w(\xi) \ge \frac{A}{2} e^{\xi^2}$:
+Criterio de Integrabilidad para la Norma en $L^2(\mathbb{R})$
 
-    $$\Vert{}\psi\Vert{}^2 \ge \int_{\vert{}\xi\vert{} > \xi_0} \left( \frac{A}{2} e^{\xi^2} \right)^2 e^{-\xi^2} d\xi$$
+Evaluemos la norma al cuadrado de $\psi(\xi)$ utilizando la regla de monotonía de la integral de Lebesgue sobre el dominio $(-\infty, -\xi_0] \cup [\xi_0, \infty
 
-    $$\Vert{}\psi\Vert{}^2 \ge \frac{A^2}{4} \int_{\vert{}\xi\vert{} > \xi_0} e^{2\xi^2} e^{-\xi^2} d\xi = \frac{A^2}{4} \int_{\vert{}\xi\vert{} > \xi_0} e^{+\xi^2} d\xi$$Dado que $e^{+\xi^2} \ge 1$ para todo $\xi$:$$\Vert{}\psi\Vert{}^2 \ge \frac{A^2}{4} \int_{\xi_0}^{\infty} 1 \, d\xi = +\infty$$
+Vert{}\psi\Vert{}^2 = \int_{-\infty}^{\infty} [w(\xi)]^2 e^{-\xi^2} d\xi \ge \int_{\vert{}\xi\vert{} > \xi_0} [w(\xi)]^2 e^{-\xi^2} d\xi$$
+
+Sustituyendo la acotación inferior estricta $w(\xi) \ge \frac{A}{2} e^{\xi^2}$:
+
+$$\Vert{}\psi\Vert{}^2 \ge \int_{\vert{}\xi\vert{} > \xi_0} \left( \frac{A}{2} e^{\xi^2} \right)^2 e^{-\xi^2} d\xi$$
+
+$$\Vert{}\psi\Vert{}^2 \ge \frac{A^2}{4} \int_{\vert{}\xi\vert{} > \xi_0} e^{2\xi^2} e^{-\xi^2} d\xi = \frac{A^2}{4} \int_{\vert{}\xi\vert{} > \xi_0} e^{+\xi^2} d\xi$$Dado que $e^{+\xi^2} \ge 1$ para todo $\xi$:$$\Vert{}\psi\Vert{}^2 \ge \frac{A^2}{4} \int_{\xi_0}^{\infty} 1 \, d\xi = +\infty$$
 
 ## Cuantización Inevitable de $(2\mathcal{E} - 1)$
 
