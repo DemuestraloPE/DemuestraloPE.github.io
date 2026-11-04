@@ -1,7 +1,7 @@
-# [Nombre del tema]
+# [Introducción a Teoría de Grupos]
 
 !!! info "Información del documento"
-    - **Área:** [Matemáticas o Física]
+    - **Área:** [Matemáticas]
     - **Autoría:** [Nombre]
     - **Última actualización:** [Fecha]
     - **Estado:** [Borrador / En revisión / Verificado]
