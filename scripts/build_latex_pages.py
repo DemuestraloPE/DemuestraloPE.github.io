@@ -72,15 +72,8 @@ def embed_block(markdown, output_html):
     return "\n".join(
         (
             START_MARKER,
-            '<div class="latex-class-embed">',
-            f'  <p><a href="{relative_url}" target="_blank" rel="noopener">',
-            "    Abrir la clase convertida a HTML en una pestaña nueva",
-            "  </a></p>",
-            f'  <iframe src="{relative_url}" title="{title}" loading="lazy"',
-            '    style="width:100%;height:85vh;min-height:40rem;border:1px solid '
-            'var(--md-default-fg-color--lightest);border-radius:.5rem">',
-            "  </iframe>",
-            "</div>",
+            f"[Consultar la versión HTML de «{title}» convertida desde LaTeX]"
+            f"({relative_url}){{ .md-button }}",
             END_MARKER,
         )
     )
