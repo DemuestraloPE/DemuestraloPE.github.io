@@ -209,20 +209,22 @@ Como el salto en los subíndices es de $k \to k+2$, la paridad queda **completam
 
 ---
 
-# Divergencia sin Truncamiento
+=== "2. Desarrollo estándar"
+    [Presenta el desarrollo habitual para un curso universitario.]
+
+=== "Divergencia sin Truncamiento"
+    [Explica la idea con palabras, ejemplos o diagramas.]
 
 Para que la función de onda $\psi(\xi) = w(\xi) e^{-\xi^2/2}$ represente un estado físico válido, debe pertenecer al espacio de Hilbert $L^2(\mathbb{R})$, lo que exige que su norma sea finita: $\|\psi\|^2 < \infty$. A continuación se demuestra que si la serie $w(\xi)$ no se trunca en un polinomio, esta integral diverge estrictamente a $+\infty$.
 
-## 1. Comportamiento Asintótico y Producto Telescópico de los Coeficientes
+### Comportamiento Asintótico de los Coeficientes
 
 Partimos de la relación de recurrencia exacta para la rama par (o impar):
 
 $$c_{2m+2} = \frac{4m - (2\mathcal{E} - 1)}{(2m+1)(2m+2)} c_{2m}$$
 
-**Paso 1.1: Estabilización del signo.**  
 Si la serie no se trunca, el numerador nunca es cero. Existe un entero $M \in \mathbb{N}$ suficientemente grande tal que para todo $m \ge M$, se cumple $4m - (2\mathcal{E} - 1) > 0$. Como el denominador siempre es positivo, a partir de $M$ todos los coeficientes mantienen el mismo signo. Asumiremos $c_{2M} > 0$.
 
-**Paso 1.2: Acotación del cociente.**  
 Analizamos el cociente de coeficientes para $m \ge M$:
 
 $$\frac{c_{2m+2}}{c_{2m}} = \frac{4m - (2\mathcal{E} - 1)}{4m^2 + 6m + 2}$$
@@ -231,7 +233,6 @@ Para $m$ grande, el término dominante en el numerador es $4m$ y en el denominad
 
 $$\frac{c_{2m+2}}{c_{2m}} \ge \frac{\gamma}{m+1}$$
 
-**Paso 1.3: Expansión por inducción (Detalle Omitido Frecuentemente).**  
 Para hallar el valor de un coeficiente avanzado $c_{2N}$ (con $N > K$), multiplicamos todos los cocientes intermedios desde $m = K$ hasta $N-1$. Esto forma un producto telescópico donde los términos intermedios se cancelan:
 
 $$\frac{c_{2N}}{c_{2K}} = \left( \frac{c_{2K+2}}{c_{2K}} \right) \left( \frac{c_{2K+4}}{c_{2K+2}} \right) \dots \left( \frac{c_{2N}}{c_{2N-2}} \right)$$
@@ -247,7 +248,7 @@ $$c_{2N} \ge A \frac{\gamma^N}{N!} \quad \text{para todo } N \ge K$$
 
 ---
 
-## 2. Acotación Inferior de la Función $w(\xi)$ frente al Polinomio
+### Acotación Inferior de la Función $w(\xi)$ frente al Polinomio
 
 Sabiendo que $c_{2m} \ge \frac{A}{m!}$, dividimos la función $w(\xi)$ en dos partes: el tramo finito inicial y la cola infinita.
 
@@ -275,7 +276,7 @@ $$w(\xi) \ge \frac{A}{2} e^{\xi^2}$$
 
 ---
 
-## 3. Criterio de Integrabilidad para la Norma en $L^2(\mathbb{R})$
+### Criterio de Integrabilidad para la Norma en $L^2(\mathbb{R})$
 
 Ahora evaluamos la condición física de normalización calculando la norma al cuadrado $\|\psi\|^2$.
 
@@ -355,14 +356,6 @@ El uso directo de $s = 0$ demuestra que no es estrictamente necesario separar $s
 ### Resultados principales
 
 [Enuncia los teoremas, leyes o relaciones importantes.]
-
-## Ejemplos y aplicaciones
-
-[Añade ejemplos resueltos y aplicaciones.]
-
-## Ejercicios
-
-1. [Enunciado del ejercicio]
 
 ## Referencias
 
