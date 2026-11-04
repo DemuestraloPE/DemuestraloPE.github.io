@@ -1,6 +1,7 @@
 site_name: DemuestraloPE
 site_description: Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.
 site_author: Comunidad DemuestraloPE
+use_directory_urls: true
 
 theme:
   name: material
@@ -63,12 +64,11 @@ extra_css:
 
 plugins:
   - search
-  - gen-files:
-      scripts:
-        - scripts/generate_indexes.py
-  - awesome-pages
 
-# Evita que la falta de un PDF detenga el despliegue
+exclude_docs: |
+  /clases_tex/**
+
+# Ignora referencias externas y vínculos que MkDocs no puede resolver localmente.
 validation:
   links:
     absolute_links: ignore

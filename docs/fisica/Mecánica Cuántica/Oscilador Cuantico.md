@@ -1,3 +1,8 @@
+---
+title: Oscilador Armónico Cuántico
+latex_source: "Clase_OsciladorArmonico1D/Clase_OsciladorArmonico1D.tex"
+---
+
 # Oscilador Armónico Cuántico
 
 !!! info "Información del documento"
@@ -11,7 +16,7 @@
 - [Añade aquí los conceptos previos y enlaza las páginas existentes.]
 
 ## Resumen
-Uno de los sistemas físicos de mayor interés teórico, el oscilador armónico, cuya energia potencial es $V=\frac{1}{2}m\omega^2 x^2$. Para simplificar el tratamiento nos restringimos al caso unidimensional, que carece de degeneración (el oscilador armónico en más de una dimensión es un problema degenerado que, para su tratamiento cabal, requiere en la teoría clásica de la teoría del momento angular, la que habremos de desarrollar mas adelante). 
+Uno de los sistemas físicos de mayor interés teórico, el oscilador armónico, cuya energia potencial es $V=\frac{1}{2}m\omega^2 x^2$. Para simplificar el tratamiento nos restringimos al caso unidimensional, que carece de degeneración (el oscilador armónico en más de una dimensión es un problema degenerado que, para su tratamiento cabal, requiere en la teoría clásica de la teoría del momento angular, la que habremos de desarrollar mas adelante).
 
 El oscilador armónico suministra importante información acerca de las vibraciones atómicas en las moléculas y los sólidos dado que aparece cuando potenciales más o menos complicados se aproximan en la región de un mínimo con curvas parabólicas. Por lo tanto, se trata esencialmente de la teoría de oscilaciones poco energéticas en torno a un mínimo de potencial, situación que se da con frecuencia con átomos, moléculas, etc. Además, el empleo frecuente del análisis de Fourier para estudiar sistemas complejos en términos de osciladores elementales hace del oscilador armónico uno de los problemas más importantes de la física teórica, sin considerar su interés metodológico debido al hecho de poseer solución exacta bajo la ecuación de schrodinger:
 $$ \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} \Psi + \frac{1}{2}m\omega^2 x^2 \Psi = E \Psi$$
@@ -22,7 +27,7 @@ Imagen hecha con **figurelabs**
 ??? Conceptos fundamentales
     A primera vista, la elección de un potencial proporcional a la posición al cuadrado, $V(x) = \frac{1}{2}m\omega^2 x^2$, evoca directamente al resorte clásico de la ley de Hooke. Sin embargo, su relevancia en física cuántica vamucho más allá de un simple resorte. En la naturaleza, cualquier sistema cuántico cerca de un punto de equilibrio estable (como los átomos vibrando dentro de una molécula o en una red cristalina) puede aproximarse mediante un potencial parabólico al truncar su expansión en serie de Taylor a segundo orden.
 
-Este modelo surge de preguntarse que pasa si la energía potencial es parabólica, y dense cuenta de lo interesante del asunto, dado que el operador energía cinética $\hat{T}=-(\hbar/2m)\nabla^2$ en mecánica clásica es estrictamente positivo 
+Este modelo surge de preguntarse que pasa si la energía potencial es parabólica, y dense cuenta de lo interesante del asunto, dado que el operador energía cinética $\hat{T}=-(\hbar/2m)\nabla^2$ en mecánica clásica es estrictamente positivo
 
 ---
 
@@ -107,7 +112,7 @@ $$
 \lim_{y \to \infty} \left[ \frac{d^2\psi(y)}{dy^2} + \frac{1}{2y} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2y} - \frac{1}{4} \right) \psi(y) \right] = 0 \implies \frac{d^2\psi(y)}{dy^2} - \frac{1}{4} \psi(y) = 0
 $$
 
-Esto sugiere una solución asintótica de la forma $\psi(y) = e^{-y/2} w(y)$ para valores grandes de $y$, recordando que $y = x^2 \geq 0$. Con esta propuesta, acoplamos dicho comportamiento asintótico a una función propuesta $w(y)$ que dictará el comportamiento de la solución en regiones cercanas al origen. 
+Esto sugiere una solución asintótica de la forma $\psi(y) = e^{-y/2} w(y)$ para valores grandes de $y$, recordando que $y = x^2 \geq 0$. Con esta propuesta, acoplamos dicho comportamiento asintótico a una función propuesta $w(y)$ que dictará el comportamiento de la solución en regiones cercanas al origen.
 
 Calculamos las derivadas de $\psi(y) = e^{-y/2} w(y)$:
 
@@ -266,9 +271,9 @@ Sustituyendo esto en la función original $w(\xi)$:
 
 $$w(\xi) \ge P(\xi) + A e^{\xi^2} - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}$$
 
-**El argumento de dominancia asintótica (Detalle Omitido):**  
-Agrupemos los términos polinómicos en un solo polinomio $Q(\xi) = P(\xi) - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}$. 
-Sabemos por el Teorema de L'Hôpital que la función exponencial $e^{\xi^2}$ crece asintóticamente mucho más rápido que *cualquier* polinomio finito $Q(\xi)$. Por tanto, el cociente $|Q(\xi)| / e^{\xi^2} \to 0$ cuando $\xi \to \infty$. 
+**El argumento de dominancia asintótica (Detalle Omitido):**
+Agrupemos los términos polinómicos en un solo polinomio $Q(\xi) = P(\xi) - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}$.
+Sabemos por el Teorema de L'Hôpital que la función exponencial $e^{\xi^2}$ crece asintóticamente mucho más rápido que *cualquier* polinomio finito $Q(\xi)$. Por tanto, el cociente $|Q(\xi)| / e^{\xi^2} \to 0$ cuando $\xi \to \infty$.
 
 Esto garantiza que existe un punto en el espacio $\xi_0 > 0$ a partir del cual el término $A e^{\xi^2}$ es tan inmensamente superior al polinomio $Q(\xi)$ que lo absorbe holgadamente, permitiéndonos asegurar que para todo $|\xi| > \xi_0$:
 
@@ -286,7 +291,7 @@ Dado que el integrando es estrictamente positivo, la integral sobre todo el domi
 
 $$\|\psi\|^2 \ge \int_{|\xi| > \xi_0} [w(\xi)]^2 e^{-\xi^2} d\xi$$
 
-**Sustitución de la cota inferior:**  
+**Sustitución de la cota inferior:**
 Reemplazamos $w(\xi)$ por la desigualdad estricta $\frac{A}{2} e^{\xi^2}$ que demostramos para esa región:
 
 $$\|\psi\|^2 \ge \int_{|\xi| > \xi_0} \left( \frac{A}{2} e^{\xi^2} \right)^2 e^{-\xi^2} d\xi$$
@@ -295,7 +300,7 @@ Elevamos al cuadrado y operamos los exponentes:
 
 $$\|\psi\|^2 \ge \frac{A^2}{4} \int_{|\xi| > \xi_0} e^{2\xi^2} e^{-\xi^2} d\xi = \frac{A^2}{4} \int_{|\xi| > \xi_0} e^{+\xi^2} d\xi$$
 
-**Conclusión del límite de divergencia:**  
+**Conclusión del límite de divergencia:**
 Para cualquier número real $\xi$, se cumple que $e^{+\xi^2} \ge 1$. Sustituyendo esto en la integral:
 
 $$\|\psi\|^2 \ge \frac{A^2}{4} \int_{|\xi| > \xi_0} 1 \, d\xi = \frac{A^2}{4} \times (\infty) = +\infty$$
@@ -328,17 +333,10 @@ $$\mathbf{E_n = \left(n + \frac{1}{2}\right)\hbar\omega \quad (n = 0, 1, 2, \dot
 
 El uso directo de $s = 0$ demuestra que no es estrictamente necesario separar $s = 1$ y $s = 0$ como dos casos independientes. La estructura del salto $k+2$ en la recurrencia de $s = 0$ separa naturalmente a la función $w(\xi)$ en sus componentes par e impar, y la exigencia física de normalizabilidad fuerza a que $2\mathcal{E}-1$ sea un entero par no negativo, cuantizando la energía de forma automática.
 
-## 📄 Visor de las Notas de Clase y Demostraciones
+## Versión HTML generada desde LaTeX
 
-<div style="width: 100%; height: 800px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-  <object
-    data="../../../assets/pdf/Clase_OsciladorArmonico1D.pdf#toolbar=1&navpanes=0&scrollbar=1"
-    type="application/pdf"
-    width="100%"
-    height="100%">
-    <p>Tu navegador no soporta la vista previa. <a href="../../../assets/pdf/Clase_OsciladorArmonico1D.pdf">Descargar PDF</a></p>
-  </object>
-</div>
+<!-- LATEXML:START -->
+<!-- LATEXML:END -->
 
 ---
 
@@ -360,9 +358,3 @@ El uso directo de $s = 0$ demuestra que no es estrictamente necesario separar $s
 ## Referencias
 
 - [Añade aquí libros, artículos o recursos consultados.]
-
-## 📥 Recursos de la Clase
-
-[📥 Descargar PDF de la Clase](../../../assets/pdf/Osc_Cuantico_1D.pdf){ .md-button .md-button--primary }
-
-[📦 Descargar Código Fuente TeX (.zip)](../../../clases_zip/Osc_Cuantico_1D.zip){ .md-button }

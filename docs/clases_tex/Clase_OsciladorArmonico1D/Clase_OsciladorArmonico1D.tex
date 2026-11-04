@@ -1,50 +1,201 @@
 \documentclass[12pt]{article}
-\usepackage{float}
-\usepackage[a4paper]{geometry}
-\geometry{top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm}
-\usepackage{graphicx,subfig} %LaTeX package to import graphics
-\graphicspath{{images/}} %configuring the graphicx package
-\usepackage{amsmath}
-\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[a4paper,margin=2.54cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+
+\title{Oscilador armónico cuántico unidimensional}
+\author{Campaña Vergara Jackson}
+\date{}
 
 \begin{document}
-\section*{Oscilador armonico cuántico:}
+\maketitle
 
-El Hamiltoniano del oscilador armónico en 1D es:
+\section{Resumen}
 
-$$\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2}m\omega^2 x^2 \right) \psi(x) = E \psi(x)$$
+El oscilador armónico cuántico describe una partícula sometida a un potencial
+parabólico. Es un modelo fundamental porque muchos sistemas físicos pueden
+aproximarse por un potencial parabólico cerca de un punto de equilibrio estable.
+Entre sus aplicaciones están las vibraciones moleculares y las vibraciones de
+átomos en sólidos.
 
-Reordenando para dejar la derivada de mayor orden limpia:
+En estas notas se obtiene la ecuación de Hermite, se explica por qué la energía
+está cuantizada y se presentan las funciones de onda normalizadas.
 
-$$\frac{d^2\psi(x)}{dx^2} - \frac{m^2\omega^2}{\hbar^2} x^2 \psi(x) + \frac{2mE}{\hbar^2} \psi(x) = 0$$
+\section{Modelo físico}
 
-Constantes físicas estándar con dimensiones apropiadas:
-$a^2 = \frac{m\omega}{\hbar} \implies a^4 = \frac{m^2\omega^2}{\hbar^2}$
-$k^2 = \frac{2mE}{\hbar^2}$
+La energía potencial de un oscilador armónico unidimensional es
+\[
+V(x)=\frac{1}{2}m\omega^2x^2,
+\]
+donde \(m\) es la masa y \(\omega\) la frecuencia angular. El Hamiltoniano es
+\[
+\hat{H}
+=-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}
++\frac{1}{2}m\omega^2x^2.
+\]
 
-$$\text{Ahora se tiene: } \mathbf{\frac{d^2\psi(x)}{dx^2} - a^4 x^2 \psi(x) + k^2 \psi(x) = 0}$$
+La ecuación de Schrödinger independiente del tiempo,
+\(\hat{H}\psi(x)=E\psi(x)\), queda
+\[
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}
++\frac{1}{2}m\omega^2x^2\psi
+=E\psi.
+\]
+El primer término es el operador de energía cinética. Aunque su expresión
+contiene una segunda derivada con signo negativo, su valor esperado es no
+negativo para funciones de onda normalizables que satisfacen las condiciones de
+frontera apropiadas.
 
-\subsubsection*{Cambio de Variable Hacia la Ecuación Confluente:}
+\section{Ecuación adimensional}
 
-$$\text{Aplicando } y = a^2 x^2 \Rightarrow \frac{dy}{dx}=2a^2x=2ay^{1/2} \Rightarrow \frac{df}{dx}=\frac{dy}{dx}\frac{df}{dy}=2ay^{1/2}\frac{df}{dy}$$
+Definimos la escala de longitud \(\alpha\), la coordenada adimensional \(\xi\)
+y la energía adimensional \(\varepsilon\):
+\[
+\alpha=\sqrt{\frac{m\omega}{\hbar}},
+\qquad
+\xi=\alpha x,
+\qquad
+\varepsilon=\frac{E}{\hbar\omega}.
+\]
+Por la regla de la cadena,
+\(\frac{d}{dx}=\alpha\frac{d}{d\xi}\) y
+\(\frac{d^2}{dx^2}=\alpha^2\frac{d^2}{d\xi^2}\). Al sustituir y dividir entre
+\(\hbar\omega\), obtenemos
+\[
+-\frac{1}{2}\frac{d^2\psi}{d\xi^2}
++\frac{1}{2}\xi^2\psi
+=\varepsilon\psi,
+\]
+o, equivalentemente,
+\begin{equation}
+\frac{d^2\psi}{d\xi^2}
++\left(2\varepsilon-\xi^2\right)\psi=0.
+\label{eq:dimensionless}
+\end{equation}
 
-$$\text{Ahora }\frac{d^2f}{dx^2} = 2ay^{1/2}\frac{d}{dy}(2ay^{1/2}\frac{df}{dy}) = 4a^2 y \frac{d^2f}{dy^2} + 2a^2 \frac{df}{dy}$$
-Sustituyendo en la ecuación diferencial
+\section{Comportamiento asintótico y ecuación de Hermite}
 
-$$\left( 4a^2 y \frac{d^2\psi}{dy^2} + 2a^2 \frac{d\psi}{dy} \right) - a^4 \left(\frac{y}{a^2}\right)\psi + k^2 \psi = 0$$
+Cuando \(|\xi|\) es grande, el término \(\xi^2\) domina. La solución que puede
+ser normalizable debe decaer como una gaussiana. Por ello escribimos
+\[
+\psi(\xi)=e^{-\xi^2/2}H(\xi),
+\]
+donde \(H(\xi)\) es una función por determinar. Sus derivadas son
+\[
+\frac{d\psi}{d\xi}
+=e^{-\xi^2/2}\left(H'-\xi H\right),
+\qquad
+\frac{d^2\psi}{d\xi^2}
+=e^{-\xi^2/2}\left(H''-2\xi H'+(\xi^2-1)H\right).
+\]
+Al sustituir estas expresiones en la ecuación
+\eqref{eq:dimensionless} y cancelar el factor común \(e^{-\xi^2/2}\), resulta
+\[
+H''-2\xi H'+(2\varepsilon-1)H=0.
+\]
 
-Dividiendo toda la ecuación entre $4a^2$
+Esta es la ecuación diferencial de Hermite cuando su solución es un polinomio.
+Para ver cuándo ocurre, desarrollamos \(H\) como una serie de potencias:
+\[
+H(\xi)=\sum_{j=0}^{\infty}c_j\xi^j.
+\]
+Al sustituirla en la ecuación, los coeficientes satisfacen la recurrencia
+\[
+c_{j+2}
+=\frac{2j-(2\varepsilon-1)}{(j+2)(j+1)}c_j.
+\]
+La serie termina y da una función normalizable cuando
+\(2\varepsilon-1=2n\), con \(n=0,1,2,\ldots\). Por tanto, los niveles de
+energía son
+\[
+E_n=\hbar\omega\left(n+\frac{1}{2}\right).
+\]
+El entero \(n\) es el número cuántico. La energía mínima no es cero:
+\(E_0=\frac{1}{2}\hbar\omega\), llamada energía de punto cero.
 
-$$y \frac{d^2\psi}{dy^2} + \frac{1}{2} \frac{d\psi}{dy} + \left( \frac{k^2}{4a^2} - \frac{y}{4} \right) \psi(y) = 0$$
+\section{Funciones de onda}
 
-Definimos el parámetro adimensional de energía
+Las soluciones normalizadas son
+\[
+\psi_n(x)
+=
+\left(\frac{\alpha}{\sqrt{\pi}\,2^n n!}\right)^{1/2}
+H_n(\alpha x)e^{-(\alpha x)^2/2},
+\qquad n=0,1,2,\ldots,
+\]
+donde \(H_n\) son los polinomios de Hermite de los físicos. Los primeros son
+\[
+H_0(\xi)=1,\qquad
+H_1(\xi)=2\xi,\qquad
+H_2(\xi)=4\xi^2-2.
+\]
+La paridad de \(\psi_n\) es \((-1)^n\): los estados con \(n\) par son pares y
+los estados con \(n\) impar son impares.
 
-$$\mathcal{E} \equiv \frac{k^2}{2a^2} = \frac{\frac{2mE}{\hbar^2}}{2\frac{m\omega}{\hbar}} = \mathbf{\frac{E}{\hbar\omega}}$$
+\section{Conexión con la ecuación de Kummer}
 
-Sustituyendo $\frac{k^2}{4a^2} = \frac{\mathcal{E}}{2}$, obtenemos la ecuación intermedia
+También se puede usar \(y=\xi^2\), pero esa sustitución por sí sola no
+distingue las soluciones pares e impares. Para conservar ambas familias,
+escribimos
+\[
+\psi(\xi)=e^{-y/2}\xi^s u(y),
+\qquad s\in\{0,1\},
+\]
+donde \(s=0\) corresponde a la paridad par y \(s=1\) a la impar. Al sustituir
+en la ecuación de Hermite se obtiene
+\[
+yu''+\left(s+\frac{1}{2}-y\right)u'
++\frac{2\varepsilon-1-2s}{4}u=0.
+\]
 
-$$\mathbf{y \frac{d^2\psi(y)}{dy^2} + \frac{1}{2} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) \psi(y) = 0}$$
+En la forma estándar de Kummer,
+\(yu''+(b-y)u'-a_Ku=0\), los parámetros son
+\[
+b=s+\frac{1}{2},
+\qquad
+a_K=\frac{2s+1-2\varepsilon}{4}.
+\]
+La serie termina cuando \(a_K=-r\), con \(r=0,1,2,\ldots\). Entonces
+\[
+\varepsilon=2r+s+\frac{1}{2},
+\]
+que recupera todos los niveles \(n=2r+s\). Considerar solo \(y=\xi^2\) sin el
+factor \(\xi^s\) deja fuera los estados impares.
 
-Comportamiento Asintótico $e^{-y/2}$ (Ecuación de Kummer)Para grandes valores de $y \to \infty$, la ecuación dominante es $\psi'' - \frac{1}{4}\psi \approx 0$, sugiriendo una solución de la forma $\psi(y) = e^{-y/2} w(y)$.Sustituyendo $\psi(y) = e^{-y/2} w(y)$ y sus derivadas:$\psi' = e^{-y/2} \left( w' - \frac{1}{2}w \right)$$\psi'' = e^{-y/2} \left( w'' - w' + \frac{1}{4}w \right)$Sustituyendo estas derivadas en la ecuación anterior y cancelando el factor común $e^{-y/2}$:$$y \left( w'' - w' + \frac{1}{4}w \right) + \frac{1}{2} \left( w' - \frac{1}{2}w \right) + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) w = 0$$Desarrollando los términos:$$y w'' - y w' + \frac{y}{4}w + \frac{1}{2} w' - \frac{1}{4}w + \frac{\mathcal{E}}{2}w - \frac{y}{4}w = 0$$Cancelando los términos $\frac{y}{4}w$ y $-\frac{y}{4}w$:$$y w'' + \left(\frac{1}{2} - y\right) w' - \left( \frac{1}{4} - \frac{\mathcal{E}}{2} \right) w = 0$$Llegamos exactamente a la Ecuación Hipergeométrica Confluente (de Kummer):$$\mathbf{y \frac{d^2 w(y)}{dy^2} + (b - y) \frac{dw(y)}{dy} - a \, w(y) = 0}$$donde los parámetros corresponden a:$b = \frac{1}{2}$$a = \frac{1}{4} - \frac{\mathcal{E}}{2} = \mathbf{\frac{1}{4} - \frac{E}{2\hbar\omega}}$Paso 4: Transformación a la Variable Espacial $\xi = ax = \sqrt{y}$ (Ecuación de Hermite)Si en lugar de $y$ usamos la coordenada espacial adimensional $\xi = ax = \sqrt{\frac{m\omega}{\hbar}} x$, se extrae la envolvente gaussiana $\psi(\xi) = e^{-\xi^2/2} H(\xi)$.Calculando las derivadas de $\psi(\xi) = e^{-\xi^2/2} H(\xi)$ respecto a $\xi$:$\frac{d\psi}{d\xi} = e^{-\xi^2/2} \left( \frac{dH}{d\xi} - \xi H \right)$$\frac{d^2\psi}{d\xi^2} = e^{-\xi^2/2} \left( \frac{d^2H}{d\xi^2} - 2\xi \frac{dH}{d\xi} + (\xi^2 - 1) H \right)$Expresando la ecuación de Schrödinger en la variable $\xi$ ($x^2 = \frac{\xi^2}{a^2}$ y $k^2/a^2 = 2\mathcal{E}$):$$\frac{d^2\psi}{d\xi^2} - \xi^2 \psi + 2\mathcal{E} \psi = 0$$Sustituyendo $\psi(\xi)$ y sus derivadas, y cancelando $e^{-\xi^2/2}$:$$\left( \frac{d^2H}{d\xi^2} - 2\xi \frac{dH}{d\xi} + (\xi^2 - 1) H \right) - \xi^2 H + 2\mathcal{E} H = 0$$Cancelando $\xi^2 H$ y $-\xi^2 H$:$$\mathbf{\frac{d^2 H(\xi)}{d\xi^2} - 2\xi \frac{dH(\xi)}{d\xi} + (2\mathcal{E} - 1) H(\xi) = 0}$$
+\section{Ejemplos de los primeros estados}
+
+\[
+\begin{array}{c|c|c}
+n & E_n & H_n(\xi) \\ \hline
+0 & \frac{1}{2}\hbar\omega & 1 \\
+1 & \frac{3}{2}\hbar\omega & 2\xi \\
+2 & \frac{5}{2}\hbar\omega & 4\xi^2-2
+\end{array}
+\]
+
+\section{Preguntas para comprobar la comprensión}
+
+\begin{itemize}
+  \item ¿Por qué se introduce una coordenada adimensional?
+  \item ¿Qué comportamiento de la función de onda se descarta al exigir
+        normalización?
+  \item ¿Por qué una sustitución que depende de \(\xi^2\) requiere tratar por
+        separado la paridad?
+  \item ¿Cómo se relacionan \(n\), \(r\) y \(s\) en la solución de Kummer?
+\end{itemize}
+
+\section{Referencias}
+
+\begin{itemize}
+  \item Griffiths, D. J. y Schroeter, D. F.
+        \emph{Introduction to Quantum Mechanics}, 3.\textsuperscript{a} ed.,
+        capítulo 2.
+  \item Cohen-Tannoudji, C., Diu, B. y Laloë.
+        \emph{Quantum Mechanics}, volumen I, capítulo sobre el oscilador
+        armónico.
+\end{itemize}
 
 \end{document}

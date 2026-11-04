@@ -5,12 +5,16 @@ on:
     branches:
       - main
       - master
+  pull_request:
+    branches:
+      - main
+      - master
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,67 +32,53 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 1. Crear directorios base necesarios
-      - run: |
-          mkdir -p docs/clases_tex
-          mkdir -p docs/assets/pdf
-
-      # 2. Compilar carpetas de LaTeX a PDF respetando imágenes y assets locales
-      - name: Compilar carpetas de LaTeX a PDF
+      - name: Instalar LaTeXML
         run: |
-          for folder in docs/clases_tex/*/; do
-            if [ -d "$folder" ]; then
-              folder_name=$(basename "$folder")
-              echo "=== Procesando clase: $folder_name ==="
-              
-              # Buscar main.tex o el primer .tex dentro de la carpeta
-              tex_file=$(find "$folder" -maxdepth 2 -type f -name "main.tex" | head -n 1)
-              if [ -z "$tex_file" ]; then
-                tex_file=$(find "$folder" -maxdepth 2 -type f -name "*.tex" | head -n 1)
-              fi
-              
-              if [ -n "$tex_file" ]; then
-                tex_filename=$(basename "$tex_file")
-                echo "Compilando $tex_filename dentro de $folder..."
-                
-                # Ejecutar latexmk desde dentro de la carpeta del tema para que detecte imágenes locales
-                docker run --rm -v "$(pwd):/github/workspace" -w "/github/workspace/$folder" ghcr.io/xu-cheng/texlive-full:latest \
-                  latexmk -pdf -interaction=nonstopmode -output-directory=../../assets/pdf "$tex_filename"
-                
-                # Renombrar el PDF resultante para que coincida con el nombre de la carpeta
-                raw_pdf="docs/assets/pdf/${tex_filename%.tex}.pdf"
-                target_pdf="docs/assets/pdf/${folder_name}.pdf"
-                
-                if [ -f "$raw_pdf" ] && [ "$raw_pdf" != "$target_pdf" ]; then
-                  mv "$raw_pdf" "$target_pdf"
-                fi
-                
-                echo "PDF listo: docs/assets/pdf/${folder_name}.pdf"
-              fi
-            fi
-          done
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends --yes latexml
 
-      # 3. Lista de verificación de PDFs generados
-      - name: Verificar PDFs generados
+      - name: Convertir clases LaTeX enlazadas desde Markdown
+        run: python scripts/build_latex_pages.py
+
+      - name: Instalar dependencias de MkDocs
+        run: pip install mkdocs-material
+
+      - name: Validar el sitio
+        run: mkdocs build
+
+      - name: Guardar el sitio compilado
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitio-compilado
+          path: site/
+          retention-days: 30
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Descargar el sitio compilado
+        uses: actions/download-artifact@v4
+        with:
+          name: sitio-compilado
+          path: site/
+
+      - name: Instalar ghp-import
+        run: pip install ghp-import
+
+      - name: Configurar Git Bot
         run: |
-          echo "=== PDFs disponibles en assets/pdf/ ==="
-          ls -la docs/assets/pdf/
-
-      # 4. Instalar dependencias para MkDocs
-      - run: pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-gen-files
-
-      # 5. Configurar Git Bot
-      - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 6. Desplegar sitio en GitHub Pages
-      - run: mkdocs gh-deploy --force
-
-      # 7. Crear copia de respaldo descargable (Artefacto)
-      - name: Crear Respaldo de Artefacto
-        uses: actions/upload-artifact@v4
-        with:
-          name: respaldo-sitio-y-pdfs
-          path: site/
-          retention-days: 30
+      - name: Publicar GitHub Pages
+        run: ghp-import --nojekyll --push --force --branch gh-pages site
