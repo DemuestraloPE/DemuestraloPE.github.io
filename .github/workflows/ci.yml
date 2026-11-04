@@ -81,4 +81,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Publicar GitHub Pages
-        run: ghp-import --nojekyll --push --force --branch gh-pages site
+        run: ghp-import -n --push --force --branch gh-pages site
