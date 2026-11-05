@@ -1,9 +1,10 @@
 ---
 title: Oscilador Armónico Cuántico
-latex_source: "Clase_OsciladorArmonico1D/Clase_OsciladorArmonico1D.tex"
 ---
 
 # Oscilador Armónico Cuántico
+
+[Descargar la clase en PDF](../../assets/pdf/Clase_OsciladorArmonico1D.pdf){ .md-button }
 
 !!! info "Información del documento"
     - **Área:** Física, Mecánica Cuantica
@@ -24,10 +25,14 @@ $$ \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} \Psi + \frac{1}{2}m\omega^2 x^2 \Psi = E
 ![Aplicación del Oscilador Cuántico en un Potencial Irregular](../../assets/images/Class_OsciCuantico_PotMin.png)
 Imagen hecha con **figurelabs**
 
-??? Conceptos fundamentales
-    A primera vista, la elección de un potencial proporcional a la posición al cuadrado, $V(x) = \frac{1}{2}m\omega^2 x^2$, evoca directamente al resorte clásico de la ley de Hooke. Sin embargo, su relevancia en física cuántica vamucho más allá de un simple resorte. En la naturaleza, cualquier sistema cuántico cerca de un punto de equilibrio estable (como los átomos vibrando dentro de una molécula o en una red cristalina) puede aproximarse mediante un potencial parabólico al truncar su expansión en serie de Taylor a segundo orden.
+??? note "Conceptos fundamentales"
+    A primera vista, la elección de un potencial proporcional a la posición al cuadrado, \(V(x) = \frac{1}{2}m\omega^2 x^2\), evoca directamente al resorte clásico de la ley de Hooke. Sin embargo, su relevancia en física cuántica va mucho más allá de un simple resorte. En la naturaleza, cualquier sistema cuántico cerca de un punto de equilibrio estable (como los átomos vibrando dentro de una molécula o en una red cristalina) puede aproximarse mediante un potencial parabólico al truncar su expansión en serie de Taylor a segundo orden.
 
-Este modelo surge de preguntarse que pasa si la energía potencial es parabólica, y dense cuenta de lo interesante del asunto, dado que el operador energía cinética $\hat{T}=-(\hbar/2m)\nabla^2$ en mecánica clásica es estrictamente positivo
+    Este modelo surge de preguntar qué ocurre si la energía potencial es parabólica. El operador de energía cinética cuántica es
+    \[
+    \hat{T}=-\frac{\hbar^2}{2m}\nabla^2,
+    \]
+    cuyo valor esperado es no negativo para funciones de onda normalizables que satisfacen las condiciones de frontera apropiadas.
 
 ---
 
@@ -37,7 +42,7 @@ Ecuación de Schrodinger: $\frac{-\hbar^2}{2m} \nabla^2 \Psi + V(\vec{r}) \Psi =
 
 ---
 
-# Solución del Oscilador Armónico Cuántico
+## Solución del Oscilador Armónico Cuántico
 
 El Hamiltoniano del oscilador armónico en una dimensión (1D) está dado por:
 
@@ -332,13 +337,6 @@ $$\mathbf{E_n = \left(n + \frac{1}{2}\right)\hbar\omega \quad (n = 0, 1, 2, \dot
 ## Conclusión
 
 El uso directo de $s = 0$ demuestra que no es estrictamente necesario separar $s = 1$ y $s = 0$ como dos casos independientes. La estructura del salto $k+2$ en la recurrencia de $s = 0$ separa naturalmente a la función $w(\xi)$ en sus componentes par e impar, y la exigencia física de normalizabilidad fuerza a que $2\mathcal{E}-1$ sea un entero par no negativo, cuantizando la energía de forma automática.
-
-## Versión HTML generada desde LaTeX
-
-<!-- LATEXML:START -->
-<!-- LATEXML:END -->
-
----
 
 ## Desarrollo en tres niveles de rigor
 

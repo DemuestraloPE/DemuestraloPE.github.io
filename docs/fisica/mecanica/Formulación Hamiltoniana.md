@@ -71,16 +71,22 @@ Ahora los $\lambda$ son conocidos y las variaciones de las coordenadas sobrantes
 
 $$
 \begin{gathered}
-\frac{\partial L}{\partial q_{j}}-\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}_{j}}\right)+\sum_{k} \lambda_{k} C_{k j}=0 \\
-
-## Referencias Bibliograficas
-
-- Mecánica Analítica - (Gantmajer)
-
-- Cálculo Variacional - M. Krasnov.
-
-- Mecánica Analítica - H. Goldstein
-\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}_{j}}\right)-\frac{\partial L}{\partial q_{j}}=Q_{j}^{n c}
+\frac{\partial L}{\partial q_j}
+-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q_j}\right)
++\sum_k\lambda_k C_{kj}=0
 \end{gathered}
 $$
 
+Para coordenadas sujetas a fuerzas no conservativas, las ecuaciones de
+Euler-Lagrange se escriben
+
+$$
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q_j}\right)
+-\frac{\partial L}{\partial q_j}=Q_j^{\mathrm{nc}}.
+$$
+
+## Referencias bibliográficas
+
+- Gantmajer, *Mecánica analítica*.
+- M. Krasnov, *Cálculo variacional*.
+- H. Goldstein, *Mecánica clásica*.
