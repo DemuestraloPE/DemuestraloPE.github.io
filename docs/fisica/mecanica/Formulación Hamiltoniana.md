@@ -2,14 +2,10 @@
 
 Espacio real hace referencia al uso de las coordenadas comunes y corrientes, distinguen las tres dimensiones espaciales las cuales estamos acostumbrados y describimos el sistema bajo dichas coordenadas.
 Espacio de configuración es el formado por las k coordenadas generalizadas, lo cual formaría un hiper-espacio de k dimensiones, con lo cual se podría describir el movimiento de dicho sistema bajo una sola trayectoria en este nuevo espacio. El propósito de esto es describir el movimiento del sistema bajo una sola trayectoria, una sola curva. Y asi definir el funcional acción.
-![](./images/57fcf198-dd34-44d0-8551-8e6704814d97-1_1340_771_1039_1029.jpg)
+
+![ForHamilto1](../../assets/images/MecanicaClasica/ForHamilto1.png)
 
 Condensamos todas las coordenadas generlizadas independientes y a cada una se le asigna una recta numerica, ose una dimension en este hiper-espacio
-
-Fuentes bibliograficas: Diapositiva del docente.
-Mecánica Analítica - (Gantmajer)
-Cálculo Variacional - M. Krasnov.
-Mecánica Analítica - H. Goldstein
 
 ## SEMANA 02: FORMULACIÓN HAMILTONIANA
 
@@ -60,7 +56,9 @@ q(t, \alpha) & =q(t, 0)+\alpha \eta(t) \\
 $$
 
 Donde $\eta$ es una función cualquiera que sea continua y diferenciable. Y a es un parametro arbitrario.
-![](./images/57fcf198-dd34-44d0-8551-8e6704814d97-1_455_697_913_3053.jpg)
+
+![ForHamilto2](../../assets/images/MecanicaClasica/ForHamilto2.png)
+
 De forma análoga a buscar un punto critico de una función, el principio de Hamilton trata de buscar un punto critico del funcional, osea que sea estacionario De ello que la acción que realizara el sistema tiene que ser tal que...
 
 $$
@@ -74,6 +72,14 @@ Ahora los $\lambda$ son conocidos y las variaciones de las coordenadas sobrantes
 $$
 \begin{gathered}
 \frac{\partial L}{\partial q_{j}}-\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}_{j}}\right)+\sum_{k} \lambda_{k} C_{k j}=0 \\
+
+## Referencias Bibliograficas
+
+- Mecánica Analítica - (Gantmajer)
+
+- Cálculo Variacional - M. Krasnov.
+
+- Mecánica Analítica - H. Goldstein
 \frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}_{j}}\right)-\frac{\partial L}{\partial q_{j}}=Q_{j}^{n c}
 \end{gathered}
 $$
