@@ -2,6 +2,8 @@
 ![Banner DemuestraloPE](assets/images/Gemini_Generated_LOGO.jpg)
 *Enciclopedia abierta de demostraciones, teoremas y notas de clase.*
 
+<div id="web-tip-box"></div>
+
 ---
 
 ## 🎯 Visión del Proyecto

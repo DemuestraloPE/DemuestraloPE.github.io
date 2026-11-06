@@ -167,8 +167,46 @@ function renderRandomQuote() {
     }
   ];
 
+  const consejosSitio = [
+    {
+      titulo: "Encuentra un tema",
+      texto: "Usa la lupa para buscar conceptos o abre Matemáticas y Física en el menú superior para explorar sus cursos."
+    },
+    {
+      titulo: "Lee una demostración a tu ritmo",
+      texto: "Las cajas plegables se abren al pulsar su título. Si una caja está cerrada, intenta resolver el paso antes de mostrar la pista."
+    },
+    {
+      titulo: "Explora distintas explicaciones",
+      texto: "Las pestañas agrupan enfoques alternativos, como intuición, desarrollo estándar y fundamentación rigurosa."
+    },
+    {
+      titulo: "Mira las ecuaciones con claridad",
+      texto: "Las fórmulas en línea y las ecuaciones en bloque se muestran si usan sus delimitadores matemáticos correspondientes."
+    },
+    {
+      titulo: "Comprueba de dónde viene una idea",
+      texto: "Revisa las referencias al final de cada clase; cuando estudies un resultado, anota también el libro y las páginas."
+    },
+    {
+      titulo: "Usa las cajas interactivas",
+      texto: "Las páginas pueden incluir pistas, soluciones, imágenes, tablas y ejercicios dentro de secciones plegables."
+    }
+  ];
+
   // 📌 1. SELECCIÓN ALEATORIA
   const item = contenidoAleatorio[Math.floor(Math.random() * contenidoAleatorio.length)];
+
+  const contenedorConsejo = document.getElementById("web-tip-box");
+  if (contenedorConsejo) {
+    const consejo = consejosSitio[Math.floor(Math.random() * consejosSitio.length)];
+    contenedorConsejo.innerHTML = `
+      <div class="admonition tip">
+        <p class="admonition-title">💡 Consejo para usar el sitio: ${consejo.titulo}</p>
+        <p>${consejo.texto}</p>
+      </div>
+    `;
+  }
 
   // 2. Inyectar en la Barra Lateral Derecha (Sidebar)
   const contenedorSidebar = document.querySelector(

@@ -32,16 +32,11 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      - name: Instalar LaTeXML
-        run: |
-          sudo apt-get update
-          sudo apt-get install --no-install-recommends --yes latexml
-
-      - name: Convertir clases LaTeX enlazadas desde Markdown
-        run: python scripts/build_latex_pages.py
-
       - name: Instalar dependencias de MkDocs
         run: pip install mkdocs-material
+
+      - name: Actualizar índices de áreas
+        run: python scripts/update_area_indexes.py
 
       - name: Validar el sitio
         run: mkdocs build
