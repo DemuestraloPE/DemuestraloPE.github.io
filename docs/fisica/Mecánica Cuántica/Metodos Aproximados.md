@@ -1,24 +1,24 @@
-# Métodos aproximados en la MC.
+# Métodos aproximados (no Degenerado)
 
-$$\rightarrow \hat{H} = \hat{H}_0 + \hat{H}^1$$
+$$\rightarrow \hat{H} = \hat{H}_0 + \hat{H}'$$
 
-$$\langle \text{Conocido} \,|\, \hat{H}_0 \,|\, \text{Conocido} \rangle \quad \Rightarrow \quad \hat{H}_0 |n\rangle = E_n |n\rangle$$
+$$\langle \text{Conocido} \,|\, \hat{H}_0 \,|\, \text{Conocido} \rangle \quad \Rightarrow \quad \hat{H}_0 |n^{(0)}\rangle = E_n^{(0)} |n^{(0)}\rangle$$
 
-$$\rightarrow \hat{H}_0 \supset \hat{H}^1 \quad \rightarrow \quad \hat{H}^1 |n\rangle = E_n^1 |n\rangle$$
+$$\rightarrow \hat{H}_0 \gg \hat{H}' \quad \rightarrow \quad \hat{H}' |n^{(0)}\rangle = E_n^{(1)} |n^{(0)}\rangle$$
 
-Las soluciones de $\hat{H}$ pueden ser expresados por los de $\hat{H}_0$, pero serán una aproximación y serán tomados con diferentes grados de precisión.
+Las soluciones de $\hat{H}$ pueden ser expresadas por las de $\hat{H}_0$, pero serán una aproximación y serán tomadas con diferentes grados de precisión.
 
 → Se puede tomar como $\hat{H}_0$ estado inicial
 
-→ $\hat{H}^1$ pequeña perturbación a $\hat{H}_0$, recordando que $\hat{H}$ es el objetivo en realidad
+→ $\hat{H}'$ pequeña perturbación a $\hat{H}_0$, recordando que $\hat{H}$ es el objetivo en realidad
 
 *(→ Hamiltoniano conocido)*
 
-$$\rightarrow \hat{H}(\lambda) = \hat{H}_0 + \lambda \hat{H}^1 \,, \quad 0 \leq \lambda \leq 1$$
+$$\rightarrow \hat{H}(\lambda) = \hat{H}_0 + \lambda \hat{H}' \,, \quad 0 \leq \lambda \leq 1$$
 
 Cambio de parámetro continuo con $\lambda$ desde $\hat{H}_0$ hasta donde buscamos $\hat{H}$, asimismo sus valores y vectores propios van variando de igual forma entre el sistema conocido ($\hat{H}_0$) y el deseado $\hat{H}$.
 
-$$\lim_{\lambda \to 0} \left( E_n(\lambda) \right) = \left( E_n(0) \right)$$
+$$\lim_{\lambda \to 0} E_n(\lambda) = E_n^{(0)}$$
 
 Con ello podemos plantear una expansión en series de potencias.
 
@@ -32,9 +32,9 @@ $$\Rightarrow \quad E_n(1) = E_n = \sum_{q=0}^{\infty} E_n^{(q)} \qquad , \qquad
 
 **Reales**
 
-- $\leadsto$ $|n^{(q)}\rangle$ pueden ser representados en la base de los $|n_0\rangle$ por ser una base completa
+- $\leadsto$ $|n^{(q)}\rangle$ pueden ser representados en la base de los $|m^{(0)}\rangle$ por ser una base completa
 
-$$\leadsto \quad |n^{(q)}\rangle = \sum_{m} C_{mn}^{(q)}\,|m_0\rangle \quad \Rightarrow \quad C_{mn}^{(q)} = \langle m_0 | n^{(q)}\rangle$$
+$$\leadsto \quad |n^{(q)}\rangle = \sum_{m} c_{mn}^{(q)}\,|m^{(0)}\rangle \quad \Rightarrow \quad c_{mn}^{(q)} = \langle m^{(0)} | n^{(q)}\rangle$$
 
 Reemplazando en $\hat{H}(\lambda)\,|n(\lambda)\rangle = E_n(\lambda)\,|n(\lambda)\rangle$ :
 
@@ -47,89 +47,82 @@ $$\underbrace{\sum_{q=0}^{\infty} \lambda^q\, \hat{H}_0\,|n^{(q)}\rangle}_{q \to
 $$\leadsto\ q \to N-i,\ i>0 \ \Rightarrow\ N \geq i \qquad \leadsto\ 0 \ \text{si}\ i > N$$
 
 $$\sum_{q=0}^{N} \lambda^q\left[\hat{H}_0\,|n^{(q)}\rangle + \hat{H}'\,|n^{(q-1)}\rangle - \sum_{i=0}^{N} E_n^{(i)}\,|n^{(q-i)}\rangle\right] = 0 \qquad 
+(|n^{(-1)}\rangle = 0)$$
 
-$$|n^{(1)}\rangle = 0$$
-
-$$q: \{0, 1, 2, \dots, \infty\} \qquad r: \{0, 1, 2, \dots, \infty\}$$
+$$q: \{0, 1, 2, \dots, \infty\} \qquad i: \{0, 1, 2, \dots, \infty\}$$
 
 ---
 
-**N=0** $\Rightarrow \hat{H}_0|n^{(0)}\rangle + \hat{H}^{(1)}|n^{(0)}\rangle - E_n^{(0)}|n^{(0)}\rangle = 0$
+**N=0** $\Rightarrow \hat{H}_0|n^{(0)}\rangle + \hat{H}'|n^{(-1)}\rangle - E_n^{(0)}|n^{(0)}\rangle = 0$
 
 $$\Rightarrow \hat{H}_0|n^{(0)}\rangle = E_n^{(0)}|n^{(0)}\rangle$$
 
-**N=1** $\Rightarrow \hat{H}_0|n^{(1)}\rangle + \hat{H}^{(1)}|n^{(0)}\rangle - E_n^{(0)}|n^{(1)}\rangle - E_n^{(1)}|n^{(0)}\rangle = 0$
+**N=1** $\Rightarrow \hat{H}_0|n^{(1)}\rangle + \hat{H}'|n^{(0)}\rangle - E_n^{(0)}|n^{(1)}\rangle - E_n^{(1)}|n^{(0)}\rangle = 0$
 
-$$\left(\hat{H}_0 - E_n^{(0)}\right)|n^{(1)}\rangle + \left(\hat{H}^{(1)} - E_n^{(1)}\right)|n^{(0)}\rangle = 0$$
+$$\left(\hat{H}_0 - E_n^{(0)}\right)|n^{(1)}\rangle + \left(\hat{H}' - E_n^{(1)}\right)|n^{(0)}\rangle = 0$$
 
-**N=2** $\Rightarrow \hat{H}_0|n^{(2)}\rangle + \hat{H}^{(1)}|n^{(1)}\rangle - \left(E_n^{(0)}|n^{(2)}\rangle + E_n^{(1)}|n^{(1)}\rangle + E_n^{(2)}|n^{(0)}\rangle\right) = 0$
+**N=2** $\Rightarrow \hat{H}_0|n^{(2)}\rangle + \hat{H}'|n^{(1)}\rangle - \left(E_n^{(0)}|n^{(2)}\rangle + E_n^{(1)}|n^{(1)}\rangle + E_n^{(2)}|n^{(0)}\rangle\right) = 0$
 
-$$\left(\hat{H}_0 - E_n^{(0)}\right)|n^{(2)}\rangle + \left(\hat{H}^{(1)} - E_n^{(1)}\right)|n^{(1)}\rangle - E_n^{(2)}|n^{(0)}\rangle = 0$$
+$$\left(\hat{H}_0 - E_n^{(0)}\right)|n^{(2)}\rangle + \left(\hat{H}' - E_n^{(1)}\right)|n^{(1)}\rangle - E_n^{(2)}|n^{(0)}\rangle = 0$$
 
 ---
 
 **Perturbaciones de niveles sin degeneración.**
 
-Si no hay degeneración $\Rightarrow \hat{H}_0|m_0\rangle = E_{n0}|m_0\rangle$ ✓
+Si no hay degeneración $\Rightarrow \hat{H}_0|m^{(0)}\rangle = E_m^{(0)}|m^{(0)}\rangle$ ✓
 
-$$q = 1 \Rightarrow \left[\hat{H}_0 - E_n\right]|n^{(1)}\rangle + \left[\hat{H}^{(1)} - E_n^{(1)}\right]|n_0\rangle = 0$$
+$$q = 1 \Rightarrow \left[\hat{H}_0 - E_n^{(0)}\right]|n^{(1)}\rangle + \left[\hat{H}' - E_n^{(1)}\right]|n^{(0)}\rangle = 0$$
 
 - Ec. No homogénea para $|n^{(1)}\rangle$
 
-$$\Rightarrow \left[\hat{H}_0 - E_n\right]\underbrace{|n^{(1)}\rangle}_{\sum_m C_{mn}^{(1)}|m_0\rangle} = |A\rangle = \sum_m A_{mn}|m_0\rangle$$
+$$\Rightarrow \left[\hat{H}_0 - E_n^{(0)}\right]\underbrace{|n^{(1)}\rangle}_{\sum_m c_{mn}^{(1)}|m^{(0)}\rangle} = |A\rangle = \sum_m A_m|m^{(0)}\rangle$$
 
-$$\Rightarrow \sum_{m \neq 0} \left\{ \left[\hat{H}_0 - E_n\right] C_{mn}^{(1)} - A_m \right\}|m_0\rangle = 0$$
+$$\Rightarrow \sum_{m} \left\{ c_{mn}^{(1)} \left[\hat{H}_0 - E_n^{(0)}\right] - A_m \right\}|m^{(0)}\rangle = 0$$
 
-$$\Rightarrow \sum_m \left\{ C_{mn}^{(1)}\left(E_m - E_n\right) - A_m \right\}|m_0\rangle = 0$$
+$$\Rightarrow \sum_m \left\{ c_{mn}^{(1)}\left(E_m^{(0)} - E_n^{(0)}\right) - A_m \right\}|m^{(0)}\rangle = 0$$
 
-$$-\sum_{m'}\left[\,C^{(1)}_{m'm}\,(E_{m'}-E_n)-A_{m'}\,\right]\langle m'_0\,|\,m_0\rangle = 0$$
+$$\Rightarrow\; c_{m'n}^{(1)}\,(E_{m'}^{(0)}-E_n^{(0)})-A_{m'} = 0$$
 
-$$\Rightarrow\; C^{(1)}_{m'm}\,(E_{m'}-E_n)-A_{m'} = 0$$
+Si $m'=n \;\Rightarrow\; A_n = 0$
 
-Si $m'=n \;\Rightarrow\; A_{m'} = 0$
+$$\Rightarrow\; |n^{(1)}\rangle = \sum_{m'\neq n} c_{m'n}^{(1)}\,|m'^{(0)}\rangle = \sum_{m'\neq n} \langle m'^{(0)}|n^{(1)}\rangle\,|m'^{(0)}\rangle$$
 
-$$\Rightarrow\; |\,n^{(1)}\rangle = \sum_{m'\neq n} C^{(1)}_{m'n}\,|\,m_0\rangle = \sum_{m'\neq n} \langle m'_0\,|\,n^{(1)}\rangle\,|\,m_0\rangle$$
+Proyectando con $\langle m'^{(0)}|$ en la ecuación de orden 1:
 
-Si $\langle m'_0|\hat{H}'|n_0\rangle = \left(\langle n_0|\hat{H}'|m'_0\rangle\right)^{\dagger} = \left(E_n\langle n_0|m'_0\rangle\right)^{\dagger} = \langle m'_0|E_n$
+$$\Rightarrow\; \langle m'^{(0)}|\left(\hat{H}_0 - E_n^{(0)}\right)|n^{(1)}\rangle + \langle m'^{(0)}|\left(\hat{H}' - E_n^{(1)}\right)|n^{(0)}\rangle = 0$$
 
-$$\Rightarrow\; \langle m'_0\,|\,\text{(e.c. } n=n\text{)}\rangle = \sum \,(E_{m'}+E_n)\,\langle m'_0\,|\,n^{(1)}\rangle + \langle m'_0\,|\,\hat{H}'\,|\,n_0\rangle$$
+$$\Rightarrow\; (E_{m'}^{(0)}-E_n^{(0)})\,c_{m'n}^{(1)} + \langle m'^{(0)}|\hat{H}'|n^{(0)}\rangle - E_n^{(1)}\langle m'^{(0)}|n^{(0)}\rangle = 0$$
 
-$$-\;E_n^{(1)}\,\langle m'_0\,|\,n_0\rangle = 0$$
+Si $m'=n \;\Rightarrow\; \langle n^{(0)}|\hat{H}'|n^{(0)}\rangle = E_n^{(1)}$
 
-$$\Rightarrow\; (E_{m'}-E_n)\,C^{(1)}_{m'n} + \langle m'_0\,|\,\hat{H}'\,|\,n_0\rangle - E_n^{(1)}\,\langle m'_0\,|\,n_0\rangle = 0$$
+Si $m'\neq n \;\Rightarrow\; (E_{m'}^{(0)}-E_n^{(0)})\,c_{m'n}^{(1)} + \langle m'^{(0)}|\hat{H}'|n^{(0)}\rangle = 0$
 
-Si $m'=n \;\Rightarrow\; \langle n_0\,|\,\hat{H}'\,|\,n_0\rangle = E_n^{(1)}$
+$$\Rightarrow\; c_{m'n}^{(1)} = \frac{\langle m'^{(0)}|\hat{H}'|n^{(0)}\rangle}{E_n^{(0)} - E_{m'}^{(0)}} \;\Rightarrow\; |n^{(1)}\rangle = \sum_{m'\neq n} \frac{\langle m'^{(0)}|\hat{H}'|n^{(0)}\rangle}{E_n^{(0)} - E_{m'}^{(0)}}\,|m'^{(0)}\rangle$$
 
-Si $m'\neq n \;\Rightarrow\; (E_{m'}-E_n)\,C^{(1)}_{m'n} + \langle m'_0\,|\,\hat{H}'\,|\,n_0\rangle = 0$
-
-$$\Rightarrow\; C^{(1)}_{m'n} = \frac{\langle m_0\,|\,\hat{H}'\,|\,n_0\rangle}{E_n - E_{m'}} \;\Rightarrow\; |\,n^{(1)}\rangle = \sum_{m'\neq n} \frac{\langle m_0\,|\,\hat{H}'\,|\,n_0\rangle}{E_n - E_{m'}}\,|\,m_0\rangle$$
-
-$$E_n^{(1)} = \langle n_0\,|\,\hat{H}'\,|\,n_0\rangle$$
+$$E_n^{(1)} = \langle n^{(0)}|\hat{H}'|n^{(0)}\rangle$$
 
 $\langle M^{(1)} \rangle = 0$
 
 ---
 
-$\otimes \quad \left[\widehat{H}_0 - E_n^{(0)}\right]\left|n^{(1)}\right\rangle + \left[\widehat{H}' - E_n^{(1)}\right]\left|n^{(0)}\right\rangle = \sum_{l \neq n} E_n^{(1)}\left|n^{(1)}\right\rangle$
+$\otimes \quad \left[\hat{H}_0 - E_n^{(0)}\right]|n^{(1)}\rangle + \left[\hat{H}' - E_n^{(1)}\right]|n^{(0)}\rangle = \sum_{l \neq n} E_n^{(1)}|n^{(1)}\rangle$
 
-$\rightsquigarrow \langle m^0|\widehat{H}_0 = \mathcal{E}_m \langle m^0|$
+$\rightsquigarrow \langle m^{(0)}|\hat{H}_0 = \mathcal{E}_m \langle m^{(0)}|$
 
 $\rightsquigarrow$ No degenerado $\rightarrow E_n^{(0)} = \mathcal{E}_n$ del no perturbado
 
-$\rightsquigarrow (\mathcal{E}_m - \mathcal{E}_n)\, c_{m|n}^{(1)} + \langle m^0|\widehat{H}'|n^{(1)}\rangle - \sum_{l \neq n} E_n^{(1)} \langle m^0|n^{(1)}\rangle = 0$
+$\rightsquigarrow (\mathcal{E}_m - \mathcal{E}_n)\, c_{mn}^{(1)} + \langle m^{(0)}|\hat{H}'|n^{(0)}\rangle - \sum_{l \neq n} E_n^{(1)} \langle m^{(0)}|n^{(1)}\rangle = 0$
 
-**Si $m = n$** $\Rightarrow \langle n^0|\widehat{H}'|n^{(0)}\rangle - \sum_{l \neq n}^{n-1} E_n^{(1)} \langle n^0|n^{(1)}\rangle = E_n^{(1)}$
+**Si $m = n$** $\Rightarrow \langle n^{(0)}|\hat{H}'|n^{(0)}\rangle - \sum_{l \neq n}^{n-1} E_n^{(1)} \langle n^{(0)}|n^{(1)}\rangle = E_n^{(1)}$
 
 $\rightsquigarrow$
 
-**Si $m \neq n$** $\Rightarrow (\mathcal{E}_m + \mathcal{E}_n)\, c_{m|n}^{(1)} = -\langle m^0|\widehat{H}'|n^{(0)}\rangle + \sum_{l \neq n} E_n^{(1)} \langle m^0|n^{(1)}\rangle = E_n^{(1)} \langle m^0|n^{(0)}\rangle$
+**Si $m \neq n$** $\Rightarrow (\mathcal{E}_m - \mathcal{E}_n)\, c_{mn}^{(1)} = -\langle m^{(0)}|\hat{H}'|n^{(0)}\rangle + \sum_{l \neq n} E_n^{(1)} \langle m^{(0)}|n^{(1)}\rangle$
 
-*(margin note, right side: $m \neq n \Rightarrow 0$; $n^{(0)}$; no)*
-
-$\Rightarrow c_{m|n}^{(1)}|m^0\rangle = |n^{(1)}\rangle = \sum_{m \neq n} \frac{\langle m^0|\widehat{H}'|n^{(0)}\rangle - \sum_{l \neq n} E_n^{(1)} \langle m^0|n^{(1)}\rangle}{(\mathcal{E}_n - \mathcal{E}_m)}\, |m^0\rangle$
+$\Rightarrow c_{mn}^{(1)}|m^{(0)}\rangle = |n^{(1)}\rangle = \sum_{m \neq n} \frac{\langle m^{(0)}|\hat{H}'|n^{(0)}\rangle - \sum_{l \neq n} E_n^{(1)} \langle m^{(0)}|n^{(1)}\rangle}{\mathcal{E}_n - \mathcal{E}_m}\, |m^{(0)}\rangle$
 
 ---
 
-$E_n^{(0)} = \mathcal{E}_n \quad , \quad |n^{(0)}\rangle = |n^0\rangle$
+$E_n^{(0)} = \mathcal{E}_n \quad , \quad |n^{(0)}\rangle = |n^{(0)}\rangle$
 
-$E_n^{(1)} = \langle n^0|\widehat{H}'|n^0\rangle \quad , \quad |n^{(1)}\rangle = \sum_{m \neq n} \frac{\langle m^0|\widehat{H}'|n^0\rangle}{\mathcal{E}_n - \mathcal{E}_m}\, |m^0\rangle$
+$E_n^{(1)} = \langle n^{(0)}|\hat{H}'|n^{(0)}\rangle \quad , \quad |n^{(1)}\rangle = \sum_{m \neq n} \frac{\langle m^{(0)}|\hat{H}'|n^{(0)}\rangle}{\mathcal{E}_n - \mathcal{E}_m}\, |m^{(0)}\rangle$
