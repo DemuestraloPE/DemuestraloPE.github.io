@@ -1,5 +1,22 @@
 # Métodos aproximados (no Degenerado)
 
+!!! info "Información del documento"
+    - **Área:** Física
+    - **Autoría:** [Nombre]
+    - **Última actualización:** [Fecha]
+    - **Estado:** [Borrador]
+
+## Resumen
+
+[Describe en pocas líneas qué estudia este tema y por qué es importante.]
+
+## Objetivos de aprendizaje
+
+- [Objetivo 1]
+- [Objetivo 2]
+
+## Conceptos Previos
+
 $$\rightarrow \hat{H} = \hat{H}_0 + \hat{H}'$$
 
 $$\langle \text{Conocido} \,|\, \hat{H}_0 \,|\, \text{Conocido} \rangle \quad \Rightarrow \quad \hat{H}_0 |n^{(0)}\rangle = E_n^{(0)} |n^{(0)}\rangle$$
