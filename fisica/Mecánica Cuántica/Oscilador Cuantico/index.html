@@ -1,0 +1,2521 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.">
+      
+      
+        <meta name="author" content="Comunidad DemuestraloPE">
+      
+      
+      
+        <link rel="prev" href="../Metodos%20Aproximados/">
+      
+      
+        <link rel="next" href="../../Ondas/Ondas%20Mec%C3%A1nicas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/LOGODEMUESTRALO.PNG">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Oscilador Armónico Cuántico - DemuestraloPE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/study_desk.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <style>
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Transición suave y entrada de página */
+    .md-content {
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oscilador-armonico-cuantico" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="DemuestraloPE" class="md-header__button md-logo" aria-label="DemuestraloPE" data-md-component="logo">
+      
+  <img src="../../../assets/images/LOGODEMUESTRALO.PNG" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DemuestraloPE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Oscilador Armónico Cuántico
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="blue"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="blue"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  DemuestraloPE: Presentación
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fisica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../matematica/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Matematica
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DemuestraloPE" class="md-nav__button md-logo" aria-label="DemuestraloPE" data-md-component="logo">
+      
+  <img src="../../../assets/images/LOGODEMUESTRALO.PNG" alt="logo">
+
+    </a>
+    DemuestraloPE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DemuestraloPE: Presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fisica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fisica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electromagnetismo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electromagnetismo
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electromagnetismo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Electromagnetismo/Ecuaciones%20de%20Maxwell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones de Maxwell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Electromagnetismo/Funci%C3%B3n%20de%20Green/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Función de Green
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecánica Cuántica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mecánica Cuántica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Atomo%20de%20Hidrogeno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Átomo de hidrógeno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Metodos%20Aproximados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos aproximados (no Degenerado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oscilador Armónico Cuántico
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oscilador Armónico Cuántico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!-- Tabla de contenidos nativa -->
+
+  <nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+          <a href="#oscilador-armonico-cuantico" class="md-nav__link">
+            <span class="md-ellipsis">Oscilador Armónico Cuántico</span>
+          </a>
+          
+            <nav class="md-nav" aria-label="Oscilador Armónico Cuántico">
+              <ul class="md-nav__list">
+                
+                  <li class="md-nav__item">
+                    <a href="#prerrequisitos" class="md-nav__link">
+                      <span class="md-ellipsis">Prerrequisitos</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#resumen" class="md-nav__link">
+                      <span class="md-ellipsis">Resumen</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#solucion-del-oscilador-armonico-cuantico" class="md-nav__link">
+                      <span class="md-ellipsis">Solución del Oscilador Armónico Cuántico</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#cuantizacion-inevitable-de-2mathcale-1" class="md-nav__link">
+                      <span class="md-ellipsis">Cuantización Inevitable de \((2\mathcal{E} - 1)\)</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#conclusion" class="md-nav__link">
+                      <span class="md-ellipsis">Conclusión</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#desarrollo-en-tres-niveles-de-rigor" class="md-nav__link">
+                      <span class="md-ellipsis">Desarrollo en tres niveles de rigor</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#referencias" class="md-nav__link">
+                      <span class="md-ellipsis">Referencias</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+          
+        </li>
+      
+    </ul>
+  </nav>
+
+
+<!-- Bloque dinámico para citas aleatorias -->
+<div class="sidebar-random-fact-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--md-default-fg-color--lightest);">
+  <div class="sidebar-random-fact"></div>
+</div>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ondas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ondas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ondas/Ondas%20Mec%C3%A1nicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ondas:
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Termodin%C3%A1mica/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Termodinámica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Termodinámica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Termodin%C3%A1mica/Primera%20Ley/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primera ley de la termodinámica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Termodin%C3%A1mica/Segunda%20Ley/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segunda ley y entropía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mecanica/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecanica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mecanica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/Formulaci%C3%B3n%20Hamiltoniana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulación Hamiltoniana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mecanica/Formulaci%C3%B3n%20Lagrangiana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecánica Clásica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matematica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Matematica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Calculo%20de%20Variable%20Real/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculo de Variable Real
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calculo de Variable Real
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Calculo%20de%20Variable%20Real/Limites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Límites y Continuidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Ecuaciones%20Diferenciales/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones Diferenciales
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ecuaciones Diferenciales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Ecuaciones%20Diferenciales/Ecuaciones%20Lineales%20de%20Primer%20Orden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones lineales de primer orden
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Plantillas/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plantillas
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plantillas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Plantillas/PlantillaClaseLaTeX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Título de la clase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Plantillas/PlantillaDemostracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Nombre del teorema o resultado]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Plantillas/PlantillaTema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Nombre del tema]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Polinomios%20Especiales/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polinomios Especiales
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Polinomios Especiales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Polinomios%20Especiales/Polinomios%20de%20Hermite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polinomios de Hermite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Polinomios%20Especiales/Polinomios%20de%20Legendre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polinomios de Legendre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría de Grupos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teoría de Grupos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Teor%C3%ADa%20de%20Grupos/Introducci%C3%B3n%20a%20Teor%C3%ADa%20de%20Grupos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Introducción a Teoría de Grupos]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/%C3%81lgebra%20Lineal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Álgebra Lineal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Álgebra Lineal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/%C3%81lgebra%20Lineal/Sistemas%20Lineales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas lineales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/%C3%81lgebra%20Lineal/Valores%20Propios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valores propios y vectores propios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Tabla de contenidos nativa -->
+
+  <nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+          <a href="#oscilador-armonico-cuantico" class="md-nav__link">
+            <span class="md-ellipsis">Oscilador Armónico Cuántico</span>
+          </a>
+          
+            <nav class="md-nav" aria-label="Oscilador Armónico Cuántico">
+              <ul class="md-nav__list">
+                
+                  <li class="md-nav__item">
+                    <a href="#prerrequisitos" class="md-nav__link">
+                      <span class="md-ellipsis">Prerrequisitos</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#resumen" class="md-nav__link">
+                      <span class="md-ellipsis">Resumen</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#solucion-del-oscilador-armonico-cuantico" class="md-nav__link">
+                      <span class="md-ellipsis">Solución del Oscilador Armónico Cuántico</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#cuantizacion-inevitable-de-2mathcale-1" class="md-nav__link">
+                      <span class="md-ellipsis">Cuantización Inevitable de \((2\mathcal{E} - 1)\)</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#conclusion" class="md-nav__link">
+                      <span class="md-ellipsis">Conclusión</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#desarrollo-en-tres-niveles-de-rigor" class="md-nav__link">
+                      <span class="md-ellipsis">Desarrollo en tres niveles de rigor</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#referencias" class="md-nav__link">
+                      <span class="md-ellipsis">Referencias</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+          
+        </li>
+      
+    </ul>
+  </nav>
+
+
+<!-- Bloque dinámico para citas aleatorias -->
+<div class="sidebar-random-fact-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--md-default-fg-color--lightest);">
+  <div class="sidebar-random-fact"></div>
+</div>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    DemuestraloPE: Presentación
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Fisica
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../Atomo%20de%20Hidrogeno/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mecánica Cuántica
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  <!-- Contenedor nativo de contenido Markdown -->
+<article class="md-content__inner md-typeset">
+
+  
+    
+
+    
+
+    <h1 id="oscilador-armonico-cuantico">Oscilador Armónico Cuántico</h1>
+<p><a class="md-button" href="../../../assets/pdf/Clase_OsciladorArmonico1D.pdf">Descargar la clase en PDF</a></p>
+<div class="admonition info">
+<p class="admonition-title">Información del documento</p>
+<ul>
+<li><strong>Área:</strong> Física, Mecánica Cuantica</li>
+<li><strong>Autoría:</strong> Campaña Vergara Jackson</li>
+<li><strong>Última actualización:</strong> 31/10/26</li>
+<li><strong>Estado:</strong> [✏ Borrador]</li>
+</ul>
+</div>
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+<ul>
+<li>[Añade aquí los conceptos previos y enlaza las páginas existentes.]</li>
+</ul>
+<h2 id="resumen">Resumen</h2>
+<p>Uno de los sistemas físicos de mayor interés teórico, el oscilador armónico, cuya energia potencial es <span class="arithmatex">\(V=\frac{1}{2}m\omega^2 x^2\)</span>. Para simplificar el tratamiento nos restringimos al caso unidimensional, que carece de degeneración (el oscilador armónico en más de una dimensión es un problema degenerado que, para su tratamiento cabal, requiere en la teoría clásica de la teoría del momento angular, la que habremos de desarrollar mas adelante).</p>
+<p>El oscilador armónico suministra importante información acerca de las vibraciones atómicas en las moléculas y los sólidos dado que aparece cuando potenciales más o menos complicados se aproximan en la región de un mínimo con curvas parabólicas. Por lo tanto, se trata esencialmente de la teoría de oscilaciones poco energéticas en torno a un mínimo de potencial, situación que se da con frecuencia con átomos, moléculas, etc. Además, el empleo frecuente del análisis de Fourier para estudiar sistemas complejos en términos de osciladores elementales hace del oscilador armónico uno de los problemas más importantes de la física teórica, sin considerar su interés metodológico debido al hecho de poseer solución exacta bajo la ecuación de schrodinger:
+$$ \frac{-\hbar^2}{2m} \frac{d^2}{dx^2} \Psi + \frac{1}{2}m\omega^2 x^2 \Psi = E \Psi$$</p>
+<p><img alt="Aplicación del Oscilador Cuántico en un Potencial Irregular" src="../../../assets/images/Class_OsciCuantico_PotMin.png" />
+Imagen hecha con <strong>figurelabs</strong></p>
+<details class="note">
+<summary>Conceptos fundamentales</summary>
+<p>A primera vista, la elección de un potencial proporcional a la posición al cuadrado, <span class="arithmatex">\(V(x) = \frac{1}{2}m\omega^2 x^2\)</span>, evoca directamente al resorte clásico de la ley de Hooke. Sin embargo, su relevancia en física cuántica va mucho más allá de un simple resorte. En la naturaleza, cualquier sistema cuántico cerca de un punto de equilibrio estable (como los átomos vibrando dentro de una molécula o en una red cristalina) puede aproximarse mediante un potencial parabólico al truncar su expansión en serie de Taylor a segundo orden.</p>
+<p>Este modelo surge de preguntar qué ocurre si la energía potencial es parabólica. El operador de energía cinética cuántica es
+[
+\hat{T}=-\frac{\hbar^2}{2m}\nabla^2,
+]
+cuyo valor esperado es no negativo para funciones de onda normalizables que satisfacen las condiciones de frontera apropiadas.</p>
+</details>
+<hr />
+<h3 id="definiciones">Definiciones</h3>
+<p>Ecuación de Schrodinger: <span class="arithmatex">\(\frac{-\hbar^2}{2m} \nabla^2 \Psi + V(\vec{r}) \Psi = E \Psi\)</span></p>
+<hr />
+<h2 id="solucion-del-oscilador-armonico-cuantico">Solución del Oscilador Armónico Cuántico</h2>
+<p>El Hamiltoniano del oscilador armónico en una dimensión (1D) está dado por:</p>
+<div class="arithmatex">\[
+\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2}m\omega^2 x^2 \right) \psi(x) = E \psi(x)
+\]</div>
+<p>Reordenando para aislar la derivada de mayor orden:</p>
+<div class="arithmatex">\[
+\frac{d^2\psi(x)}{dx^2} - \frac{m^2\omega^2}{\hbar^2} x^2 \psi(x) + \frac{2mE}{\hbar^2} \psi(x) = 0
+\]</div>
+<p>Definimos las constantes físicas estándar con dimensiones apropiadas:</p>
+<ul>
+<li><span class="arithmatex">\(a^2 = \frac{m\omega}{\hbar} \implies a^4 = \frac{m^2\omega^2}{\hbar^2}\)</span></li>
+<li><span class="arithmatex">\(k^2 = \frac{2mE}{\hbar^2}\)</span></li>
+</ul>
+<p>Obtenemos la ecuación diferencial reestructurada:</p>
+<div class="arithmatex">\[
+\mathbf{\frac{d^2\psi(x)}{dx^2} - a^4 x^2 \psi(x) + k^2 \psi(x) = 0}
+\]</div>
+<hr />
+<h3 id="cambio-de-variable-hacia-la-ecuacion-confluente">Cambio de Variable Hacia la Ecuación Confluente</h3>
+<p>Aplicando la transformación <span class="arithmatex">\(y = a^2 x^2\)</span>:</p>
+<div class="arithmatex">\[
+\frac{dy}{dx} = 2a^2 x = 2a y^{1/2} \implies \frac{df}{dx} = \frac{dy}{dx}\frac{df}{dy} = 2a y^{1/2} \frac{df}{dy}
+\]</div>
+<p>Calculando la segunda derivada:</p>
+<div class="arithmatex">\[
+\frac{d^2 f}{dx^2} = 2a y^{1/2} \frac{d}{dy}\left(2a y^{1/2} \frac{df}{dy}\right) = 4a^2 y \frac{d^2 f}{dy^2} + 2a^2 \frac{df}{dy}
+\]</div>
+<p>Sustituyendo en la ecuación diferencial principal:</p>
+<div class="arithmatex">\[
+\left( 4a^2 y \frac{d^2\psi}{dy^2} + 2a^2 \frac{d\psi}{dy} \right) - a^4 \left(\frac{y}{a^2}\right)\psi + k^2 \psi = 0
+\]</div>
+<p>Dividiendo toda la ecuación entre <span class="arithmatex">\(4a^2\)</span>:</p>
+<div class="arithmatex">\[
+y \frac{d^2\psi}{dy^2} + \frac{1}{2} \frac{d\psi}{dy} + \left( \frac{k^2}{4a^2} - \frac{y}{4} \right) \psi(y) = 0
+\]</div>
+<p>Definimos el parámetro adimensional de energía <span class="arithmatex">\(\mathcal{E}\)</span>:</p>
+<div class="arithmatex">\[
+\mathcal{E} \equiv \frac{k^2}{2a^2} = \frac{\frac{2mE}{\hbar^2}}{2\frac{m\omega}{\hbar}} = \mathbf{\frac{E}{\hbar\omega}}
+\]</div>
+<p>Sustituyendo <span class="arithmatex">\(\frac{k^2}{4a^2} = \frac{\mathcal{E}}{2}\)</span>, obtenemos la ecuación intermedia:</p>
+<div class="arithmatex">\[
+\mathbf{y \frac{d^2\psi(y)}{dy^2} + \frac{1}{2} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) \psi(y) = 0} \quad (*)
+\]</div>
+<hr />
+<h3 id="comportamiento-asintotico-e-y2-ecuacion-de-kummer">Comportamiento Asintótico <span class="arithmatex">\(e^{-y/2}\)</span> (Ecuación de Kummer)</h3>
+<p>Para grandes valores de <span class="arithmatex">\(y\)</span>, la ecuación dominante toma la forma:</p>
+<div class="arithmatex">\[
+\lim_{y \to \infty} \left[ \frac{d^2\psi(y)}{dy^2} + \frac{1}{2y} \frac{d\psi(y)}{dy} + \left( \frac{\mathcal{E}}{2y} - \frac{1}{4} \right) \psi(y) \right] = 0 \implies \frac{d^2\psi(y)}{dy^2} - \frac{1}{4} \psi(y) = 0
+\]</div>
+<p>Esto sugiere una solución asintótica de la forma <span class="arithmatex">\(\psi(y) = e^{-y/2} w(y)\)</span> para valores grandes de <span class="arithmatex">\(y\)</span>, recordando que <span class="arithmatex">\(y = x^2 \geq 0\)</span>. Con esta propuesta, acoplamos dicho comportamiento asintótico a una función propuesta <span class="arithmatex">\(w(y)\)</span> que dictará el comportamiento de la solución en regiones cercanas al origen.</p>
+<p>Calculamos las derivadas de <span class="arithmatex">\(\psi(y) = e^{-y/2} w(y)\)</span>:</p>
+<div class="arithmatex">\[
+\psi' = e^{-y/2} \left( w' - \frac{1}{2}w \right) \qquad \psi'' = e^{-y/2} \left( w'' - w' + \frac{1}{4}w \right)
+\]</div>
+<p>Sustituyendo en la ecuación intermedia <span class="arithmatex">\((*)\)</span> y simplificando el factor común <span class="arithmatex">\(e^{-y/2}\)</span>:</p>
+<div class="arithmatex">\[
+y \left( w'' - w' + \frac{1}{4}w \right) + \frac{1}{2} \left( w' - \frac{1}{2}w \right) + \left( \frac{\mathcal{E}}{2} - \frac{y}{4} \right) w = 0
+\]</div>
+<p>Desarrollando los términos:</p>
+<div class="arithmatex">\[
+y w'' - y w' + \frac{y}{4}w + \frac{1}{2} w' - \frac{1}{4}w + \frac{\mathcal{E}}{2}w - \frac{y}{4}w = 0
+\]</div>
+<div class="arithmatex">\[
+y w'' + \left(\frac{1}{2} - y\right) w' - \left( \frac{1}{4} - \frac{\mathcal{E}}{2} \right) w = 0
+\]</div>
+<p>Llegamos exactamente a la <strong>Ecuación Hipergeométrica Confluente (de Kummer)</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{y \frac{d^2 w(y)}{dy^2} + (b - y) \frac{dw(y)}{dy} - a \, w(y) = 0}
+\]</div>
+<p>La cual es capaz de entregar una solución basada en polinomios especiales según los parámetros <span class="arithmatex">\(a\)</span> y <span class="arithmatex">\(b\)</span> involucrados en el problema. Es una forma generalizada desde la cual se obtiene la solución mediante los Polinomios de Hermite, donde:</p>
+<div class="arithmatex">\[
+b = \frac{1}{2}, \qquad a = \frac{1}{4} - \frac{\mathcal{E}}{2} = \mathbf{\frac{1}{4} - \frac{E}{2\hbar\omega}}
+\]</div>
+<hr />
+<h3 id="transformacion-a-la-variable-espacial-xi-sqrty-ecuacion-de-hermite">Transformación a la Variable Espacial <span class="arithmatex">\(\xi = \sqrt{y}\)</span> (Ecuación de Hermite)</h3>
+<p>Si en lugar de <span class="arithmatex">\(y\)</span> empleamos la coordenada espacial adimensional <span class="arithmatex">\(\xi = ax = \sqrt{\frac{m\omega}{\hbar}} x\)</span>:</p>
+<div class="arithmatex">\[
+\frac{d\xi}{dy} = \frac{1}{2}y^{-1/2} \implies \frac{df}{dy} = \frac{1}{2\xi} \frac{df}{d\xi}
+\]</div>
+<p>Calculando las derivadas correspondientes:</p>
+<div class="arithmatex">\[
+\frac{dw}{dy} = \frac{1}{2\xi}\frac{dw}{d\xi} \qquad \frac{d^2w}{dy^2} = \frac{1}{2\xi}\frac{d}{d\xi}\left(\frac{1}{2\xi}\frac{dw}{d\xi}\right) = \frac{1}{2\xi}\left(-\frac{1}{2\xi^2}\frac{dw}{d\xi} + \frac{1}{2\xi}\frac{d^2w}{d\xi^2}\right)
+\]</div>
+<p>Expresando la ecuación de Kummer en términos de la variable espacial <span class="arithmatex">\(\xi\)</span>:</p>
+<div class="arithmatex">\[
+-\frac{1}{4\xi}\frac{dw}{d\xi} + \frac{1}{4}\frac{d^2w}{d\xi^2} + \frac{1}{4\xi}\frac{dw}{d\xi} - \frac{\xi}{2}\frac{dw}{d\xi} - \left(\frac{1}{4} - \frac{\mathcal{E}}{2}\right) w(\xi) = 0
+\]</div>
+<p>Simplificando los términos, obtenemos la <strong>Ecuación Diferencial de Hermite</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{\frac{d^2 w(\xi)}{d\xi^2} - 2\xi \frac{dw(\xi)}{d\xi} + (2\mathcal{E} - 1) w(\xi) = 0}
+\]</div>
+<p><strong>NOTA:</strong> Claramente se pudo obtener directamente este resultado pero es interesante observar como surgen los polinomios de hermite de la ecuación hipergeométrica confluente (Ec. de Kummer).</p>
+<p>Con esto concluimos que la solución general del oscilador armónico cuántico es muy parecida a la ecuación de los <strong>Polinomios de Hermite</strong> <span class="arithmatex">\(H_n(\xi)\)</span>. Solo si <span class="arithmatex">\(2\mathcal{E} - 1=2n\)</span> con <span class="arithmatex">\(n\)</span> un numero entero positivo, a rigor falta demostrar la discretización de este termino para que la solución de la función de valores cercanos al origen <span class="arithmatex">\(w(\xi)\)</span> es efectivamente dada por dichos polinomios.</p>
+<p>Para demostrarlo supondremos la solución de <span class="arithmatex">\(w(\xi)\)</span> en forma de una serie de potencias en forma del metodo de Frobenious.</p>
+<hr />
+<h3 id="proponemos-la-solucion-de-frobenius-en-la-forma-general"><strong>Proponemos la solución de Frobenius en la forma general:</strong></h3>
+<p>Proponemos la solución en serie de potencias en la forma general de Frobenius para <span class="arithmatex">\(w(\xi)\)</span>:</p>
+<div class="arithmatex">\[w(\xi) = \sum_{k=0}^{\infty} c_k \xi^{k+s} \quad (c_0 \neq 0)\]</div>
+<p>Sustituyendo <span class="arithmatex">\(w(\xi)\)</span>, <span class="arithmatex">\(w'(\xi)\)</span> y <span class="arithmatex">\(w''(\xi)\)</span> en la ecuación diferencial de Hermite:</p>
+<div class="arithmatex">\[\frac{d^2 w}{d\xi^2} - 2\xi \frac{dw}{d\xi} + (2\mathcal{E} - 1)w = 0\]</div>
+<div class="arithmatex">\[\sum_{k=0}^{\infty} (k+s)(k+s-1)c_k \xi^{k+s-2} - 2\sum_{k=0}^{\infty} (k+s)c_k \xi^{k+s} + (2\mathcal{E} - 1)\sum_{k=0}^{\infty} c_k \xi^{k+s} = 0\]</div>
+<div class="arithmatex">\[\sum_{k=-2}^{\infty} (k+s+2)(k+s+1)c_{k+2} \xi^{k+s} + \sum_{k=0}^{\infty} [-2(k+s)c_k + (2\mathcal{E} - 1) c_k]\xi^{k+s} = 0\]</div>
+<div class="arithmatex">\[\underbrace{(s)(s-1)c_{0} \xi^{s-2} + (s+1)(s)c_{1} \xi^{s-1}}_{términos \quad sobrantes \quad =0} + \sum_{k=0}^{\infty} [(k+s+2)(k+s+1)c_{k+2} -2(k+s)c_k + (2\mathcal{E} - 1) c_k ]\xi^{k+s} = 0\]</div>
+<p>Para eliminar los términos sobrantes tomamos <span class="arithmatex">\(s=0\)</span>, con ello la serie queda limpia y obtenemos la <strong>relación de recurrencia</strong> para <span class="arithmatex">\(k \ge 0\)</span>.</p>
+<div class="arithmatex">\[(k+2)(k+1)c_{k+2} -2(k)c_k + (2\mathcal{E} - 1) c_k =0\]</div>
+<div class="arithmatex">\[c_{k+2} = \frac{2k - (2\mathcal{E} - 1)}{(k+1)(k+2)} c_k\]</div>
+<p>Como el salto en los subíndices es de <span class="arithmatex">\(k \to k+2\)</span>, la paridad queda <strong>completamente desacoplada</strong>:</p>
+<ul>
+<li>
+<p>Los coeficientes pares (<span class="arithmatex">\(c_0, c_2, c_4, \dots\)</span>) dependen <strong>únicamente de <span class="arithmatex">\(c_0\)</span></strong>.</p>
+</li>
+<li>
+<p>Los coeficientes impares (<span class="arithmatex">\(c_1, c_3, c_5, \dots\)</span>) dependen <strong>únicamente de <span class="arithmatex">\(c_1\)</span></strong>.</p>
+</li>
+</ul>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">2. Desarrollo estándar</label><label for="__tabbed_1_2">Divergencia sin Truncamiento</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>[Presenta el desarrollo habitual para un curso universitario.]</p>
+</div>
+<div class="tabbed-block">
+<p>[Explica la idea con palabras, ejemplos o diagramas.]</p>
+</div>
+</div>
+</div>
+<p>Para que la función de onda <span class="arithmatex">\(\psi(\xi) = w(\xi) e^{-\xi^2/2}\)</span> represente un estado físico válido, debe pertenecer al espacio de Hilbert <span class="arithmatex">\(L^2(\mathbb{R})\)</span>, lo que exige que su norma sea finita: <span class="arithmatex">\(\|\psi\|^2 &lt; \infty\)</span>. A continuación se demuestra que si la serie <span class="arithmatex">\(w(\xi)\)</span> no se trunca en un polinomio, esta integral diverge estrictamente a <span class="arithmatex">\(+\infty\)</span>.</p>
+<h3 id="comportamiento-asintotico-de-los-coeficientes">Comportamiento Asintótico de los Coeficientes</h3>
+<p>Partimos de la relación de recurrencia exacta para la rama par (o impar):</p>
+<div class="arithmatex">\[c_{2m+2} = \frac{4m - (2\mathcal{E} - 1)}{(2m+1)(2m+2)} c_{2m}\]</div>
+<p>Si la serie no se trunca, el numerador nunca es cero. Existe un entero <span class="arithmatex">\(M \in \mathbb{N}\)</span> suficientemente grande tal que para todo <span class="arithmatex">\(m \ge M\)</span>, se cumple <span class="arithmatex">\(4m - (2\mathcal{E} - 1) &gt; 0\)</span>. Como el denominador siempre es positivo, a partir de <span class="arithmatex">\(M\)</span> todos los coeficientes mantienen el mismo signo. Asumiremos <span class="arithmatex">\(c_{2M} &gt; 0\)</span>.</p>
+<p>Analizamos el cociente de coeficientes para <span class="arithmatex">\(m \ge M\)</span>:</p>
+<div class="arithmatex">\[\frac{c_{2m+2}}{c_{2m}} = \frac{4m - (2\mathcal{E} - 1)}{4m^2 + 6m + 2}\]</div>
+<p>Para <span class="arithmatex">\(m\)</span> grande, el término dominante en el numerador es <span class="arithmatex">\(4m\)</span> y en el denominador es <span class="arithmatex">\(4m^2\)</span>, por lo que el cociente decae como <span class="arithmatex">\(1/m\)</span>. Formalmente, siempre es posible elegir un índice <span class="arithmatex">\(K \ge M\)</span> y una constante estricta <span class="arithmatex">\(\gamma &gt; 0\)</span> tal que para todo <span class="arithmatex">\(m \ge K\)</span>:</p>
+<div class="arithmatex">\[\frac{c_{2m+2}}{c_{2m}} \ge \frac{\gamma}{m+1}\]</div>
+<p>Para hallar el valor de un coeficiente avanzado <span class="arithmatex">\(c_{2N}\)</span> (con <span class="arithmatex">\(N &gt; K\)</span>), multiplicamos todos los cocientes intermedios desde <span class="arithmatex">\(m = K\)</span> hasta <span class="arithmatex">\(N-1\)</span>. Esto forma un producto telescópico donde los términos intermedios se cancelan:</p>
+<div class="arithmatex">\[\frac{c_{2N}}{c_{2K}} = \left( \frac{c_{2K+2}}{c_{2K}} \right) \left( \frac{c_{2K+4}}{c_{2K+2}} \right) \dots \left( \frac{c_{2N}}{c_{2N-2}} \right)\]</div>
+<p>Aplicando nuestra desigualdad a cada factor:</p>
+<div class="arithmatex">\[\frac{c_{2N}}{c_{2K}} \ge \left( \frac{\gamma}{K+1} \right) \left( \frac{\gamma}{K+2} \right) \dots \left( \frac{\gamma}{N} \right) = \frac{\gamma^{N-K} \, K!}{N!}\]</div>
+<p>Despejando <span class="arithmatex">\(c_{2N}\)</span> y agrupando todas las constantes que no dependen de <span class="arithmatex">\(N\)</span> en una única constante global <span class="arithmatex">\(A = c_{2K} \gamma^{-K} K! &gt; 0\)</span>, obtenemos la cota inferior estricta:</p>
+<p>$<span class="arithmatex">\(c_{2N} \ge A \frac{\gamma^N}{N!} \quad \text{para todo } N \ge K\)</span>$
+<em>(Para simplificar la notación en la integral posterior, podemos reabsorber <span class="arithmatex">\(\gamma\)</span> en un cambio de escala o asumir el caso límite donde comparamos directamente, por lo que escribiremos genéricamente <span class="arithmatex">\(c_{2m} \ge \frac{A}{m!}\)</span>).</em></p>
+<hr />
+<h3 id="acotacion-inferior-de-la-funcion-wxi-frente-al-polinomio">Acotación Inferior de la Función <span class="arithmatex">\(w(\xi)\)</span> frente al Polinomio</h3>
+<p>Sabiendo que <span class="arithmatex">\(c_{2m} \ge \frac{A}{m!}\)</span>, dividimos la función <span class="arithmatex">\(w(\xi)\)</span> en dos partes: el tramo finito inicial y la cola infinita.</p>
+<div class="arithmatex">\[w(\xi) = \underbrace{\sum_{m=0}^{K-1} c_{2m} \xi^{2m}}_{\text{Polinomio finito } P(\xi)} + \underbrace{\sum_{m=K}^{\infty} c_{2m} \xi^{2m}}_{\text{Cola infinita}}\]</div>
+<p>Aplicamos la cota a la cola infinita:</p>
+<div class="arithmatex">\[\sum_{m=K}^{\infty} c_{2m} \xi^{2m} \ge A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!}\]</div>
+<p>Reconocemos que esta suma es casi la serie de Taylor de la función exponencial, solo le faltan los primeros <span class="arithmatex">\(K\)</span> términos:</p>
+<div class="arithmatex">\[A \sum_{m=K}^{\infty} \frac{(\xi^2)^m}{m!} = A \left( e^{\xi^2} - \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!} \right)\]</div>
+<p>Sustituyendo esto en la función original <span class="arithmatex">\(w(\xi)\)</span>:</p>
+<div class="arithmatex">\[w(\xi) \ge P(\xi) + A e^{\xi^2} - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}\]</div>
+<p><strong>El argumento de dominancia asintótica (Detalle Omitido):</strong>
+Agrupemos los términos polinómicos en un solo polinomio <span class="arithmatex">\(Q(\xi) = P(\xi) - A \sum_{m=0}^{K-1} \frac{\xi^{2m}}{m!}\)</span>.
+Sabemos por el Teorema de L'Hôpital que la función exponencial <span class="arithmatex">\(e^{\xi^2}\)</span> crece asintóticamente mucho más rápido que <em>cualquier</em> polinomio finito <span class="arithmatex">\(Q(\xi)\)</span>. Por tanto, el cociente <span class="arithmatex">\(|Q(\xi)| / e^{\xi^2} \to 0\)</span> cuando <span class="arithmatex">\(\xi \to \infty\)</span>.</p>
+<p>Esto garantiza que existe un punto en el espacio <span class="arithmatex">\(\xi_0 &gt; 0\)</span> a partir del cual el término <span class="arithmatex">\(A e^{\xi^2}\)</span> es tan inmensamente superior al polinomio <span class="arithmatex">\(Q(\xi)\)</span> que lo absorbe holgadamente, permitiéndonos asegurar que para todo <span class="arithmatex">\(|\xi| &gt; \xi_0\)</span>:</p>
+<div class="arithmatex">\[w(\xi) \ge \frac{A}{2} e^{\xi^2}\]</div>
+<hr />
+<h3 id="criterio-de-integrabilidad-para-la-norma-en-l2mathbbr">Criterio de Integrabilidad para la Norma en <span class="arithmatex">\(L^2(\mathbb{R})\)</span></h3>
+<p>Ahora evaluamos la condición física de normalización calculando la norma al cuadrado <span class="arithmatex">\(\|\psi\|^2\)</span>.</p>
+<div class="arithmatex">\[\|\psi\|^2 = \int_{-\infty}^{\infty} [w(\xi)]^2 e^{-\xi^2} d\xi\]</div>
+<p>Dado que el integrando es estrictamente positivo, la integral sobre todo el dominio real es mayor que la integral evaluada únicamente en las "colas" del espacio (para <span class="arithmatex">\(|\xi| &gt; \xi_0\)</span>):</p>
+<div class="arithmatex">\[\|\psi\|^2 \ge \int_{|\xi| &gt; \xi_0} [w(\xi)]^2 e^{-\xi^2} d\xi\]</div>
+<p><strong>Sustitución de la cota inferior:</strong>
+Reemplazamos <span class="arithmatex">\(w(\xi)\)</span> por la desigualdad estricta <span class="arithmatex">\(\frac{A}{2} e^{\xi^2}\)</span> que demostramos para esa región:</p>
+<div class="arithmatex">\[\|\psi\|^2 \ge \int_{|\xi| &gt; \xi_0} \left( \frac{A}{2} e^{\xi^2} \right)^2 e^{-\xi^2} d\xi\]</div>
+<p>Elevamos al cuadrado y operamos los exponentes:</p>
+<div class="arithmatex">\[\|\psi\|^2 \ge \frac{A^2}{4} \int_{|\xi| &gt; \xi_0} e^{2\xi^2} e^{-\xi^2} d\xi = \frac{A^2}{4} \int_{|\xi| &gt; \xi_0} e^{+\xi^2} d\xi\]</div>
+<p><strong>Conclusión del límite de divergencia:</strong>
+Para cualquier número real <span class="arithmatex">\(\xi\)</span>, se cumple que <span class="arithmatex">\(e^{+\xi^2} \ge 1\)</span>. Sustituyendo esto en la integral:</p>
+<div class="arithmatex">\[\|\psi\|^2 \ge \frac{A^2}{4} \int_{|\xi| &gt; \xi_0} 1 \, d\xi = \frac{A^2}{4} \times (\infty) = +\infty\]</div>
+<p>La integral diverge irremisiblemente a infinito. Esto demuestra matemáticamente que <strong>la única forma de que la función de onda sea físicamente admisible (cuadrado integrable) es impedir la existencia de la cola infinita</strong>, forzando al numerador de la recurrencia a ser cero en algún punto: <span class="arithmatex">\(2N - (2\mathcal{E} - 1) = 0\)</span>.</p>
+<h2 id="cuantizacion-inevitable-de-2mathcale-1">Cuantización Inevitable de <span class="arithmatex">\((2\mathcal{E} - 1)\)</span></h2>
+<p>Para evitar que la serie <span class="arithmatex">\(w(\xi)\)</span> sea infinita y diverja asintóticamente como <span class="arithmatex">\(e^{\xi^2}\)</span> (lo que destruiría la normalizabilidad de la función de onda total <span class="arithmatex">\(\psi(\xi) = w(\xi)e^{-\xi^2/2}\)</span>), la serie debe <strong>truncarse</strong> en un polinomio de grado finito <span class="arithmatex">\(N\)</span>.</p>
+<p>Esto requiere que el numerador de la recurrencia sea cero para un índice entero <span class="arithmatex">\(k = N\)</span>:</p>
+<div class="arithmatex">\[2N - (2\mathcal{E} - 1) = 0 \implies 2\mathcal{E} - 1 = 2N \quad \text{con } N \in \{0, 1, 2, 3, \dots\}\]</div>
+<p>Llamando <span class="arithmatex">\(n = N\)</span> al grado del Polinomio de Hermite <span class="arithmatex">\(H_n(\xi)\)</span>:</p>
+<div class="arithmatex">\[2\mathcal{E} - 1 = 2n\]</div>
+<p>Despejando la energía adimensional <span class="arithmatex">\(\mathcal{E} = \frac{E}{\hbar\omega}\)</span>:</p>
+<div class="arithmatex">\[2\mathcal{E} = 2n + 1 \implies \mathcal{E} = n + \frac{1}{2}\]</div>
+<h3 id="resultado-final-de-la-energia">Resultado Final de la Energía</h3>
+<div class="arithmatex">\[\mathbf{E_n = \left(n + \frac{1}{2}\right)\hbar\omega \quad (n = 0, 1, 2, \dots)}\]</div>
+<hr />
+<h2 id="conclusion">Conclusión</h2>
+<p>El uso directo de <span class="arithmatex">\(s = 0\)</span> demuestra que no es estrictamente necesario separar <span class="arithmatex">\(s = 1\)</span> y <span class="arithmatex">\(s = 0\)</span> como dos casos independientes. La estructura del salto <span class="arithmatex">\(k+2\)</span> en la recurrencia de <span class="arithmatex">\(s = 0\)</span> separa naturalmente a la función <span class="arithmatex">\(w(\xi)\)</span> en sus componentes par e impar, y la exigencia física de normalizabilidad fuerza a que <span class="arithmatex">\(2\mathcal{E}-1\)</span> sea un entero par no negativo, cuantizando la energía de forma automática.</p>
+<h2 id="desarrollo-en-tres-niveles-de-rigor">Desarrollo en tres niveles de rigor</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">1. Intuición</label><label for="__tabbed_2_2">2. Desarrollo estándar</label><label for="__tabbed_2_3">3. Fundamentación rigurosa</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>[Explica la idea con palabras, ejemplos o diagramas.]</p>
+</div>
+<div class="tabbed-block">
+<p>[Presenta el desarrollo habitual para un curso universitario.]</p>
+</div>
+<div class="tabbed-block">
+<p>[Expón las hipótesis, definiciones formales y demostraciones completas.]</p>
+</div>
+</div>
+</div>
+<h3 id="resultados-principales">Resultados principales</h3>
+<p>[Enuncia los teoremas, leyes o relaciones importantes.]</p>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li>[Añade aquí libros, artículos o recursos consultados.]</li>
+</ul>
+
+    
+  
+</article>
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+  <footer class="md-footer" style="
+    background-color: var(--md-default-bg-color--light, var(--md-code-bg-color)); 
+    border-top: 1px solid var(--md-default-fg-color--lightest); 
+    padding: 0 0 2rem 0; 
+    margin-top: 4rem;
+    width: 100%;
+  ">
+    <!-- Borde animado superior -->
+    <div style="height: 3px; width: 100%; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite; margin-bottom: 2rem;"></div>
+
+    <div class="md-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: var(--md-default-fg-color);">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-weight: 800; font-size: 1.1rem;">DemuestraloPE</span>
+          <span style="background: rgba(0, 230, 118, 0.15); border: 1px solid rgba(0, 230, 118, 0.4); padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; color: #00e676;">
+            ● Build Active
+          </span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 0.8rem; opacity: 0.8;">
+          Repositorio académico abierto para la ciencia y tecnología.
+        </p>
+        <p style="margin: 2px 0 0 0; font-size: 0.75rem; opacity: 0.6;">
+          © <span id="footer-year">2026</span> DemuestraloPE • Desarrollado con MkDocs & LaTeX
+        </p>
+      </div>
+
+      <div style="font-size: 0.85rem; display: flex; align-items: center; gap: 15px;">
+        <a href="../../../PlantillaPE.html" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: 500;">📄 Plantilla</a>
+        <a href="https://github.com/DemuestraloPE" target="_blank" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: bold;">GitHub Repositorio</a>
+      </div>
+    </div>
+  </footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "search.suggest", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/random_quotes.js"></script>
+      
+        <script src="../../../javascripts/study_desk.js"></script>
+      
+    
+  </body>
+</html>

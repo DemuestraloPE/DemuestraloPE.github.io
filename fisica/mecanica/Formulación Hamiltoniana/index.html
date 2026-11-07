@@ -1,0 +1,2470 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Un catálogo colaborativo de teoremas de física explicados en tres niveles de rigor científico.">
+      
+      
+        <meta name="author" content="Comunidad DemuestraloPE">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../Formulaci%C3%B3n%20Lagrangiana/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/LOGODEMUESTRALO.PNG">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Formulación Hamiltoniana - DemuestraloPE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/study_desk.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <style>
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Transición suave y entrada de página */
+    .md-content {
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-espacios-de-configuracion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="DemuestraloPE" class="md-header__button md-logo" aria-label="DemuestraloPE" data-md-component="logo">
+      
+  <img src="../../../assets/images/LOGODEMUESTRALO.PNG" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DemuestraloPE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Formulación Hamiltoniana
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="blue"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="blue"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  DemuestraloPE: Presentación
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fisica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../matematica/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Matematica
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DemuestraloPE" class="md-nav__button md-logo" aria-label="DemuestraloPE" data-md-component="logo">
+      
+  <img src="../../../assets/images/LOGODEMUESTRALO.PNG" alt="logo">
+
+    </a>
+    DemuestraloPE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DemuestraloPE: Presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fisica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fisica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electromagnetismo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electromagnetismo
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electromagnetismo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Electromagnetismo/Ecuaciones%20de%20Maxwell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones de Maxwell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Electromagnetismo/Funci%C3%B3n%20de%20Green/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Función de Green
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecánica Cuántica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mecánica Cuántica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mec%C3%A1nica%20Cu%C3%A1ntica/Atomo%20de%20Hidrogeno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Átomo de hidrógeno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mec%C3%A1nica%20Cu%C3%A1ntica/Metodos%20Aproximados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métodos aproximados (no Degenerado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mec%C3%A1nica%20Cu%C3%A1ntica/Oscilador%20Cuantico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oscilador Armónico Cuántico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ondas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ondas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ondas/Ondas%20Mec%C3%A1nicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ondas:
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Termodin%C3%A1mica/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Termodinámica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Termodinámica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Termodin%C3%A1mica/Primera%20Ley/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primera ley de la termodinámica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Termodin%C3%A1mica/Segunda%20Ley/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segunda ley y entropía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecanica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mecanica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulación Hamiltoniana
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulación Hamiltoniana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        <!-- Tabla de contenidos nativa -->
+
+  <nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+          <a href="#1-espacios-de-configuracion" class="md-nav__link">
+            <span class="md-ellipsis">1. ESPACIOS DE CONFIGURACION</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#semana-02-formulacion-hamiltoniana" class="md-nav__link">
+            <span class="md-ellipsis">SEMANA 02: FORMULACIÓN HAMILTONIANA</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#2-principio-de-hamilton" class="md-nav__link">
+            <span class="md-ellipsis">2. PRINCIPIO DE HAMILTON</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#4-multiplicadores-de-lagrange" class="md-nav__link">
+            <span class="md-ellipsis">4. MULTIPLICADORES DE LAGRANGE</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#3-principios-variacionales" class="md-nav__link">
+            <span class="md-ellipsis">3. PRINCIPIOS VARIACIONALES</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#principio-de-hamilton-y-principios-variacionales" class="md-nav__link">
+            <span class="md-ellipsis">Principio de Hamilton y Principios Variacionales</span>
+          </a>
+          
+            <nav class="md-nav" aria-label="Principio de Hamilton y Principios Variacionales">
+              <ul class="md-nav__list">
+                
+                  <li class="md-nav__item">
+                    <a href="#1-espacio-de-configuraciones" class="md-nav__link">
+                      <span class="md-ellipsis">1. Espacio de Configuraciones</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#2-integral-de-accion-y-principio-de-hamilton" class="md-nav__link">
+                      <span class="md-ellipsis">2. Integral de Acción y Principio de Hamilton</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#3-calculo-variacional" class="md-nav__link">
+                      <span class="md-ellipsis">3. Cálculo Variacional</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#4-transformacion-de-legendre-y-espacio-de-fase" class="md-nav__link">
+                      <span class="md-ellipsis">4. Transformación de Legendre y Espacio de Fase</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#5-ecuaciones-de-hamilton" class="md-nav__link">
+                      <span class="md-ellipsis">5. Ecuaciones de Hamilton</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#referencias-bibliograficas" class="md-nav__link">
+                      <span class="md-ellipsis">Referencias bibliográficas</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+          
+        </li>
+      
+    </ul>
+  </nav>
+
+
+<!-- Bloque dinámico para citas aleatorias -->
+<div class="sidebar-random-fact-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--md-default-fg-color--lightest);">
+  <div class="sidebar-random-fact"></div>
+</div>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Formulaci%C3%B3n%20Lagrangiana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecánica Clásica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matematica
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Matematica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Calculo%20de%20Variable%20Real/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculo de Variable Real
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calculo de Variable Real
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Calculo%20de%20Variable%20Real/Limites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Límites y Continuidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Ecuaciones%20Diferenciales/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones Diferenciales
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ecuaciones Diferenciales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Ecuaciones%20Diferenciales/Ecuaciones%20Lineales%20de%20Primer%20Orden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones lineales de primer orden
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Plantillas/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plantillas
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plantillas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Plantillas/PlantillaClaseLaTeX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Título de la clase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Plantillas/PlantillaDemostracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Nombre del teorema o resultado]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Plantillas/PlantillaTema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Nombre del tema]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/Polinomios%20Especiales/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polinomios Especiales
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Polinomios Especiales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Polinomios%20Especiales/Polinomios%20de%20Hermite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polinomios de Hermite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Polinomios%20Especiales/Polinomios%20de%20Legendre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polinomios de Legendre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría de Grupos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teoría de Grupos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/Teor%C3%ADa%20de%20Grupos/Introducci%C3%B3n%20a%20Teor%C3%ADa%20de%20Grupos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Introducción a Teoría de Grupos]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../matematica/%C3%81lgebra%20Lineal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Álgebra Lineal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Álgebra Lineal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/%C3%81lgebra%20Lineal/Sistemas%20Lineales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas lineales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../matematica/%C3%81lgebra%20Lineal/Valores%20Propios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valores propios y vectores propios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Tabla de contenidos nativa -->
+
+  <nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+          <a href="#1-espacios-de-configuracion" class="md-nav__link">
+            <span class="md-ellipsis">1. ESPACIOS DE CONFIGURACION</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#semana-02-formulacion-hamiltoniana" class="md-nav__link">
+            <span class="md-ellipsis">SEMANA 02: FORMULACIÓN HAMILTONIANA</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#2-principio-de-hamilton" class="md-nav__link">
+            <span class="md-ellipsis">2. PRINCIPIO DE HAMILTON</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#4-multiplicadores-de-lagrange" class="md-nav__link">
+            <span class="md-ellipsis">4. MULTIPLICADORES DE LAGRANGE</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#3-principios-variacionales" class="md-nav__link">
+            <span class="md-ellipsis">3. PRINCIPIOS VARIACIONALES</span>
+          </a>
+          
+        </li>
+      
+        <li class="md-nav__item">
+          <a href="#principio-de-hamilton-y-principios-variacionales" class="md-nav__link">
+            <span class="md-ellipsis">Principio de Hamilton y Principios Variacionales</span>
+          </a>
+          
+            <nav class="md-nav" aria-label="Principio de Hamilton y Principios Variacionales">
+              <ul class="md-nav__list">
+                
+                  <li class="md-nav__item">
+                    <a href="#1-espacio-de-configuraciones" class="md-nav__link">
+                      <span class="md-ellipsis">1. Espacio de Configuraciones</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#2-integral-de-accion-y-principio-de-hamilton" class="md-nav__link">
+                      <span class="md-ellipsis">2. Integral de Acción y Principio de Hamilton</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#3-calculo-variacional" class="md-nav__link">
+                      <span class="md-ellipsis">3. Cálculo Variacional</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#4-transformacion-de-legendre-y-espacio-de-fase" class="md-nav__link">
+                      <span class="md-ellipsis">4. Transformación de Legendre y Espacio de Fase</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#5-ecuaciones-de-hamilton" class="md-nav__link">
+                      <span class="md-ellipsis">5. Ecuaciones de Hamilton</span>
+                    </a>
+                  </li>
+                
+                  <li class="md-nav__item">
+                    <a href="#referencias-bibliograficas" class="md-nav__link">
+                      <span class="md-ellipsis">Referencias bibliográficas</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+          
+        </li>
+      
+    </ul>
+  </nav>
+
+
+<!-- Bloque dinámico para citas aleatorias -->
+<div class="sidebar-random-fact-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--md-default-fg-color--lightest);">
+  <div class="sidebar-random-fact"></div>
+</div>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    DemuestraloPE: Presentación
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Fisica
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mecanica
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  <!-- Contenedor nativo de contenido Markdown -->
+<article class="md-content__inner md-typeset">
+
+  
+    
+
+    
+
+    <h2 id="1-espacios-de-configuracion">1. ESPACIOS DE CONFIGURACION</h2>
+<p>Espacio real hace referencia al uso de las coordenadas comunes y corrientes, distinguen las tres dimensiones espaciales las cuales estamos acostumbrados y describimos el sistema bajo dichas coordenadas.
+Espacio de configuración es el formado por las k coordenadas generalizadas, lo cual formaría un hiper-espacio de k dimensiones, con lo cual se podría describir el movimiento de dicho sistema bajo una sola trayectoria en este nuevo espacio. El propósito de esto es describir el movimiento del sistema bajo una sola trayectoria, una sola curva. Y asi definir el funcional acción.</p>
+<p><img alt="ForHamilto1" src="../../../assets/images/MecanicaClasica/ForHamilto1.png" /></p>
+<p>Condensamos todas las coordenadas generlizadas independientes y a cada una se le asigna una recta numerica, ose una dimension en este hiper-espacio</p>
+<h2 id="semana-02-formulacion-hamiltoniana">SEMANA 02: FORMULACIÓN HAMILTONIANA</h2>
+<h2 id="2-principio-de-hamilton">2. PRINCIPIO DE HAMILTON</h2>
+<p>Es un principio integral donde la el movimiento del sistema esta dado por fuerzas (excepto las ligaduras) que derivan de un potencial. Y si el sistema es conservativo el principio anuncia que:</p>
+<div class="arithmatex">\[
+I=\int_{t_{1}}^{t_{2}} L d t
+\]</div>
+<p>El movimiento que el sistema realiza entre dos instantes de tiempos esta dado por la integral curvilínea donde el lagrangiano tiene un valor estacionario, por ello es equivalente a escribir...</p>
+<div class="arithmatex">\[
+\delta I=\delta \int_{t_{1}}^{t_{2}} L d t=0
+\]</div>
+<h2 id="4-multiplicadores-de-lagrange">4. MULTIPLICADORES DE LAGRANGE</h2>
+<p>Sistemas no Conservativos:
+Nos encontramos ante un sistema no conservativo si las fuerzas que intervienen no provienen de un potencial.</p>
+<p>Método de Multiplicadores de Lagrange:
+Si las ligaduras son no holonomas por ser de una forma diferencial no integrable, pero se pueden plantear de forma variacional con a las coordenadas generalizadas, y luego hallaremos una forma de describir la ligadura k-esima en base a</p>
+<div class="arithmatex">\[
+\sum_{j=1}^{n} C_{k j} \delta q_{j}=0
+\]</div>
+<p>Los Ckj son funciones de las coordenadas y velocidades generalizadas, tales que se forma la ligadura k-esima
+Ahora introducimos los multiplicadores de lagrange, funciones de coordenas y/o velocidades generalidas que escogeremos con el fin de anualr terminos
+Luego las integramos a las ec. de Euler-Lagrange y luego los m primeros <span class="arithmatex">\(\lambda\)</span> son seleccionas tal que anulen los primeros m sumandos</p>
+<div class="arithmatex">\[
+\sum_{j=m+1}^{n}\left[\frac{\partial L}{\partial q_{j}}-\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q}_{j}}\right)+\sum_{k} \lambda_{k} C_{k j}\right] \delta q_{j}=0
+\]</div>
+<h2 id="3-principios-variacionales">3. PRINCIPIOS VARIACIONALES</h2>
+<p>Notar que la acción es un funcional, osea un grupo de diferentes funciones. Para representar a los diferentes caminos que describe este funcional en el sistema en el espacio de configuraciones consideramos lo siguiente:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+q\left(t_{1}\right) &amp; =h_{1}, q\left(t_{2}\right)=h_{2} \\
+q(t, \alpha) &amp; =q(t, 0)+\alpha \eta(t) \\
+\eta\left(t_{1}\right) &amp; =\eta\left(t_{2}\right)=0
+\end{aligned}
+\]</div>
+<p>Donde <span class="arithmatex">\(\eta\)</span> es una función cualquiera que sea continua y diferenciable. Y a es un parametro arbitrario.</p>
+<p><img alt="ForHamilto2" src="../../../assets/images/MecanicaClasica/ForHamilto2.png" /></p>
+<p>De forma análoga a buscar un punto critico de una función, el principio de Hamilton trata de buscar un punto critico del funcional, osea que sea estacionario De ello que la acción que realizara el sistema tiene que ser tal que...</p>
+<div class="arithmatex">\[
+\frac{\partial I(\alpha)}{\partial \alpha}=0
+\]</div>
+<p>Matemáticamente significa que la razon de cambio respecto a la variación de <span class="arithmatex">\(a\)</span> es 0 , osea la curva mas 'rígida' es la empleada por la naturaleza Despues un tratamiento matematico y usar el lema fundamental del calculo variacional se puede llegar a las ecuaciones de Euler-Lagrange</p>
+<p>Ahora los <span class="arithmatex">\(\lambda\)</span> son conocidos y las variaciones de las coordenadas sobrantes ahora son independientes, por ello...</p>
+<div class="arithmatex">\[
+\begin{gathered}
+\frac{\partial L}{\partial q_j}
+-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q_j}\right)
++\sum_k\lambda_k C_{kj}=0
+\end{gathered}
+\]</div>
+<p>Para coordenadas sujetas a fuerzas no conservativas, las ecuaciones de
+Euler-Lagrange se escriben</p>
+<div class="arithmatex">\[
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q_j}\right)
+-\frac{\partial L}{\partial q_j}=Q_j^{\mathrm{nc}}.
+\]</div>
+<h1 id="principio-de-hamilton-y-principios-variacionales">Principio de Hamilton y Principios Variacionales</h1>
+<h2 id="1-espacio-de-configuraciones">1. Espacio de Configuraciones</h2>
+<ul>
+<li><strong>Espacio Real:</strong> Describe el sistema en coordenadas espaciales comunes <span class="arithmatex">\((x, y, z)\)</span> para <span class="arithmatex">\(N\)</span> partículas, dependiendo del tiempo <span class="arithmatex">\(t\)</span>.</li>
+<li><strong>Espacio de Configuraciones:</strong> Se define a partir de las <strong>coordenadas generalizadas</strong> <span class="arithmatex">\(q_1, q_2, \dots, q_k\)</span>. Si un sistema posee <span class="arithmatex">\(k\)</span> coordenadas generalizadas independientes, su estado se representa como un punto en un espacio <span class="arithmatex">\(\mathbb{R}^k\)</span>. La evolución del sistema está dada por las funciones de trayectoria <span class="arithmatex">\(q_j = q_j(t)\)</span>.</li>
+</ul>
+<hr />
+<h2 id="2-integral-de-accion-y-principio-de-hamilton">2. Integral de Acción y Principio de Hamilton</h2>
+<p>Se define la <strong>Acción</strong> (<span class="arithmatex">\(S\)</span> o <span class="arithmatex">\(I\)</span>) como la integral temporal del Lagrangiano <span class="arithmatex">\(L(q_i, \dot{q}_i, t)\)</span> entre dos instantes de tiempo <span class="arithmatex">\(t_1\)</span> y <span class="arithmatex">\(t_2\)</span>:
+$$ S = \int_{t_1}^{t_2} L(q_i, \dot{q}_i, t) dt $$</p>
+<blockquote>
+<p><strong>Nota:</strong> La elección de las coordenadas generalizadas no importa, ya que la acción es invariante ante transformaciones de coordenadas. </p>
+</blockquote>
+<p><strong>Principio de Hamilton:</strong> 
+La trayectoria real del sistema (la que efectivamente sigue en la naturaleza) es aquella para la cual la integral de acción es <strong>estacionaria</strong>. Es decir, ante pequeñas variaciones de la trayectoria que mantienen fijos los extremos, la variación de la acción es nula:
+$$ \delta S = 0 $$</p>
+<p><em>(Este principio establece una jerarquía en la formulación de la mecánica: Newton <span class="arithmatex">\(\rightarrow\)</span> Lagrange <span class="arithmatex">\(\rightarrow\)</span> Hamilton, siendo la formulación integral la más fundamental).</em></p>
+<hr />
+<h2 id="3-calculo-variacional">3. Cálculo Variacional</h2>
+<p>Para entender cómo minimizar la acción, analizamos una integral matemática genérica de la forma:
+$$ J = \int_{x_1}^{x_2} f(y, y', x) dx $$
+<em>(En física, <span class="arithmatex">\(x\)</span> funcionará como el tiempo <span class="arithmatex">\(t\)</span>, y <span class="arithmatex">\(y\)</span> como las coordenadas <span class="arithmatex">\(q_j\)</span>).</em></p>
+<p>Queremos hallar la función <span class="arithmatex">\(y(x)\)</span> que hace que <span class="arithmatex">\(J\)</span> sea un extremo, con los puntos finales fijos: <span class="arithmatex">\(y(x_1) = y_1\)</span> y <span class="arithmatex">\(y(x_2) = y_2\)</span>.</p>
+<p>Proponemos una familia de curvas parametrizadas por <span class="arithmatex">\(\alpha\)</span>:
+$$ y(x, \alpha) = y(x, 0) + \alpha \eta(x) $$
+Donde <span class="arithmatex">\(\eta(x)\)</span> es una función arbitraria de variación, con la única condición de que se anule en las fronteras: <span class="arithmatex">\(\eta(x_1) = \eta(x_2) = 0\)</span>.</p>
+<p>Para que <span class="arithmatex">\(J\)</span> sea estacionario, debe cumplirse que:
+$$ \left( \frac{\partial J}{\partial \alpha} \right)_{\alpha=0} = 0 $$</p>
+<p>Derivando el integrando mediante la regla de la cadena:
+$$ \frac{\partial J}{\partial \alpha} = \int_{x_1}^{x_2} \left( \frac{\partial f}{\partial y} \frac{\partial y}{\partial \alpha} + \frac{\partial f}{\partial y'} \frac{\partial y'}{\partial \alpha} \right) dx = 0 $$</p>
+<p>Sabiendo que <span class="arithmatex">\(\frac{\partial y}{\partial \alpha} = \eta(x)\)</span> y <span class="arithmatex">\(\frac{\partial y'}{\partial \alpha} = \frac{d}{dx}\left(\frac{\partial y}{\partial \alpha}\right)\)</span>, aplicamos integración por partes al segundo término:
+$$ \int_{x_1}^{x_2} \frac{\partial f}{\partial y'} \frac{d}{dx}\left(\frac{\partial y}{\partial \alpha}\right) dx = \left[ \frac{\partial f}{\partial y'} \frac{\partial y}{\partial \alpha} \right]<em x_1>{x_1}^{x_2} - \int</em> dx $$}^{x_2} \frac{d}{dx}\left(\frac{\partial f}{\partial y'}\right) \frac{\partial y}{\partial \alpha</p>
+<p>Como la variación se anula en los extremos (<span class="arithmatex">\(\frac{\partial y}{\partial \alpha} = 0\)</span> en <span class="arithmatex">\(x_1\)</span> y <span class="arithmatex">\(x_2\)</span>), el término evaluado es cero. Reemplazando en la integral completa obtenemos:
+$$ \frac{\partial J}{\partial \alpha} = \int_{x_1}^{x_2} \left[ \frac{\partial f}{\partial y} - \frac{d}{dx}\left(\frac{\partial f}{\partial y'}\right) \right] \eta(x) dx = 0 $$</p>
+<h3 id="lema-fundamental-del-calculo-variacional">Lema Fundamental del Cálculo Variacional</h3>
+<p>Si la integral <span class="arithmatex">\(\int M(x)\eta(x) dx = 0\)</span> para toda función arbitraria <span class="arithmatex">\(\eta(x)\)</span> que se anule en los extremos, entonces obligatoriamente:
+$$ M(x) = 0 $$</p>
+<p>Esto nos da la <strong>Ecuación de Euler-Lagrange</strong>:
+$$ \frac{\partial f}{\partial y} - \frac{d}{dx}\left(\frac{\partial f}{\partial y'}\right) = 0 $$</p>
+<p>Al hacer la traducción a variables físicas (<span class="arithmatex">\(f \to L\)</span>, <span class="arithmatex">\(y \to q_j\)</span>, <span class="arithmatex">\(x \to t\)</span>), obtenemos la ecuación de movimiento:
+$$ \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_j}\right) - \frac{\partial L}{\partial q_j} = 0 $$</p>
+<hr />
+<h2 id="4-transformacion-de-legendre-y-espacio-de-fase">4. Transformación de Legendre y Espacio de Fase</h2>
+<p>Mientras que el lagrangiano usa <span class="arithmatex">\(n\)</span> coordenadas y <span class="arithmatex">\(n\)</span> velocidades (espacio de configuración), el formalismo hamiltoniano utiliza variables de posición y momento.</p>
+<p>Definimos los <strong>Momentos Conjugados</strong> (<span class="arithmatex">\(p_i\)</span>) como:
+$$ p_i = \frac{\partial L(q_j, \dot{q}_j, t)}{\partial \dot{q}_i} $$
+Esto nos traslada al <strong>Espacio de Fase</strong>, el cual consta de <span class="arithmatex">\(2n\)</span> variables independientes: <span class="arithmatex">\((q_i, p_i)\)</span>.</p>
+<h3 id="la-transformacion-de-legendre">La Transformación de Legendre</h3>
+<p>Para una función <span class="arithmatex">\(f(x, y)\)</span>, su diferencial total es:
+$$ df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy \equiv u \, dx + v \, dy $$
+Definimos una nueva función <span class="arithmatex">\(g = ux - f\)</span>. Al diferenciarla:
+$$ dg = (x \, du + u \, dx) - (u \, dx + v \, dy) = x \, du - v \, dy $$
+De donde se deduce que <span class="arithmatex">\(\frac{\partial g}{\partial u} = x\)</span> y <span class="arithmatex">\(\frac{\partial g}{\partial y} = -v\)</span>.</p>
+<h3 id="el-hamiltoniano">El Hamiltoniano</h3>
+<p>Aplicando esta transformación al Lagrangiano (donde <span class="arithmatex">\(f \to L\)</span>, <span class="arithmatex">\((x,y) \to (\dot{q}_i, q_i)\)</span> y <span class="arithmatex">\(u \to p_i\)</span>), definimos la función <strong>Hamiltoniano</strong> <span class="arithmatex">\(H(q_i, p_i, t)\)</span>:
+$$ H(q_i, p_i, t) = \sum_i p_i \dot{q}_i - L(q_i, \dot{q}_i, t) $$</p>
+<hr />
+<h2 id="5-ecuaciones-de-hamilton">5. Ecuaciones de Hamilton</h2>
+<p>Calculamos la diferencial total del Hamiltoniano usando su definición:
+$$ dH = \sum_i (p_i \, d\dot{q}_i + \dot{q}_i \, dp_i) - \sum_i \left( \frac{\partial L}{\partial q_i} dq_i + \frac{\partial L}{\partial \dot{q}_i} d\dot{q}_i \right) - \frac{\partial L}{\partial t} dt $$</p>
+<p>Agrupando términos y recordando que <span class="arithmatex">\(p_i = \frac{\partial L}{\partial \dot{q}_i}\)</span> (lo que cancela los <span class="arithmatex">\(d\dot{q}_i\)</span>) y que por Euler-Lagrange <span class="arithmatex">\(\dot{p}_i = \frac{\partial L}{\partial q_i}\)</span>:
+$$ dH = \sum_i (\dot{q}_i \, dp_i - \dot{p}_i \, dq_i) - \frac{\partial L}{\partial t} dt $$</p>
+<p>Por otro lado, como <span class="arithmatex">\(H = H(q_i, p_i, t)\)</span>, su diferencial exacta también debe ser:
+$$ dH = \sum_i \left( \frac{\partial H}{\partial q_i} dq_i + \frac{\partial H}{\partial p_i} dp_i \right) + \frac{\partial H}{\partial t} dt $$</p>
+<p>Igualando los coeficientes de las diferenciales (<span class="arithmatex">\(dp_i, dq_i, dt\)</span>) de ambas expresiones, llegamos a las <strong>Ecuaciones Canónicas de Hamilton</strong>:</p>
+<div class="arithmatex">\[ \dot{q}_i = \frac{\partial H}{\partial p_i} $$
+$$ \dot{p}_i = -\frac{\partial H}{\partial q_i} $$
+$$ \frac{\partial H}{\partial t} = -\frac{\partial L}{\partial t} \]</div>
+<h2 id="referencias-bibliograficas">Referencias bibliográficas</h2>
+<ul>
+<li>Gantmajer, <em>Mecánica analítica</em>.</li>
+<li>M. Krasnov, <em>Cálculo variacional</em>.</li>
+<li>H. Goldstein, <em>Mecánica clásica</em>.</li>
+</ul>
+
+    
+  
+</article>
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+  <footer class="md-footer" style="
+    background-color: var(--md-default-bg-color--light, var(--md-code-bg-color)); 
+    border-top: 1px solid var(--md-default-fg-color--lightest); 
+    padding: 0 0 2rem 0; 
+    margin-top: 4rem;
+    width: 100%;
+  ">
+    <!-- Borde animado superior -->
+    <div style="height: 3px; width: 100%; background: linear-gradient(90deg, #7c4dff, #00e676, #651fff); background-size: 200% 200%; animation: gradientShift 4s ease infinite; margin-bottom: 2rem;"></div>
+
+    <div class="md-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: var(--md-default-fg-color);">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-weight: 800; font-size: 1.1rem;">DemuestraloPE</span>
+          <span style="background: rgba(0, 230, 118, 0.15); border: 1px solid rgba(0, 230, 118, 0.4); padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; color: #00e676;">
+            ● Build Active
+          </span>
+        </div>
+        <p style="margin: 4px 0 0 0; font-size: 0.8rem; opacity: 0.8;">
+          Repositorio académico abierto para la ciencia y tecnología.
+        </p>
+        <p style="margin: 2px 0 0 0; font-size: 0.75rem; opacity: 0.6;">
+          © <span id="footer-year">2026</span> DemuestraloPE • Desarrollado con MkDocs & LaTeX
+        </p>
+      </div>
+
+      <div style="font-size: 0.85rem; display: flex; align-items: center; gap: 15px;">
+        <a href="../../../PlantillaPE.html" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: 500;">📄 Plantilla</a>
+        <a href="https://github.com/DemuestraloPE" target="_blank" style="color: var(--md-accent-fg-color); text-decoration: none; font-weight: bold;">GitHub Repositorio</a>
+      </div>
+    </div>
+  </footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "search.suggest", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/random_quotes.js"></script>
+      
+        <script src="../../../javascripts/study_desk.js"></script>
+      
+    
+  </body>
+</html>

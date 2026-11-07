@@ -1,0 +1,13 @@
+{% import "partials/tabs-item.html" as item with context %}
+
+{% if "navigation.tabs" in config.theme.features %}
+  <nav class="md-tabs" data-md-component="tabs" aria-label="{{ lang.t('tabs') }}">
+    <div class="md-grid">
+      <ul class="md-tabs__list">
+        {% for nav_item in nav.items %}
+          {{ item.render(nav_item) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+{% endif %}
